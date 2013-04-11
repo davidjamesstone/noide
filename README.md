@@ -18,17 +18,35 @@ noide
 - Run/Debugging/Previewing
 
 Built using:
-=========================
+============
 
 - Node.js
 - ACE Editor
 - Bootstrap
 - Backbone
 - JQuery
+- socket.io
+
+
+*** WARNING ***:
+================
+If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
+noide is in early stages & not thouroughly tested.
+
+I started the IDE as a learning exercise for Backbone and Node.js
+This is a pet project and I am no whizz programmer.
+
+Ensure any work is backed up regularly.
+I would not like it to be responsible for any work lost. 
+
+Having said that the IDE seems fairly stable and robust and is a 
+workable lightweight tool for Node.js, HTML5/CSS/JS development.
+
 
 Dependencies:
-=========================
+=============
 - Node.js
+- Node packages (express, ejs, ejs-locals, rimraf & socket.io)
 
 Optional
 =========================
@@ -36,24 +54,24 @@ Optional
 
 OS Platforms/Browsers
 =========================
-- Tested on Ubuntu Linux and Windows 7 but should work on MAC OS
+- Tested on Ubuntu Linux and Windows 7
 - Tested using Chrome, Firefox, Safari & IE9
 
-Note: integrated debugging uses web inspector tools so is only available on webkit based browsers Chrome, Safari, Opera.
+Note: integrated debugging uses web inspector plugin available on webkit based browsers Chrome, Safari, Opera.
 
 Instructions
 ============
 
 Clone the repository into a folder of your choice ([noide-install-dir]).
 
-Once complete entering
+Once complete, entering
 
     node app
 
-from the [noide-install-dir] should be enough to get up and running.
+from the [noide-install-dir] should be enough to get the web app up and running.
 
 
-noide runs on port 2424
+noide runs on port 2424 so
 
 http://localhost:2424 should bring up the Projects Landing Page.
 
@@ -64,13 +82,14 @@ By default this is set to /[noide-install-dir]/noide/projects.
 To change this and other settings you use a noide.json configuration file.
 
 
-Configuration
-=======
+noide configuration file (optional)
+===================================
 If a `noide.json` file is present in the root of the [noide-install-dir] it is read on start up.
 This file should hold the IDE settings:
 
 ```json
 {
+  "projectsDir": "",
   "users": {
     "testuser": "testpassword"
   },
