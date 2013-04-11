@@ -66,10 +66,11 @@ To change this and other settings you use a noide.json configuration file.
 
 Configuration
 =======
-The noide.json file is non-mandatory, however if present (in the root of [noide-install-dir]) it will 
-will hold the IDE settings.
+If a `noide.json` file is present in the root of the [noide-install-dir] the file is read (on starting the app)
+This file should hold the IDE settings:
 
-```json{
+```json
+{
   "users": {
     "testuser": "testpassword"
   },
@@ -123,7 +124,8 @@ will hold the IDE settings.
     "jqueryui": "http://jqueryui.com/",
     "jquerymobile": "http://jquerymobile.com/"
   }
-}```
+}
+```
 
 License
 =======
