@@ -66,7 +66,7 @@ To change this and other settings you use a noide.json configuration file.
 
 Configuration
 =======
-If a `noide.json` file is present in the root of the [noide-install-dir] the file is read (on starting the app)
+If a `noide.json` file is present in the root of the [noide-install-dir] it is read on start up.
 This file should hold the IDE settings:
 
 ```json
