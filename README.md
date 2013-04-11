@@ -69,7 +69,7 @@ Configuration
 The noide.json file is non-mandatory, however if present (in the root of [noide-install-dir]) it will 
 will hold the IDE settings.
 
-`{
+```json{
   "users": {
     "testuser": "testpassword"
   },
@@ -123,7 +123,7 @@ will hold the IDE settings.
     "jqueryui": "http://jqueryui.com/",
     "jquerymobile": "http://jquerymobile.com/"
   }
-}`
+}```
 
 License
 =======
