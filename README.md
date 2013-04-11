@@ -5,13 +5,17 @@ noide
 
 `noide`’s current features:
 
-- Project tree display
+- File explorer tree view
 - File operations (create/delete/rename files and directories)
-- Syntax highlighted code editing for multiple programming languages
-- NPM integration (display currently installed packages, add/remove packages)
+- Syntax highlighted code tabbed code editing for multiple programming languages
+- HTML/CSS/JS beautify
+- Code folding
+- Find/Find+Replace 
+- JSLINT validation warning
+- NPM integration (display currently installed packages, add/remove packages, install package dependencies)
 - HTTP basic authentication (for running noide on a public server)
-- Node.JS Documentation browsing
-- Debugging
+- Configurable documentation links
+- Run/Debugging/Previewing
 
 Built using:
 =========================
@@ -30,35 +34,30 @@ Optional
 =========================
 - node-inspector
 
-============================================
-
-- Nide now supports syntax highlighting for filetypes other than JavaScript.
-- A simple cache mechanism is now present to avoid unnecessary directory listings.
-- Directory listing is now much faster and more reliable.
-- Nide is now able to launch the user's default browser from the command line
-- The client code has been almost completely refactored so it's now easier to mantain.
-- Nide will now check for file size before opening a file.
-- HTML files can now be previewed directly from Nide.
-- Image files can now be viewed directly from Nide.
-- Lots of bugfixes.
 
 Instructions
 ============
 
-First, install nide with:
+Clone the repository and enter
 
-    sudo npm install -g nide
+    node app
 
-On a new or existing directory, use the following command to setup a new nide project:
+from the directory is enough to get up and running.
 
-    nide init
+noide runs on port 2424
 
-This command will setup a `.nide` directory, automatically add it to your `.npmignore`
-and `.gitignore` files, and start the `nide` server on port 8123. Fire up your web browser
-at `localhost:8123` to use nide. If a directory is already a nide project, you can run
-nide simply by using:
+http://localhost:2424 should bring up the Projects Landing Page.
+By default this is set to /noide/noide/projects.
 
-    nide
+To change this and other settings you use a noide.json configuration file.
+
+
+Configuration
+=======
+The noide.json file is non-mandatory, however if present (in the root of noide install directory) it will 
+will hold the IDE settings. See the 
+
+
 
 License
 =======
