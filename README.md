@@ -2,6 +2,8 @@ noide
 ====
 
 `noide` is a web-based IDE for Node.js.
+A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
+
 
 `noide`’s current features:
 
