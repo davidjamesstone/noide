@@ -34,30 +34,96 @@ Optional
 =========================
 - node-inspector
 
+OS Platforms/Browsers
+=========================
+- Tested on Ubuntu Linux and Windows 7 but should work on MAC OS
+- Tested using Chrome, Firefox, Safari & IE9
+
+Note: integrated debugging uses web inspector tools so is only available on webkit based browsers Chrome, Safari, Opera.
 
 Instructions
 ============
 
-Clone the repository and enter
+Clone the repository into a folder of your choice ([noide-install-dir]).
+
+Once complete entering
 
     node app
 
-from the directory is enough to get up and running.
+from the [noide-install-dir] should be enough to get up and running.
+
 
 noide runs on port 2424
 
 http://localhost:2424 should bring up the Projects Landing Page.
-By default this is set to /noide/noide/projects.
+
+
+
+By default this is set to /[noide-install-dir]/noide/projects.
 
 To change this and other settings you use a noide.json configuration file.
 
 
 Configuration
 =======
-The noide.json file is non-mandatory, however if present (in the root of noide install directory) it will 
-will hold the IDE settings. See the 
+The noide.json file is non-mandatory, however if present (in the root of [noide-install-dir]) it will 
+will hold the IDE settings.
 
-
+`{
+  "users": {
+    "testuser": "testpassword"
+  },
+  "editor": {
+    "tabSize": 2,
+    "useSoftTabs": true,
+    "highlightActiveLine": true,
+    "showPrintMargin": false,
+    "showGutter": true,
+    "fontSize": "12px",
+    "useWorker": false
+  },
+  "beautify": {
+    "js": {
+      "indent_size": 2,
+      "indent_char": " ",
+      "indent_level": 0,
+      "indent_with_tabs": false,
+      "preserve_newlines": true,
+      "max_preserve_newlines": 1,
+      "jslint_happy": false,
+      "brace_style": "collapse",
+      "keep_array_indentation": false,
+      "keep_function_indentation": false,
+      "space_before_conditional": true,
+      "break_chained_methods": false,
+      "eval_code": false,
+      "unescape_strings": false,
+      "wrap_line_length": 0
+    },
+    "css": {
+      "indent_size": 2,
+      "indent_char": " "
+    },
+    "html": {
+      "indent_size": 2,
+      "indent_char": " ",
+      "brace_style": "collapse",
+      "indent_scripts ": "normal"
+    }
+  },
+  "links": {
+    "node": "http://nodejs.org",
+    "mongodb": "http://www.mongodb.org",
+    "mongoose": "http://mongoosejs.com",
+    "-w3": "http://www.w3.org/",
+    "mozilla js": "https://developer.mozilla.org/en-US/docs/JavaScript",
+    "expressjs": "http://expressjs.com",
+    "bootstrap": "http://twitter.github.com/bootstrap/",
+    "-jquery": "http://jquery.com/",
+    "jqueryui": "http://jqueryui.com/",
+    "jquerymobile": "http://jquerymobile.com/"
+  }
+}`
 
 License
 =======
