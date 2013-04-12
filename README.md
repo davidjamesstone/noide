@@ -1,3 +1,7 @@
+TODO:
+include editor instructions link
+include web inspector webkit use guide (see node-inspector for link)
+
 noide
 ====
 
