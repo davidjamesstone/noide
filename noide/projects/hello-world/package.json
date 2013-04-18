@@ -1,0 +1,8 @@
+{
+  "name": "hello-world",
+  "version": "0.0.1",
+  "description": "Node.js IDE Example Project",
+  "author": {
+    "name": "Dave Stone"
+  }
+}

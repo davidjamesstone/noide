@@ -1,0 +1,53 @@
+<% layout('layout') -%>
+
+<% stylesheet('/css/index.css') -%>
+<% script('//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js') -%>
+
+<script>
+  $(function(){
+    $('ul.thumbnails').masonry({
+      itemSelector: '.box',
+      isFitWidth: true
+    });
+  });
+</script>
+
+<div id="header">
+  <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="/">no<span>i</span>de</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <% if (typeof items !== 'undefined') { %>
+    <ul class="thumbnails">
+      <% items.forEach(function(item) { %>
+        <li class="box">
+          <div class="thumbnail">
+            <img src="/img/folder.jpg" alt="" />
+            <div class="caption clearfix">
+              <h3 class="dirname"><%= item.name %></h3>
+              <p class="version"><%= item.package.version || '' %></p>
+              <h5 class="pkgname"><%=  item.package.name || '' %></h5>
+              <p class="desc"><%=  item.package.description || '' %></p>
+              <% if (item.package.author && item.package.author.name) { %>
+                <address class="pull-left">
+                  <strong><%= item.package.author.name %></strong><br>
+                  <% if (item.package.author.email) {%>
+                  <a href="mailto:<%= item.package.author.email %>"><%= item.package.author.email %></a>
+                  <% } %>
+                </address>
+              <% } %>
+              <a class="btn btn-primary pull-right" href="/?path=<%= item.path %>">Open</a>
+            </div>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+    <% } else { %>
+      <p>No projects found in projects root directory. To open the IDE on a specific directory add a 'path' query string to the URL. E.g. For windows this will be ?path=c:\myprojects, UNIX  ?path=\root\myprojects</p>
+    <% } %>
+</div>

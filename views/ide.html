@@ -1,0 +1,89 @@
+<% layout('layout') -%>
+
+<% stylesheet('/css/ide.css') -%>
+<% stylesheet('/css/treeview.css') -%>
+<% stylesheet('/css/explorer.css') -%>
+<% stylesheet('/css/editor.css') -%>
+<% stylesheet('/css/frames.css') -%>
+<% stylesheet('/css/console.css') -%>
+<% stylesheet('/css/cus-icons.css') -%>
+<% stylesheet('/css/dialogs.css') -%>
+<% script('/socket.io/socket.io.js') -%>
+<% script('/js/filesystem.js') -%>
+<% script('/js/explorer.js') -%>
+<% script('/js/editor.js') -%>
+<% script('/js/childprocess.js') -%>
+<% script('/js/run.js') -%>
+<% script('/js/noide.js') -%>
+<% script('/js/splitter.js') -%>
+<% script('/js/ace/src-min-noconflict/ace.js') -%>
+<% script('/js/beautify.js') -%>
+<% script('/js/beautify-css.js') -%>
+<% script('/js/beautify-html.js') -%>
+<script>
+  initData = <%- JSON.stringify(initData) %>
+</script>
+<%- templates %>
+<% include dialogs.html %>
+<div id="header">
+  <% include header.html %>
+</div>
+<div id="content">
+  <div id="files">
+    <div id="left">
+      <div id="explorer">
+        <% include contextmenus.html %>
+        <div class="explorer-ctnr">
+          <div class="explorer-treeview css-treeview">
+          </div>
+        </div>
+        <div class="split-x splitter" data-splitter="#left,#main">
+          <div class="toggle"></div>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <ul class="editor-tabs nav nav-tabs"></ul>
+      <% include editortoolbar.html %>
+      <div class="editor">
+      </div>
+    </div>
+  </div>
+  <div id="frames">
+    <div id="frame1">
+      <form class="form-search">
+        <div class="input-append">
+          <input class="address-bar search-query" type="text" value="<%= initData.config.framesUrl1 %>">
+          <button class="btn" type="submit">Go</button>
+        </div>
+      </form>
+      <div class="iframe-ctnr">
+        <iframe src="/frames.html"></iframe>
+      </div>
+      <div class="split-x splitter" data-splitter="#frame1,#frame2">
+        <div class="toggle">
+        </div>
+      </div>
+    </div>
+    <div id="frame2">
+      <form class="form-search">
+        <div class="input-append">
+          <input class="address-bar search-query" type="text" value="<%= initData.config.framesUrl2 %>">
+          <button class="btn" type="submit">Go</button>
+        </div>
+      </form>
+      <div class="iframe-ctnr">
+        <iframe src="/frames.html"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="split-y splitter" data-splitter="#footer,#content">
+    <div class="toggle">
+    </div>
+  </div>
+  <div id="processes">
+    <div id="proc-accordion" class="accordion"></div>
+  </div>
+</div>

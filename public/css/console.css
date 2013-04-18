@@ -1,0 +1,26 @@
+#processes {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 9px;
+}
+.console {
+  background-color: #000!important;
+  color: #00AA00;
+  font-family: Lucida Console, CommPlus, MS LineDraw, Telix TT Terminal, monospace;
+  font-size: 11px;
+  height: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+}
+#proc-accordion {
+  margin-bottom: 0;
+}
+#proc-accordion .accordion-group {
+  border-radius: 0;
+}

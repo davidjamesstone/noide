@@ -1,0 +1,60 @@
+.editor
+{
+	position: absolute!important;
+	top: 70px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/*width: 100%;
+	height: 100%;*/
+	display: none;
+	background-color: #fff;
+}
+
+.editor-tabs.nav-tabs
+{
+	margin: 0;
+	padding: 5px 0 0 7px;
+	display: none;
+	background-color: #fff;
+}
+
+.editor-tabs.nav-tabs li 
+{
+  position: relative;
+}
+
+.editor-tabs.nav-tabs li .close 
+{
+	position: absolute;
+	right: 6px;
+	top: -5px;
+	font-size: 13px;
+	/*opacity:1;*/
+}
+
+.editor-tabs.nav-tabs li.edited .close 
+{
+	color: red;
+}
+
+.editor-toolbar
+{
+	margin: 0;
+	padding: 5px 0;
+	background-color: #fff;
+	display: none;
+}
+
+.editor-toolbar li
+{
+	cursor: pointer;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.editor-toolbar li.sep 
+{
+	padding-left: 5px;
+	border-left: 1px solid #ddd;
+}

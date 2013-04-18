@@ -1,4 +1,4 @@
-TODO:
+﻿TODO:
 include editor instructions link
 include web inspector webkit use guide (see node-inspector for link)
 
@@ -42,7 +42,7 @@ noide is in early stages & not thouroughly tested.
 I started the IDE as a learning exercise for Backbone and Node.js
 This is a pet project and I am no whizz programmer.
 
-Ensure any work is backed up regularly.
+Ensure any code is backed up regularly.
 I would not like it to be responsible for any work lost. 
 
 Having said that the IDE seems fairly stable and robust and is a 
@@ -77,11 +77,19 @@ Once complete, entering
 from the [noide-install-dir] should be enough to get the web app up and running.
 
 
-noide runs on port 2424 so
+noide runs on port 2424. Use http://localhost:2424?path=your_directory_path to open the IDE in the specified path.
 
-http://localhost:2424 should bring up the Projects Landing Page.
+E.g.
+
+http://localhost:2424?path=/root/projects/node
+
+OR
+
+http://localhost:2424?path=c:\projects\node
 
 
+
+http://localhost:2424 should bring up your Projects Landing Page.
 
 By default this is set to /[noide-install-dir]/noide/projects.
 

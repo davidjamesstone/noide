@@ -1,0 +1,34 @@
+<div class="navbar /*btn-inverse*/ navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="/">no<span>i</span>de</a>
+      <div class="btn-group pull-right links">
+        <button data-toggle="dropdown" class="btn /*btn-inverse*/ dropdown-toggle"><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="view" href="#files">Show files</a>
+          </li>
+          <li>
+            <a class="view" href="#frames">Show frames</a>
+          </li>
+          <% if (initData.config.links) { %>
+          <li class="divider"></li>
+          <% 
+          var links = initData.config.links;
+          for (var l in links) { 
+            var href = links[l]; 
+            if (l.indexOf('-') == 0) { 
+              l = l.substring(1); %>
+              <li class="divider"></li>
+            <% } %>
+            <li>
+              <a href="<%= href %>" target="_blank"><%= l %></a>
+            </li>
+          <% } %>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

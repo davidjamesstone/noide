@@ -1,0 +1,9 @@
+.modal form
+{
+	margin: 0;
+}
+
+#run input.url
+{
+	width: 400px;
+}

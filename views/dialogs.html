@@ -1,0 +1,81 @@
+<div id="alert">
+</div>
+
+<div id="confirm" class="modal hide fade">
+  <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">&times;</button>
+    <h3>Confirm</h3>
+  </div>
+  <div class="modal-body">
+    <p></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn confirm-no" type="button" data-dismiss="modal">No</button>
+    <button class="btn btn-primary confirm-yes" type="button" data-dismiss="modal">Yes</button>
+  </div>
+</div>
+  
+<div id="prompt" class="modal hide fade">
+  <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">&times;</button>
+    <h3>Prompt</h3>
+  </div>
+  <form autocomplete="off">
+    <div class="modal-body">
+      <p>
+        <label></label>
+        <input type="text" />
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" type="button" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary" type="submit">Ok</button>
+    </div>
+  </form>
+</div>
+
+  
+<div id="run" class="modal hide fade">
+  <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">&times;</button>
+    <h3>Run Options</h3>
+  </div>
+  <form class="form-inline" autocomplete="off">
+    <div class="modal-body">
+      <fieldset class="debugging">
+        <legend>Debugging</legend>
+				<label class="radio">
+					<input type="radio" name="debug" value="0" checked/> Disabled
+				</label>
+				&nbsp;
+				<label class="radio">
+					<input type="radio" name="debug" value="1"/> Enabled
+				</label>
+				<div class="well">
+					<label>Port</label>&nbsp;
+					<input type="text" name="port" value="5858" required disabled/>&nbsp;
+					<label class="checkbox">
+						<input type="checkbox" name="brk" disabled/> Break on first line
+					</label>
+				</div>
+      </fieldset>
+      <fieldset class="startoptions">
+        <legend>Start Options</legend>
+				<label class="checkbox">
+					<input type="checkbox" name="showframes"/> Show frames
+				</label>
+				<div class="well">
+					<label>Url 1</label>&nbsp;
+					<input class="url" type="text" name="url1" value="<%= initData.config.framesUrl1 %>" required disabled/>
+					<br><br>
+					<label>Url 2</label>&nbsp;
+					<input class="url" type="text" name="url2" value="<%= initData.config.framesUrl2 %>" disabled/>
+				</div>
+      </fieldset>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" type="button" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary" type="submit">Run</button>
+    </div>
+  </form>
+</div>

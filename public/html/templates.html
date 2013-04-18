@@ -1,0 +1,41 @@
+<script id="dir-template" type="text/template">
+  <% _.each(data, function(fso) { %>  
+    <% var item = fso.item; %>
+    <% if (item.get('isDirectory')) { %>
+      <% if (item.get('loaded')) { %>
+        <li class="dir" data-cid="<%= item.cid %>"><input type="checkbox" <%= item.get('expanded') ? 'checked="checked"' : '' %>/><label><%= item.get('name') %></label>
+          <ul>
+            <%= templateFn({ data: fso.children, templateFn: templateFn }) %>
+          </ul>
+        </li>
+      <% } else { %>
+        <li class="dir not-loaded" data-cid="<%= item.cid %>"><input type="checkbox"/><label><%= item.get('name') %></label></li>
+      <% } %> 
+    <% } else { %>
+      <li class="file" data-cid="<%= item.cid %>">
+        <% if (item.get('loaded')) { %>
+          <a href="#"><%= item.get('name') %><span class="<%= item.get('edited') ? 'edited' : '' %>"> *</span></a>
+        <% } else { %>
+          <a href="#"><%= item.get('name') %></a>
+        <% } %>
+      </li>
+    <% } %>
+  <% }); %>
+</script>
+
+<script id="proc-template" type="text/template">
+  <%= headerTemplateFn({ data: data }) %>
+  <div id="<%= data.cid %>" class="accordion-body collapse in">
+		<textarea class="console" readonly></textarea>
+  </div>
+</script>
+
+<script id="proc-header-template" type="text/template">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" href="#<%= data.cid %>">
+      <i class="<%= data.get('alive') ? 'cus-bullet-green' : 'cus-bullet-red' %>"></i>
+      <%= data.get('cmd') %> [pid: <%= data.get('pid') %>]
+      <i class="proc-close pull-right icon-remove icon-white"></i>
+    </a>
+  </div>    
+</script>
