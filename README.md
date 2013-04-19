@@ -20,6 +20,12 @@ A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
 - Configurable documentation links
 - Run/Debugging/Previewing
 
+
+USe cases:
+============
+A lightweight editor for installation on terminal cloud VMs e.g. joyent smart machine.
+A local editor for nodejs, css, html5, & javascript development.
+
 Built using:
 ============
 
@@ -34,10 +40,9 @@ Built using:
 *** WARNING ***:
 ================
 If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
-noide is in early stages & not thouroughly tested.
+noide is in early stages.
 
-I started the IDE as a learning exercise for Backbone and Node.js
-This is a pet project and I am no whizz programmer.
+It started out as a learning exercise for Backbone and Node.js and the IDE grew out of that.
 
 Ensure any code is backed up regularly.
 I would not like it to be responsible for any work lost. 
