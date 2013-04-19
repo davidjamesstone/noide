@@ -1,8 +1,11 @@
 noide
 ====
 
-`noide` is a web-based IDE for Node.js.
+`noide`is a web-based IDE for Node.js.
 A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
+
+Thanks for taking a look. Any comments, feedback or support use [Twitter](https://twitter.com/node_ide).
+
 
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/Untitled.jpg "IDE")
 
@@ -21,7 +24,7 @@ A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
 - Run/Debugging/Previewing
 
 
-USe cases:
+Use cases:
 ============
 A lightweight editor for installation on terminal cloud VMs e.g. joyent smart machine.
 A local editor for nodejs, css, html5, & javascript development.
@@ -61,13 +64,11 @@ Optional
 =========================
 - node-inspector
 
-- For more information on getting started see the [wiki](http://github.com/dannycoates/node-inspector/wiki/Getting-Started---from-scratch)
-
 node-inspector works almost exactly like the web inspector in Safari and Chrome. Here's a good [overview](http://code.google.com/chrome/devtools/docs/scripts.html) of the UI
 
 OS Platforms/Browsers
 =========================
-- Tested on Ubuntu Linux and Windows 7
+- Tested on SmartOS, Linux Ubuntu and Windows 7
 - Tested using Chrome, Firefox, Safari & IE9
 
 Note: integrated debugging uses web inspector plugin available on webkit based browsers Chrome, Safari, Opera.
