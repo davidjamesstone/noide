@@ -1,7 +1,3 @@
-﻿TODO:
-include editor instructions link
-include web inspector webkit use guide (see node-inspector for link)
-
 noide
 ====
 
@@ -27,12 +23,12 @@ A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
 Built using:
 ============
 
-- Node.js
-- ACE Editor
-- Bootstrap
-- Backbone
-- JQuery
-- socket.io
+- [Node.js](https://github.com/joyent/node)
+- [ace editor](https://github.com/ajaxorg/ace)
+- [Twitter Bootstrap](twitter.github.com/bootstrap/)
+- [Backbone](backbone.orgbackbonejs.org)
+- [JQuery](http://jquery.com)
+- [socket.io](https://github.com/LearnBoost/socket.io)
 
 
 *** WARNING ***:
@@ -60,6 +56,10 @@ Optional
 =========================
 - node-inspector
 
+- For more information on getting started see the [wiki](http://github.com/dannycoates/node-inspector/wiki/Getting-Started---from-scratch)
+
+node-inspector works almost exactly like the web inspector in Safari and Chrome. Here's a good [overview](http://code.google.com/chrome/devtools/docs/scripts.html) of the UI
+
 OS Platforms/Browsers
 =========================
 - Tested on Ubuntu Linux and Windows 7
@@ -69,6 +69,12 @@ Note: integrated debugging uses web inspector plugin available on webkit based b
 
 Instructions
 ============
+
+From npm it's
+
+npm install noide
+
+OR
 
 Clone the repository into a folder of your choice ([noide-install-dir]).
 
@@ -161,6 +167,13 @@ This file should hold the IDE settings:
   }
 }
 ```
+
+Editor
+======
+
+The code editor used in noide is the ajaxorg/ace editor.
+
+Here's a useful [link](https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts) for default keyboard shortcuts 
 
 License
 =======
