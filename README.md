@@ -8,7 +8,7 @@ noide
 `noide` is a web-based IDE for Node.js.
 A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
 
-![main ide](https://github.com/davidjamesstone/noide/blob/gh-pages/images/Untitled.jpg "Main IDE")
+![main ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/Untitled.jpg "Main IDE")
 
 `noide`’s current features:
 
