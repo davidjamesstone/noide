@@ -1,12 +1,11 @@
-﻿TODO:
-include editor instructions link
-include web inspector webkit use guide (see node-inspector for link)
-
 noide
 ====
 
-`noide` is a web-based IDE for Node.js.
+`noide`is a web-based IDE for Node.js.
 A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
+
+Thanks for taking a look. Any comments, feedback or support use [Twitter](https://twitter.com/node_ide).
+
 
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/Untitled.jpg "IDE")
 
@@ -24,24 +23,29 @@ A useful, lightweight tool for Node.js, HTML5, CSS & JS development.
 - Configurable documentation links
 - Run/Debugging/Previewing
 
+
+Use cases:
+============
+A lightweight editor for installation on terminal cloud VMs e.g. joyent smart machine.
+A local editor for nodejs, css, html5, & javascript development.
+
 Built using:
 ============
 
-- Node.js
-- ACE Editor
-- Bootstrap
-- Backbone
-- JQuery
-- socket.io
+- [Node.js](https://github.com/joyent/node)
+- [ace editor](https://github.com/ajaxorg/ace)
+- [Twitter Bootstrap](twitter.github.com/bootstrap/)
+- [Backbone](backbone.orgbackbonejs.org)
+- [JQuery](http://jquery.com)
+- [socket.io](https://github.com/LearnBoost/socket.io)
 
 
 *** WARNING ***:
 ================
 If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
-noide is in early stages & not thouroughly tested.
+noide is in early stages.
 
-I started the IDE as a learning exercise for Backbone and Node.js
-This is a pet project and I am no whizz programmer.
+It started out as a learning exercise for Backbone and Node.js and the IDE grew out of that.
 
 Ensure any code is backed up regularly.
 I would not like it to be responsible for any work lost. 
@@ -60,15 +64,23 @@ Optional
 =========================
 - node-inspector
 
+node-inspector works almost exactly like the web inspector in Safari and Chrome. Here's a good [overview](http://code.google.com/chrome/devtools/docs/scripts.html) of the UI
+
 OS Platforms/Browsers
 =========================
-- Tested on Ubuntu Linux and Windows 7
+- Tested on SmartOS, Linux Ubuntu and Windows 7
 - Tested using Chrome, Firefox, Safari & IE9
 
 Note: integrated debugging uses web inspector plugin available on webkit based browsers Chrome, Safari, Opera.
 
 Instructions
 ============
+
+From npm it's
+
+npm install noide
+
+OR
 
 Clone the repository into a folder of your choice ([noide-install-dir]).
 
@@ -161,6 +173,13 @@ This file should hold the IDE settings:
   }
 }
 ```
+
+Editor
+======
+
+The code editor used in noide is the ajaxorg/ace editor.
+
+Here's a useful [link](https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts) for default keyboard shortcuts 
 
 License
 =======
