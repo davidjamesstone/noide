@@ -5,7 +5,6 @@ var server = require('http').createServer(app),
   io = require('socket.io').listen(server),
   path = require('path'),
   fs = require('fs'),
-  path = require('path'),
   ejs = require('ejs-locals'),
   childprocs = require('./lib/childprocs');
 // noide config
