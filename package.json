@@ -6,7 +6,7 @@
     "name": "Dave Stone"
   },
   "dependencies": {
-    "express": "3.0.0",
+    "express": "3.10.5",
     "ejs": "*",
     "ejs-locals": "*",
     "socket.io": "*",
