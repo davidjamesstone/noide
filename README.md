@@ -76,7 +76,7 @@ This will compile the JavaScripts and Less files.
 
 You will need to do this if you want to change the editors settings.
 
-Settings for the editor can be found in ``/src/client/editor/config.json`.
+Settings for the editor can be found in `/src/client/editor/config.json`.
 You can change all the settings of the actual code editor in there. E.g. tabs, spaces and theme.
 All the theme names can be found on here [ACE Editor](http://ace.c9.io/build/kitchen-sink.html).
 
@@ -93,6 +93,7 @@ Screenshots
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/3.jpg "Keyboard Shortcuts")
 
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/4.jpg "Alternative themes")
+
 
 License
 =======
