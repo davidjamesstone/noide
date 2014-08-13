@@ -3,12 +3,15 @@ noide
 ====
 
 `noide`is a web-based code editor built using Node.js.
+
 At it's core it's a useful, lightweight editor so you don't leave your browser to write code.
 
 It also allows you to customize the UI with your own workspaces.
-Workspaces support anything with a url; links to your own project urls for easy testing, embedded documention relative to the project or even other useful web-based tools such as `node-inspector` and `tty.js`.
+Workspaces are basically FRAMESETs described as JSON.
+Anything with a url and can be sectioned off to give split screen viewing.
+This can include links to your own project urls for easy testing, embedded documentation relative to the project or even other useful web-based tools such as `node-inspector` and `tty.js`.
 
-
+(see Workspaces/FRAMESETs)
 
 Thanks for taking a look. Any comments, feedback or support use [Twitter](https://twitter.com/node_ide).
 
@@ -30,18 +33,15 @@ Point your browser to `http://localhost:3000/`.
 `noide`’s current features:
 
 - File explorer tree view
-- File operations (create/delete/rename files and directories)
+- File operations (create/delete/rename files and directories etc.)
 - Syntax highlighted code editing for many programming languages
 - HTML/CSS/JS beautifiers
 - Find/Find+Replace
 - JSLINT validation warning
+- Emmet
+- Code snippets
+- Themeable
 - Configurable project level workspaces (see Fun with FRAMESETs)
-
-
-Use cases:
-============
-A lightweight editor for installation on terminal cloud VMs e.g. joyent smart machine.
-A local editor for nodejs, css, html5, & javascript development.
 
 Built using:
 ============
@@ -54,6 +54,15 @@ Built using:
 - [socket.io](https://github.com/LearnBoost/socket.io)
 
 
+To build `noide` you will need browserify and the less compiler installed:
+
+`npm i browserify -g`
+
+`npm i lessc -g`
+
+Then it's `npm run build`. This will compile the JavaScripts and Less files.
+
+
 *** WARNING ***:
 ================
 If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
@@ -61,7 +70,7 @@ If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
 Ensure any code is backed up regularly.
 I would not like it to be responsible for any work lost.
 
-Also, there is no authentication or security built in. Do not run on a publicly accessible port.
+Also, there is no authentication or security built in. Do not run on a publicly accessible server and port.
 
 ![debugger](https://raw.github.com/davidjamesstone/noide/gh-pages/images/Untitled2.jpg "debugger")
 
@@ -76,65 +85,53 @@ node-inspector works almost exactly like the web inspector in Safari and Chrome.
 
 noide configuration file (optional)
 ===================================
-If a `noide.json` file is present in the root of the [noide-install-dir] it is read on start up.
-This file should hold the IDE settings:
+If a `noide.json` file is present in the root of the directory noide was started in it is read on start up.
+This file can hold local project specific workspaces. Any local workspaces are added to those configured in the main application.
+Any other setting in this local file will override those in the main application.
+
+
+Fun with FRAMESETs
+==================
+
+Workspaces are essentially a FRAMESET definition file described in JSON. They allow you to describe a number of application workspaces.
+By default there is only one workspace; the main Editor.
 
 ```json
 {
-  "projectsDir": "",
-  "users": {
-    "testuser": "testpassword"
-  },
-  "editor": {
-    "tabSize": 2,
-    "useSoftTabs": true,
-    "highlightActiveLine": true,
-    "showPrintMargin": false,
-    "showGutter": true,
-    "fontSize": "12px",
-    "useWorker": false
-  },
-  "beautify": {
-    "js": {
-      "indent_size": 2,
-      "indent_char": " ",
-      "indent_level": 0,
-      "indent_with_tabs": false,
-      "preserve_newlines": true,
-      "max_preserve_newlines": 1,
-      "jslint_happy": false,
-      "brace_style": "collapse",
-      "keep_array_indentation": false,
-      "keep_function_indentation": false,
-      "space_before_conditional": true,
-      "break_chained_methods": false,
-      "eval_code": false,
-      "unescape_strings": false,
-      "wrap_line_length": 0
-    },
-    "css": {
-      "indent_size": 2,
-      "indent_char": " "
-    },
-    "html": {
-      "indent_size": 2,
-      "indent_char": " ",
-      "brace_style": "collapse",
-      "indent_scripts ": "normal"
+  "workspaces": [{
+    "name": "debug",
+    "description": "Node Debugger, TTY and 2 x Tabs",
+    "defn": {
+      "rows": "*,30%",
+      "items": [{
+        "cols": "*,*",
+        "items": [{
+          "src": "/tab?address=http://localhost:3010/a"
+        }, {
+          "src": "/tab"
+        }]
+      }, {
+        "cols": "*,*",
+        "items": [{
+          "src": "http://localhost:3002"
+        }, {
+          "src": "http://localhost:8080/debug"
+        }]
+      }]
     }
-  },
-  "links": {
-    "node": "http://nodejs.org",
-    "mongodb": "http://www.mongodb.org",
-    "mongoose": "http://mongoosejs.com",
-    "-w3": "http://www.w3.org/",
-    "mozilla js": "https://developer.mozilla.org/en-US/docs/JavaScript",
-    "expressjs": "http://expressjs.com",
-    "bootstrap": "http://twitter.github.com/bootstrap/",
-    "-jquery": "http://jquery.com/",
-    "jqueryui": "http://jqueryui.com/",
-    "jquerymobile": "http://jquerymobile.com/"
-  }
+  }, {
+    "name": "terminal",
+    "description": "tty.js",
+    "defn": {
+      "src": "http://localhost:3002"
+    }
+  }, {
+    "name": "dev-docs",
+    "description": "DevDocs",
+    "defn": {
+      "src": "http://devdocs.io/"
+    }
+  }]
 }
 ```
 
