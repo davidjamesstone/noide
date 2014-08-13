@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>@(model.title || 'Welcome')</title>
+
+  @* Metadata *@
+  @html.block('meta')
+
+  @* Global Styles *@
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+  @* Styles *@
+  @html.block('styles')
+
+</head>
+
+<body>
+
+  @* Container *@
+  @html.block('main')
+
+  @* Global Scripts *@
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+  @* Scripts *@
+  @html.block('scripts')
+
+</body>
+
+</html>

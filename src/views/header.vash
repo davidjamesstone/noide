@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+</head>
+
+<body onload="onload()">
+  @function addFramesetLink(defn, workspaceId) {
+    <a onclick="window.top.showWorkspace(@workspaceId);" class="btn btn-default @(workspaceId == model.workspaceId ? 'active' : '')" href="#" title="@defn.description">@defn.name</a>
+  }
+
+  <div id="workspaces" class="btn-group btn-group-justified" data-toggle="buttons">
+    @for (var i = 0; i < model.workspaces.length; i++) {
+      addFramesetLink(model.workspaces[i], i)
+    }
+  </div>
+
+  <script>
+    function onload() {
+
+      var buttons = document.querySelectorAll('.btn');
+
+      window.top.getHeaderHeight = function() {
+        return window.getComputedStyle(document.body).getPropertyValue('height');
+      }
+
+      window.top.onWorkspaceChanged = function(workspaceId) {
+        for (var i = 0; i < buttons.length; i++) {
+          if (i == workspaceId) {
+            buttons[i].classList.add('active');
+          } else {
+            buttons[i].classList.remove('active');
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

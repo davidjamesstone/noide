@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+@function addFrameset(defn) {
+  <frameset @html.raw(defn.cols ? 'cols="' + @defn.cols + '"' : '') @html.raw(defn.rows ? 'rows="' + @defn.rows + '"' : '') frameborder="1" framespacing="2px" border="1">
+    @for (var i = 0; i < defn.items.length; i++) {
+      var item = defn.items[i];
+      if (item.src) {
+        <frame src="@item.src">
+      } else {
+        addFrameset(item)
+      }
+    }
+  </frameset>
+}
+@addFrameset(model.workspace.defn)
+
+</html>

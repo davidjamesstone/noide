@@ -1,0 +1,43 @@
+.fs-tree {
+  display: block;
+}
+.fs-tree, .fs-tree ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 8px;
+
+  li {
+    display: block;
+
+    a {
+      padding: 1px 4px;
+      margin: 1px 0;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      -webkit-user-select: none;
+
+      i {
+        margin-right: 3px;
+      }
+
+      &:hover {
+        background-color: @nav-link-hover-bg;
+        color: @link-hover-color;
+      }
+    }
+
+    .active {
+      > a {
+        background-color: @nav-link-hover-bg;
+        color: @link-hover-color;
+      }
+    }
+  }
+}
+
+.fs-menu {
+  display: block;
+}

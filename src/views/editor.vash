@@ -1,0 +1,101 @@
+@html.extend('layouts/layout', function(model) {
+
+  @html.block('styles', function() {
+    <link rel="stylesheet" href="css/ide.css">
+  })
+
+  @html.block('main', function(model) {
+
+    <main ng-app="app" ng-controller="AppCtrl">
+
+      <nav ng-controller="TreeCtrl">
+        <script type="text/ng-template" id="tree-node.html">
+          <a ng-right-click="rightClickNode($event, data)"
+            ng-click="clickNode($event, data);">
+            <i ng-class="getIconClassName(data)"></i>&nbsp;{{data.name}}
+          </a>
+          <ul ng-if="data.isDirectory && isExpanded(data)">
+              <li
+                ng-repeat="data in data.children | orderBy:['-isDirectory', 'name']"
+                ng-include="'tree-node.html'"
+                ng-class="getClassName(data)"></li>
+          </ul>
+        </script>
+        <ul class="fs-tree">
+          <li ng-repeat="data in fsTree"
+            ng-include="'tree-node.html'"
+            ng-class="getClassName(data)"></li>
+        </ul>
+
+        <ul class="fs-menu dropdown-menu" ng-show="showMenu" style="top: {{menuY}}px; left: {{menuX}}px;" ng-mouseleave="showMenu = false;">
+          <li><a ng-click="rename($event, active);" href="#"><i class="icon-pencil"></i>&nbsp;Rename</a></li>
+          <li class="divider"></li>
+          <li><a ng-click="setPasteBuffer($event, active, 'cut');" href="#"><i class="icon-scissors"></i>&nbsp;Cut</a></li>
+          <li><a ng-click="setPasteBuffer($event, active, 'copy');" href="#"><i class="icon-copy"></i>&nbsp;Copy</a></li>
+          <li ng-show="showPaste($event, active)">
+            <a ng-click="paste($event, active);" href="#"><i class="icon-paste"></i>&nbsp;Paste</a>
+          </li>
+          <li ng-show="active.isDirectory" class="divider"></li>
+          <li ng-show="active.isDirectory"><a ng-click="mkfile($event, active);" href="#"><i class="icon-file"></i>&nbsp;Add new file</a></li>
+          <li ng-show="active.isDirectory"><a ng-click="mkdir($event, active);" href="#"><i class="icon-folder"></i>&nbsp;Add new folder</a></li>
+          <li class="divider"></li>
+          <li><a ng-click="delete($event, active);" href="#"><i class="icon-remove"></i>&nbsp;Delete</a></li>
+        </ul>
+      </nav>
+
+      <div class="splitter"></div>
+    	<article>
+        <div id="code-editor" ng-show="activeSession"></div>
+      </article>
+    	<div class="splitter"></div>
+    	<aside id="sessions">
+        <div class="list-group">
+          <a ng-repeat="(key, value) in sessions"
+            ng-click="clickSession($event, value)" href="#"
+            class="list-group-item" ng-class="{ active: value === activeSession }">
+            {{value.fso.name}}
+            <span class="text-danger" ng-if="value.isDirty()">&nbsp;*</span>
+            <span class="close">&times;</span>
+            </a>
+        </div>
+    	</aside>
+
+
+      @******************************
+      |
+      | Client-side template includes
+      |
+      ******************************@
+
+      @* Dialog Templates (Alert, Confirm and Prompt) *@
+      @html.include('templates/dialog')
+
+      @* Ace Editor Keyboard Shortcut Template *@
+      @html.include('templates/keyboard-shortcuts')
+
+    </main>
+
+  })
+
+  @html.block('scripts', function() {
+
+    @******************************
+    |
+    | Core Javascript
+    |
+    ******************************@
+
+    @* web sockets io *@
+    <script src="socket.io/socket.io.js"></script>
+
+    @* code editor *@
+    <script src="/vendor/ace/ace.js"></script>
+    <script src="/vendor/ace/ext-language_tools.js"></script>
+    <script src="/vendor/ace/ext-emmet.js"></script>
+    <script src="/vendor/emmet.js"></script>
+
+    @* main *@
+    <script src="js/ide.js"></script>
+  })
+
+})

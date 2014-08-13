@@ -1,0 +1,9 @@
+{
+  "workspaces": [{
+    "name": "editor",
+    "description": "Code Editor",
+    "defn": {
+      "src": "/editor"
+    }
+  }]
+}

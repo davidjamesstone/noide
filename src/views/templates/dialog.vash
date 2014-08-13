@@ -1,0 +1,38 @@
+<script type="text/ng-template" id="alert.html">
+  <div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>{{message}}</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="confirm.html">
+  <div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>{{message}}</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="prompt.html">
+  <div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>{{message}}</p>
+    <input type="text" class="form-control" ng-model="input.value" placeholder="{{placeholder}}" />
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+  </div>
+</script>

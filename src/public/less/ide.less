@@ -1,0 +1,77 @@
+@import "bootstrap.less";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  overflow: hidden;
+}
+
+nav {
+  width: 300px;
+  min-width: 0;
+  overflow: auto;
+}
+
+article {
+  border: solid grey;
+  border-width: 0 0 0 1px;
+  flex: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+aside {
+  width: 250px;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.splitter {
+  //border-left: 1px solid grey;
+  background-color: #eee;
+  width: 3px;
+  min-width: 3px;
+  cursor: col-resize;
+}
+
+//
+.ace_search_options,
+.ace_search_options * {
+  -webkit-box-sizing: content-box!important;
+  -moz-box-sizing: content-box!important;
+  box-sizing: content-box!important;
+}
+.scroll-content {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#code-editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+//
+
+@import "./components/tree.less";
+@import "./components/sessions.less";

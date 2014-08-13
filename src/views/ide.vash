@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+    window.onWorkspaceChanged = null;
+
+    function onload() {
+
+      var master = document.getElementById('master');
+      var child = document.getElementById('child');
+      var totalFrames = child.children.length;
+
+      if (window.getHeaderHeight && master.rows !== ',100%') {
+        master.rows = window.getHeaderHeight() + ',*';
+      }
+
+      function showWorkspace(workspaceId) {
+        var frame = child.children[workspaceId];
+        var cols = [];
+        cols.length = totalFrames;
+        cols[workspaceId] = '100%';
+        if (!frame.src) {
+          frame.src = frame.getAttribute('data-src');
+        }
+        child.cols = cols.join(',');
+
+        if (window.onWorkspaceChanged) {
+          window.onWorkspaceChanged(workspaceId);
+        }
+      }
+
+      // export function to make it
+      // callable from child frames (header)
+      window.showWorkspace = showWorkspace;
+    }
+  </script>
+</head>
+
+<frameset id="master" rows="@(model.workspaces.length > 1 ? '40px,*': ',100%')" frameborder="0" framespacing="0" border="0" onload="onload()">
+  <frame id="header" src="/header/@model.workspaceId" resize="noresize">
+  @{
+    var cols = [];
+    cols.length = model.workspaces.length;
+    cols[model.workspaceId] = '100%';
+    var colstr = cols.join(',');
+  }
+  <frameset id="child" cols="@colstr" frameborder="0" framespacing="0" border="0">
+    @for (var i = 0; i < model.workspaces.length; i++) {
+      var ws = model.workspaces[i];
+      var defn = ws.defn;
+      if (defn.src) {
+        <frame @html.raw((i == model.workspaceId ? 'src=' : 'data-src=') + defn.src)>
+      } else {
+        <frame @html.raw((i == model.workspaceId ? 'src=' : 'data-src=') + '/workspace/' + i)>
+      }
+    }
+  </frameset>
+</frameset>
+</html>

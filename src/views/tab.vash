@@ -1,0 +1,46 @@
+@html.extend('layouts/layout', function(model) {
+
+  @html.block('styles', function() {
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      html, body, article, iframe { height: 100%; }
+      body { padding-top: 31px; }
+      nav { position: fixed; top: 0; }
+      iframe { width: 100%; overflow: auto; border: none; }
+    </style>
+  })
+
+  @html.block('main', function(model) {
+
+    <main ng-app="app" ng-controller="TabCtrl">
+
+      <nav>
+        <form ng-submit="submit($event)">
+          <div class="input-group">
+            <input type="text" class="form-control input-sm" name="address" select-on-focus ng-model="model.address" placeholder="http://">
+            <span class="input-group-btn">
+              <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-chevron-right"></i></button>
+            </span>
+          </div>
+        </form>
+      </nav>
+      <article ng-if="model">
+        <iframe ng-src="{{address}}"></iframe>
+      </article>
+    </main>
+
+  })
+
+  @html.block('scripts', function() {
+
+    @******************************
+    |
+    | Core Javascript
+    |
+    ******************************@
+
+    @* main *@
+    <script src="js/tab.js"></script>
+  })
+
+})

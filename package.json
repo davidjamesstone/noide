@@ -1,0 +1,50 @@
+{
+  "name": "noide",
+  "description": "Web Editor built on express and websockets using browserify, angularjs, bootstrap and the ACE editor. Easy to use, customize and hack.",
+  "keywords": [
+    "Browser editor",
+    "Code editor",
+    "Web editor",
+    "IDE",
+    "express",
+    "browserify",
+    "websockets",
+    "angularjs",
+    "bootstrap"
+  ],
+  "version": "0.0.5",
+  "main": "server.js",
+  "bin": {
+    "noide": "bin/noide.js"
+  },
+  "scripts": {
+    "start": "node ./bin/noide",
+    "build": "npm run build-js && npm run build-css",
+    "build-js": "browserify ./src/client/ide.js -o ./src/public/js/ide.js -d && browserify ./src/client/tab.js -o ./src/public/js/tab.js -d",
+    "build-css": "lessc ./src/public/less/ide.less > ./src/public/css/ide.css && lessc ./src/public/less/bootstrap.less > ./src/public/css/bootstrap.css"
+  },
+  "dependencies": {
+    "express": "^4.0.0",
+    "static-favicon": "^1.0.2",
+    "morgan": "^1.0.0",
+    "cookie-parser": "^1.0.1",
+    "body-parser": "^1.0.0",
+    "vash": "^0.7.12-1",
+    "ncp": "^0.6.0",
+    "rimraf": "^2.2.8",
+    "js-beautify": "^1.5.1",
+    "chokidar": "^0.8.2",
+    "socket.io": "^1.0.6",
+    "emitter-component": "^1.1.1"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/davidjamesstone/noide.git"
+  },
+  "bugs": {
+    "url" : "http://github.com/davidjamesstone/noide/issues",
+    "email" : "davidjamesstone@gmail.com"
+  },
+  "author": "David Stone <davidjamesstone@gmail.com>",
+  "license" : "MIT"
+}
