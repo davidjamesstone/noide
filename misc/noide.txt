@@ -1,0 +1,5 @@
+https://npmjs.org/package/noide
+http://davidjamesstone.github.io/noide/
+https://github.com/davidjamesstone/noide
+https://twitter.com/node_ide
+http://www.youtube.com/watch?v=xrVsNPMtGGI

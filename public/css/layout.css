@@ -1,0 +1,20 @@
+html, body {
+  overflow: hidden;
+}
+#header, #footer {
+  position:absolute;
+  left:0;
+  right:0;
+}
+#header {
+  top:0;
+  z-index:1;
+  height:41px;
+  border-top: 3px solid #0af93c;
+}
+#header a.brand {
+  font-family: monospace
+}
+#header a.brand span {
+  color: #0af93c;
+}

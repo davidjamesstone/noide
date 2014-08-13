@@ -1,0 +1,33 @@
+sudo apt-get update
+sudo apt-get install build-essential -y
+sudo apt-get install git -y
+sudo apt-get install libxml2-dev
+sudo apt-get install python libssl-dev -y
+cd /usr/local/src
+sudo git clone git://github.com/joyent/node.git
+cd node
+sudo git checkout v0.6.16
+sudo ./configure
+sudo make
+sudo make install
+
+npm install -g sm
+cd /usr/local/src
+git clone https://github.com/davidjamesstone/cloud9.git cloud9
+cd cloud9
+sm install
+cd cloud9
+
+
+cd ~
+mkdir test
+cat > ~/test/server.js <<EOF
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337);
+console.log('Server running at :1337/');
+EOF
+
+bin/cloud9.sh -w ~/test  -l 0.0.0.0 --username ds --password Babble

@@ -1,0 +1,33 @@
+#explorer {
+  height: 100%;
+}
+#explorer .explorer-ctnr {
+  margin-right: 9px;
+	padding-left: 10px;
+  height: 100%;
+  overflow: auto;
+}
+#explorer .explorer-treeview {
+  margin-top: 10px;
+}
+#explorer .dropdown {
+  display: none;
+}
+#explorer .dropdown-menu {
+  display: block;
+}
+
+#explorer .explorer-file-menu li.run, #explorer .explorer-file-menu li.install
+{
+  display: none;
+}
+
+#explorer .explorer-file-menu.runable li.run, #explorer .explorer-file-menu.installable li.install 
+{
+  display: list-item;
+}
+
+#explorer li.file span.edited
+{
+	color: red;
+}

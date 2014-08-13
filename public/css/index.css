@@ -1,0 +1,75 @@
+html, body {
+  height: 100%;
+}
+#content {
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  overflow-y: auto;
+}
+.thumbnails {
+  margin: 0 auto;
+}
+.thumbnail {
+  background-image: url(../img/folder.jpg);
+  background-repeat: no-repeat;
+  background-position: left 10px;
+  width: 250px;
+  float: left;
+}
+.thumbnail img {
+  display: none;
+  width: 145px;
+  float: left;
+}
+
+.thumbnail .caption {
+  padding-top: 0;
+}
+.thumbnail h3.dirname {
+  margin-top: 0;
+  text-indent: 40px;
+}
+.thumbnail h5.pkgname {
+  display: none;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.thumbnail p.desc {
+  clear: both;
+}
+.thumbnail p.version {
+}
+.thumbnail address {
+  margin-bottom: 0;
+}
+.thumbnail .btn-primary {
+  margin-top: 10px;
+}
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
