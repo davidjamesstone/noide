@@ -13,6 +13,21 @@
       </thead>
       <tbody>
         <tr>
+          <td align="left">Ctrl-S,</td>
+          <td align="left">Command-S,</td>
+          <td align="left">Save the current file</td>
+        </tr>
+        <tr>
+          <td align="left">Ctrl-Shift-S,</td>
+          <td align="left">Command-Option-S,</td>
+          <td align="left">Save all files</td>
+        </tr>
+        <tr>
+          <td align="left">Ctrl-B,</td>
+          <td align="left">Command-B,</td>
+          <td align="left">Beautify (js, css, html files only)</td>
+        </tr>
+        <tr>
           <td align="left">Ctrl-,</td>
           <td align="left">Command-,</td>
           <td align="left">Show the settings menu</td>
