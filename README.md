@@ -70,19 +70,22 @@ To build `noide` you will need browserify and the less compiler installed:
 
 `npm i lessc -g`
 
-Then it's `npm run build` in the directory you installed to.
+Then it's `npm run build` in the directory you installed `noide` to.
 
-This will compile the JavaScripts and Less files.
-
+This will compile the `js` and `less` files.
 You will need to do this if you want to change the editors settings.
 
+Settings
+========
 Settings for the editor can be found in `/src/client/editor/config.json`.
-You can change all the settings of the actual code editor in there. E.g. tabs, spaces and theme.
+You can change all the settings of the actual code editor in there. E.g. indentation and theme.
+
 All the theme names can be found on here [ACE Editor](http://ace.c9.io/build/kitchen-sink.html).
 
-To change the theme of noide you can find the less files in `public/less/bootstrap.less`.
+To change the bootstrap theme of `noide` itself you can find the less files in `public/less/`.
 The `themes` directory contains two themes a light and dark one. Others can be downloaded
-from [bootswatch.com](http://bootswatch.com/) or just create your own.
+from [bootswatch.com](http://bootswatch.com/) or just create your own. Edit the `bootstrap.less`
+file with the theme name and run the build.
 
 
 Screenshots
