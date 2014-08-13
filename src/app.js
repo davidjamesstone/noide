@@ -40,7 +40,7 @@ app.use(middleware.cacheHeader);
 /*
  * Register routes
  */
-app.get('/', routes.ide);
+app.get('/', routes.editor);
 app.get('/header/:workspaceId', routes.header);
 app.get('/ide', routes.ide);
 app.get('/ide/:workspaceId', routes.ide);

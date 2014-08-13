@@ -6,13 +6,6 @@ noide
 
 At it's core it's a useful, lightweight editor so you don't leave your browser to write code.
 
-It also allows you to customize the UI with your own workspaces.
-Workspaces are basically FRAMESETs described as JSON.
-Anything with a url and can be sectioned off to give split screen viewing.
-This can include links to your own project urls for easy testing, embedded documentation relative to the project or even other useful web-based tools such as `node-inspector` and `tty.js`.
-
-(see Workspaces/FRAMESETs)
-
 Thanks for taking a look. Any comments, feedback or support use [Twitter](https://twitter.com/node_ide).
 
 
@@ -21,14 +14,29 @@ Instructions
 
 `npm install noide -g`
 
-then just cd to the directory you want to edit and execute
+Then cd to the directory you want to edit and execute
 
 `noide`
 
-Point your browser to `http://localhost:3000/`.
+Now point your browser to http://localhost:3000/
+
+You should see a page something like this:
+
+![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/1.jpg "IDE")
 
 
-![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/Untitled.jpg "IDE")
+*** WARNING ***:
+================
+If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
+
+Ensure any code is backed up regularly.
+I would not like it to be responsible for any work lost.
+
+Also, there is no authentication or security built in. That is left to you. Do not run on a publicly accessible server/port.
+
+
+Features
+========
 
 `noide`’s current features:
 
@@ -41,7 +49,6 @@ Point your browser to `http://localhost:3000/`.
 - Emmet
 - Code snippets
 - Themeable
-- Configurable project level workspaces (see Fun with FRAMESETs)
 
 Built using:
 ============
@@ -54,93 +61,38 @@ Built using:
 - [socket.io](https://github.com/LearnBoost/socket.io)
 
 
+Build
+=====
+
 To build `noide` you will need browserify and the less compiler installed:
 
 `npm i browserify -g`
 
 `npm i lessc -g`
 
-Then it's `npm run build`. This will compile the JavaScripts and Less files.
+Then it's `npm run build` in the directory you installed to.
+
+This will compile the JavaScripts and Less files.
+
+You will need to do this if you want to change the editors settings.
+
+Settings for the editor can be found in ``/src/client/editor/config.json`.
+You can change all the settings of the actual code editor in there. E.g. tabs, spaces and theme.
+All the theme names can be found on here [ACE Editor](http://ace.c9.io/build/kitchen-sink.html).
+
+To change the theme of noide you can find the less files in `public/less/bootstrap.less`.
+The `themes` directory contains two themes a light and dark one. Others can be downloaded
+from [bootswatch.com](http://bootswatch.com/) or just create your own.
 
 
-*** WARNING ***:
-================
-If you'd like to try out this IDE that's great and thanks BUT USE CAUTION.
+Screenshots
+===========
 
-Ensure any code is backed up regularly.
-I would not like it to be responsible for any work lost.
+![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/2.jpg "File System Editor Features")
 
-Also, there is no authentication or security built in. Do not run on a publicly accessible server and port.
+![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/3.jpg "Keyboard Shortcuts")
 
-![debugger](https://raw.github.com/davidjamesstone/noide/gh-pages/images/Untitled2.jpg "debugger")
-
-
-Optional
-=========================
-- node-inspector
-- tty.js
-
-node-inspector works almost exactly like the web inspector in Safari and Chrome. Here's a good [overview](http://code.google.com/chrome/devtools/docs/scripts.html) of the UI
-
-
-noide configuration file (optional)
-===================================
-If a `noide.json` file is present in the root of the directory noide was started in it is read on start up.
-This file can hold local project specific workspaces. Any local workspaces are added to those configured in the main application.
-Any other setting in this local file will override those in the main application.
-
-
-Fun with FRAMESETs
-==================
-
-Workspaces are essentially a FRAMESET definition file described in JSON. They allow you to describe a number of application workspaces.
-By default there is only one workspace; the main Editor.
-
-```json
-{
-  "workspaces": [{
-    "name": "debug",
-    "description": "Node Debugger, TTY and 2 x Tabs",
-    "defn": {
-      "rows": "*,30%",
-      "items": [{
-        "cols": "*,*",
-        "items": [{
-          "src": "/tab?address=http://localhost:3010/a"
-        }, {
-          "src": "/tab"
-        }]
-      }, {
-        "cols": "*,*",
-        "items": [{
-          "src": "http://localhost:3002"
-        }, {
-          "src": "http://localhost:8080/debug"
-        }]
-      }]
-    }
-  }, {
-    "name": "terminal",
-    "description": "tty.js",
-    "defn": {
-      "src": "http://localhost:3002"
-    }
-  }, {
-    "name": "dev-docs",
-    "description": "DevDocs",
-    "defn": {
-      "src": "http://devdocs.io/"
-    }
-  }]
-}
-```
-
-Editor
-======
-
-The code editor used in noide is the ajaxorg/ace editor.
-
-Here's a useful [link](https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts) for default keyboard shortcuts
+![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/4.jpg "Alternative themes")
 
 License
 =======
