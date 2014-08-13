@@ -98,6 +98,16 @@ Screenshots
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/4.jpg "Alternative themes")
 
 
+Notes
+=====
+`noide` uses file system watching on the server and socket.io to sync the file system to the browser.
+I haven't stress tested any of this and I know lot's of improvements could be made performance wise.
+
+I wouldn't recommend editing projects with large folder structures just yet.
+For this reason I decided to ignore the `node_modules` folder. 
+You wont see this in the this folder in the explorer tree.
+
+
 License
 =======
 
