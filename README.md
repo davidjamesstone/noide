@@ -24,6 +24,7 @@ You should see a page something like this:
 
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/1.jpg "IDE")
 
+Command-h for keyboard shortcuts
 
 *** WARNING ***:
 ================
@@ -93,6 +94,7 @@ Screenshots
 
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/2.jpg "File System Editor Features")
 
+Command-h for keyboard shortcuts
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/3.jpg "Keyboard Shortcuts")
 
 ![ide](https://raw.github.com/davidjamesstone/noide/gh-pages/images/4.jpg "Alternative themes")
