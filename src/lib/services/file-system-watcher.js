@@ -18,7 +18,7 @@ module.exports = {
   watcher: watcher,
   get watched() {
 
-    var items = Object.create(null);
+    var items = {};
     var watched = watcher.watched;
 
     for (var dirpath in watched) {
