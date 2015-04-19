@@ -69,7 +69,7 @@ To build `noide` you will need browserify and the less compiler installed:
 
 `npm i browserify -g`
 
-`npm i lessc -g`
+`npm i less -g`
 
 Then it's `npm run build` in the directory you installed `noide` to.
 
