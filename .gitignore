@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+npm-debug.log
+logs
+config/pm2.json
+config/server.json

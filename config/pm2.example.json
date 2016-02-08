@@ -1,0 +1,15 @@
+/* Development:*/
+{
+  "name": "flood-service",
+  "script": "index.js",
+  "node_args": "--debug",
+  "watch": ["index.js", "lib"]
+}
+
+/* Production:
+{
+  "name": "flood-service",
+  "script": "index.js",
+  "instances": 0,
+  "exec_mode": "cluster_mode"
+}*/
