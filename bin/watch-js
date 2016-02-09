@@ -1,0 +1,13 @@
+# Watch a single javascript bundle
+#
+# Usage
+# npm run watch:js -- index
+
+case "$1" in
+
+*)
+  echo "Watching index.js"
+  watchify assets/javascripts/station/index.js -d -o 'exorcist client/js/bundle.js.map > server/public/js/bundle.js'
+  ;;
+
+esac

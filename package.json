@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2 start config/pm2.json",
+    "build:js": "bin/build-js",
+    "build": "npm run build:js",
     "lint": "standard",
     "test": "npm run lint"
   },
@@ -12,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "boom": "3.1.2",
-    "browserify": "^13.0.0",
+    "browserify": "13.0.0",
+    "exorcist": "0.4.0",
     "glupe": "0.0.1",
     "good": "6.5.0",
     "good-console": "5.3.1",
@@ -22,6 +25,7 @@
     "inert": "3.2.0",
     "joi": "7.2.3",
     "standard": "6.0.4",
-    "vision": "4.0.1"
+    "vision": "4.0.1",
+    "watchify": "3.7.0"
   }
 }
