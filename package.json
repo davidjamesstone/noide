@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "glupe": "file:../glupe",
+    "glupe": "0.0.1",
     "joi": "7.2.3"
   }
 }
