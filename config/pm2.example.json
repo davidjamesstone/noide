@@ -1,14 +1,14 @@
 /* Development:*/
 {
-  "name": "flood-service",
+  "name": "glupe-base",
   "script": "index.js",
   "node_args": "--debug",
-  "watch": ["index.js", "lib"]
+  "watch": ["index.js", "server"]
 }
 
 /* Production:
 {
-  "name": "flood-service",
+  "name": "glupe-base",
   "script": "index.js",
   "instances": 0,
   "exec_mode": "cluster_mode"

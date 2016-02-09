@@ -1,13 +1,12 @@
 var Joi = require('joi')
 
 var serverSchema = Joi.object().required().keys({
-  host: Joi.string().hostname().required(),
-  port: Joi.number().required()
+  host: Joi.string().hostname(),
+  port: Joi.number().required(),
+  labels: Joi.string()
 })
 
 module.exports = {
   server: serverSchema,
-  logging: Joi.object(),
-  cacheViews: Joi.boolean().required(),
-  analyticsAccount: Joi.string().required().default('')
+  logging: Joi.object()
 }

@@ -1,7 +1,7 @@
 const Glupe = require('glupe')
 const config = require('./config')
 
-Glupe.compose(__dirname + '/server', config, function (err, server) {
+Glupe.compose(__dirname, config, function (err, server) {
   if (err) {
     throw err
   }
