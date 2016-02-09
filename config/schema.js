@@ -7,6 +7,5 @@ var serverSchema = Joi.object().required().keys({
 })
 
 module.exports = {
-  server: serverSchema,
-  logging: Joi.object()
+  server: serverSchema
 }
