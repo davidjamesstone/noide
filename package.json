@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2 start config/pm2.json",
+    "lint": "standard",
+    "test": "npm run lint"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "glupe": "0.0.1",
-    "joi": "7.2.3"
+    "joi": "7.2.3",
+    "standard": "6.0.4"
   }
 }
