@@ -3,5 +3,23 @@
     "host": "127.0.0.1",
     "port": 3000,
     "labels": "web"
+  },
+  "logging": {
+    "reporters": [{
+      "reporter": "good-console",
+      "events": { "log": ["info","error"], "request": "*", "response": "*", "error": "*" }
+    }, {
+      "reporter": "good-file",
+      "events": { "log": "info" },
+      "config": { "path": "logs", "prefix": "server", "rotate": "daily" }
+    }, {
+      "reporter": "good-file",
+      "events": { "ops": "*" },
+      "config": { "path": "logs", "prefix": "ops", "rotate": "daily" }
+    }, {
+      "reporter": "good-file",
+      "events": { "log": "error", "error": "*", "request": "error" },
+      "config": { "path": "logs", "prefix": "error", "rotate": "daily" }
+    }]
   }
 }
