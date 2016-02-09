@@ -21,5 +21,8 @@
       "events": { "log": "error", "error": "*", "request": "error" },
       "config": { "path": "logs", "prefix": "error", "rotate": "daily" }
     }]
+  },
+  "views": {
+    "isCached": true
   }
 }
