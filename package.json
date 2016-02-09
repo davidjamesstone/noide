@@ -10,11 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "boom": "3.1.2",
-    "glupe": "file:../glupe",
+    "glupe": "0.0.1",
     "good": "6.5.0",
     "good-console": "5.3.1",
     "good-file": "5.1.2",
+    "handlebars": "4.0.5",
     "hapi": "13.0.0",
-    "joi": "7.2.3"
+    "inert": "3.2.0",
+    "joi": "7.2.3",
+    "vision": "4.0.1"
   }
 }
