@@ -31,11 +31,11 @@ function Tree (el, fsos) {
 
       for (i = 0; i < list.length; i++) {
         obj = list[i]
-        obj.label = obj.name
         lookup[obj[idAttr]] = obj
         obj[childrenAttr] = []
       }
 
+      list = list.sort('isDirectory')
       for (i = 0; i < list.length; i++) {
         obj = list[i]
         var parent = lookup[obj[parentAttr]]

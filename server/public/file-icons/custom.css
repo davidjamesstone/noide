@@ -1,0 +1,18 @@
+.name.icon {
+  text-decoration: none;
+}
+
+.name.icon span {
+  margin-left: 4px;
+  color: lightgray;
+}
+
+.name.icon.icon-file-directory:before {
+    color: #d3d6d5;
+    content: '\e613';
+    display: inline-block;
+    font-family: icomoon;
+    font-size: 13px;
+    position: relative;
+    top: -1px;
+}

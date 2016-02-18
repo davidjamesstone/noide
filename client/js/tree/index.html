@@ -1,10 +1,13 @@
 <template name="tree" args="data tree isRoot onclick">
   <ul id="{isRoot ? 'tree' : null}" class="{isRoot ? 'tree' : ''}">
      <li each="fso, fso.path in data">
-       <a href="{'/file?path=' + fso.relativePath}"
-        data-path="{fso.relativePath}"
+       <a href="#"
         onclick="{onclick.call(this, fso)}"
-        target="{fso.path}">{fso.name}</a>
+        class="{'name icon ' + (fso.isDirectory ? 'icon-file-directory' : 'icon-file-text')}"
+        data-name="{fso.name}"
+        data-path="{fso.relativePath}">
+        <span>{fso.name}</span>
+      </a>
       <if condition="fso.isDirectory && fso.expanded">
         <script>
           tree(fso.children, tree, false, onclick)

@@ -87,41 +87,47 @@
   font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
-  src: url(atom://file-icons/resources/fonts/fontawesome-webfont.woff) format('woff');
+  src: url(/public/file-icons/resources/fonts/fontawesome-webfont.woff) format('woff');
 }
 @font-face {
   font-family: "FontMfizz";
-  src: url(atom://file-icons/resources/fonts/font-mfizz.woff) format("woff");
+  src: url(/public/file-icons/resources/fonts/font-mfizz.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "icomoon";
-  src: url(atom://file-icons/resources/fonts/icomoon.woff) format("woff");
+  src: url(/public/file-icons/resources/fonts/icomoon.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "devicons";
-  src: url(atom://file-icons/resources/fonts/devicons.woff) format("woff");
+  src: url(/public/file-icons/resources/fonts/devicons.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Octicons Regular";
+  src: url('/public/file-icons/resources/fonts/octicons.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "file-icons";
-  src: url('atom://file-icons/resources/fonts/file-icons.woff') format("woff");
+  src: url('/public/file-icons/resources/fonts/file-icons.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "iconsxd";
-  src: url('atom://file-icons/resources/fonts/file-icons.woff') format("woff");
+  src: url('/public/file-icons/resources/fonts/file-icons.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "tex";
-  src: url('atom://file-icons/resources/fonts/file-icons.woff') format("woff");
+  src: url('/public/file-icons/resources/fonts/file-icons.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }

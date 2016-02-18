@@ -1,6 +1,6 @@
 var Path = require('path')
 var Joi = require('joi')
-var Boom = require('Boom')
+var Boom = require('boom')
 var fileutils = require('../file-system-utils')
 var watcher = require('../services/file-system-watcher')
 
