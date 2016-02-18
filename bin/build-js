@@ -1,1 +1,1 @@
-browserify client/js/index.js -d | exorcist server/public/js/bundle.js.map > server/public/js/bundle.js
+browserify client/js/index.js -t [superviewify] -o server/public/js/index.js -d

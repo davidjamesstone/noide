@@ -19,6 +19,11 @@ const manifest = {
       plugin: {
         register: 'vision'
       }
+    },
+    {
+      plugin: {
+        register: 'nes'
+      }
     }]
 }
 

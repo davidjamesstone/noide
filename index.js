@@ -1,5 +1,8 @@
+const Nes = require('nes')
 const Glupe = require('glupe')
 const config = require('./config')
+
+const sock = require('./server/sockets/file-system-watcher')
 
 Glupe.compose(__dirname, config, function (err, server) {
   if (err) {
@@ -10,7 +13,8 @@ Glupe.compose(__dirname, config, function (err, server) {
     title: 'Site title',
     description: 'Comment on any web page',
     keywords: 'foo,bar,baz',
-    author: 'uris.co'
+    author: 'uris.co',
+    favicon: '/public/favicon.ico'
   }
 
   const onPostHandler = function (request, reply) {
@@ -66,6 +70,14 @@ Glupe.compose(__dirname, config, function (err, server) {
   server.ext('onPreResponse', preResponse)
 
   server.start(function () {
+    if (err) {
+      throw err
+    }
+
+    sock(server)
+    server.subscription('/io')
+    server.subscription('/io/pids')
+
     server.log('info', 'Server started')
     console.info('Server running at:', server.info)
   })

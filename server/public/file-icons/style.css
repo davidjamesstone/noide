@@ -1,0 +1,3790 @@
+/* @m<x> = .medium-<x>
+ * @l<x> = .light-<x> (<x> ligthened 15%)
+ * @d<x> = .dark-<x> (<x> darkened 15%)
+ */
+.light-red {
+  color: #c97071;
+}
+.medium-red {
+  color: #AC4142;
+}
+.dark-red {
+  color: #742c2d;
+}
+.light-green {
+  color: #b2c38b;
+}
+.medium-green {
+  color: #90A959;
+}
+.dark-green {
+  color: #66783e;
+}
+.light-yellow {
+  color: #fae0bc;
+}
+.medium-yellow {
+  color: #F4BF75;
+}
+.dark-yellow {
+  color: #ee9e2e;
+}
+.light-blue {
+  color: #9dc0ce;
+}
+.medium-blue {
+  color: #6A9FB5;
+}
+.dark-blue {
+  color: #46788d;
+}
+.light-maroon {
+  color: #be7953;
+}
+.medium-maroon {
+  color: #8F5536;
+}
+.dark-maroon {
+  color: #573421;
+}
+.light-purple {
+  color: #c7a4c0;
+}
+.medium-purple {
+  color: #AA759F;
+}
+.dark-purple {
+  color: #825078;
+}
+.light-orange {
+  color: #e1ad83;
+}
+.medium-orange {
+  color: #D28445;
+}
+.dark-orange {
+  color: #a35f27;
+}
+.light-cyan {
+  color: #a7d0c9;
+}
+.medium-cyan {
+  color: #75B5AA;
+}
+.dark-cyan {
+  color: #4d9085;
+}
+.light-pink {
+  color: #ff4ddb;
+}
+.medium-pink {
+  color: #ff00cc;
+}
+.dark-pink {
+  color: #b3008f;
+}
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+  src: url(atom://file-icons/resources/fonts/fontawesome-webfont.woff) format('woff');
+}
+@font-face {
+  font-family: "FontMfizz";
+  src: url(atom://file-icons/resources/fonts/font-mfizz.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url(atom://file-icons/resources/fonts/icomoon.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "devicons";
+  src: url(atom://file-icons/resources/fonts/devicons.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "file-icons";
+  src: url('atom://file-icons/resources/fonts/file-icons.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "iconsxd";
+  src: url('atom://file-icons/resources/fonts/file-icons.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "tex";
+  src: url('atom://file-icons/resources/fonts/file-icons.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*============================================================================*
+  Octicons
+  https://github.com/github/octicons
+/*============================================================================*/
+.octicons {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+}
+.checklist-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f076";
+}
+.code-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+}
+.comment-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02b";
+}
+.dashboard-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07d";
+}
+.database-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+}
+.gear-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+}
+.github-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f00a";
+}
+.graph-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f043";
+}
+.package-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c4";
+}
+.ruby-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f047";
+}
+.secret-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f08c";
+}
+.terminal-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+}
+.xml-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f010";
+}
+.markdown-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c9";
+}
+.book-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f007";
+}
+.text-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f011";
+}
+.image-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+}
+.video-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+}
+.binary-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f094";
+}
+.config-icon {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07c";
+}
+/*============================================================================*
+  FontAwesome
+  http://fortawesome.github.io/Font-Awesome/cheatsheet
+/*============================================================================*/
+.fa {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+}
+.coffee-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0f4";
+}
+.css3-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13c";
+}
+.html5-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+}
+.twitter-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f099";
+}
+.puppet-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0c3";
+}
+.smarty-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0eb";
+}
+.lua-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f186";
+}
+.twig-icon {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f1bb";
+}
+/*============================================================================*
+  Mfizz
+  http://mfizz.com/oss/font-mfizz
+/*============================================================================*/
+.mf {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+}
+.js-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f128";
+  font-size: medium;
+}
+.python-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f14c";
+}
+.objc-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f13e";
+  font-size: medium;
+}
+.c-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f106";
+}
+.h-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f010";
+}
+.cpp-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+}
+.csharp-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10c";
+}
+.perl-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f142";
+}
+.php-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f147";
+  font-size: medium;
+}
+.java-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f125";
+  font-size: medium;
+}
+.scala-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f154";
+  font-size: medium;
+}
+.haskell-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f121";
+}
+.templatetoolkit-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "TT";
+}
+.sql-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10e";
+}
+.svg-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f15c";
+}
+.elixir-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f113';
+}
+.apache-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f102';
+  top: 3px;
+  left: 0;
+}
+.debian-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f111';
+}
+.red-hat-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f14e';
+}
+.osx-icon {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f141';
+}
+/*============================================================================*
+  IcoMoon's default icon library
+  https://icomoon.io/#preview-free
+/*============================================================================*/
+.icomoon {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+}
+.grunt-icon {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e611";
+}
+.gulp-icon {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e610";
+}
+.hbs-mustache-icon {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+}
+.npm-icon {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e616";
+}
+/*============================================================================*
+  Devicons
+  http://vorillaz.github.io/devicons
+/*============================================================================*/
+.devicons {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+}
+.bower-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e64d";
+}
+.clojure-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e668";
+}
+.dart-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e698";
+}
+.dlang-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6af";
+}
+.erlang-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: '\e6b1';
+}
+.fsharp-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a7";
+  left: 1px;
+}
+.laravel-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e63f";
+}
+.meteor-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a5";
+  font-size: x-large;
+  left: -2px;
+}
+.rails-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e63b";
+}
+.rust-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a8";
+}
+.sass-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e64b";
+  top: 0;
+}
+.swift-icon {
+  font-family: "devicons";
+  text-align: center;
+  top: 3px;
+  content: "\e655";
+  font-size: large;
+}
+.travis-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e67e";
+  font-size: medium;
+}
+.windows-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+}
+.composer-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e683";
+  font-weight: bolder;
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.9px;
+  font-size: medium;
+}
+.go-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e624";
+  font-weight: bolder;
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+  font-size: medium;
+}
+.git-icon {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+/*============================================================================*
+  Custom file icons
+  See CONTRIBUTING.md
+/*============================================================================*/
+.file-icons {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+}
+.bibtex-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e601";
+  font-size: 8px;
+  top: -2px;
+}
+.boot-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f103";
+  left: 2px;
+}
+.cljs-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f104";
+}
+.docker-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f106";
+}
+.elm-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f102";
+}
+.eslint-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90e";
+  font-size: 14px;
+  left: 1px;
+}
+.haml-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f15b";
+  font-size: 15px;
+}
+.ionic-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f14b";
+  font-size: 18px;
+  left: 1px;
+}
+.jsx-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f101";
+  left: -3px;
+}
+.lein-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f105";
+  left: 3px;
+}
+.nginx-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f146b";
+  font-size: 15px;
+  left: 1px;
+}
+.node-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f17b";
+  font-size: 18px;
+  top: 5px;
+}
+.react-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f100";
+  top: 3px;
+  left: -2px;
+}
+.tex-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e600";
+  font-size: 8px;
+  top: 0;
+}
+.maxscript-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e900";
+  font-size: 15px;
+}
+.kivy-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e901";
+  font-size: 17px;
+  top: 3px;
+}
+.crystal-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e902";
+  font-size: 15px;
+  left: 1px;
+}
+.gradle-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e903";
+  font-size: 14px;
+  top: 1px;
+}
+.groovy-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e904";
+  font-size: 14px;
+  left: -1px;
+}
+.r-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e905";
+  font-size: 13px;
+  left: 0;
+  top: 1px;
+}
+.vue-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e906";
+  font-size: 14px;
+  top: 3px;
+}
+.haxe-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e907";
+  font-size: 15px;
+  top: 1px;
+  left: 1px;
+}
+.ada-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90b";
+  font-size: 17px;
+}
+.apl-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e909";
+  font-size: 15px;
+}
+.dyalog-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90c";
+  font-size: 14px;
+  left: 1px;
+}
+.fortran-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+}
+.lisp-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e908";
+  font-size: 12px;
+  top: 1px;
+}
+.jade-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90d";
+  font-size: 12px;
+  top: 1px;
+}
+.font-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90f";
+  font-size: 14px;
+  left: 1px;
+  top: -1px;
+}
+.postcss-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e910";
+  font-size: 14px;
+}
+.scad-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e911";
+  font-size: 14px;
+}
+.ts-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  content: "\e912";
+  font-size: 14px;
+  left: -1px;
+  top: 2px;
+}
+.ls-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e914";
+  font-size: 14px;
+}
+.raml-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e913";
+  font-size: 14px;
+}
+.terraform-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e916";
+  font-size: 14px;
+}
+.saltstack-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e915";
+  font-size: 14px;
+}
+.org-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e917";
+  font-size: 14px;
+  left: 1px;
+}
+.asciidoc-icon {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e918";
+  font-size: 14px;
+}
+atom-pane .tab-bar .tab .title[data-path]:before {
+  margin-right: 5px;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+}
+atom-pane .tab-bar .tab.temp .title[data-path]:before {
+  font-style: normal;
+}
+.icon-file-text:before,
+.icon-file-directory:before,
+.icon-file-media:before,
+.icon-book:before {
+  text-align: center;
+}
+.icon-file-directory[data-name=".git"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.icon-file-directory[data-name=".bundle"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c4";
+}
+.icon-file-directory[data-name=".meteor"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a5";
+  font-size: x-large;
+  left: -2px;
+}
+.icon-file-media[data-name$=".png"]:before {
+  color: #D28445;
+}
+.icon-file-media[data-name$=".gif"]:before {
+  color: #F4BF75;
+}
+.icon-file-media[data-name$=".jpg"]:before {
+  color: #90A959;
+}
+.icon-book[data-name="README.md"]:before,
+.icon-book[data-name="Readme.md"]:before,
+.icon-book[data-name="readme.md"]:before {
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path]:before,
+.icon-file-text:before,
+.icon-file-binary:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f011";
+  font-style: normal !important;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="TODO"]:before,
+.icon-file-text[data-name$="TODO"]:before,
+.icon-file-binary[data-name$="TODO"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f076";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="Makefile"]:before,
+.icon-file-text[data-name$="Makefile"]:before,
+.icon-file-binary[data-name$="Makefile"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f076";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="makefile"]:before,
+.icon-file-text[data-name$="makefile"]:before,
+.icon-file-binary[data-name$="makefile"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f076";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mk"]:before,
+.icon-file-text[data-name$=".mk"]:before,
+.icon-file-binary[data-name$=".mk"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f076";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mak"]:before,
+.icon-file-text[data-name$=".mak"]:before,
+.icon-file-binary[data-name$=".mak"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f076";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ini"]:before,
+.icon-file-text[data-name$=".ini"]:before,
+.icon-file-binary[data-name$=".ini"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07c";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".properties"]:before,
+.icon-file-text[data-name$=".properties"]:before,
+.icon-file-binary[data-name$=".properties"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07c";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".toml"]:before,
+.icon-file-text[data-name$=".toml"]:before,
+.icon-file-binary[data-name$=".toml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07c";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".clj"]:before,
+.icon-file-text[data-name$=".clj"]:before,
+.icon-file-binary[data-name$=".clj"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e668";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cljs"]:before,
+.icon-file-text[data-name$=".cljs"]:before,
+.icon-file-binary[data-name$=".cljs"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f104";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".xml"]:before,
+.icon-file-text[data-name$=".xml"]:before,
+.icon-file-binary[data-name$=".xml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".config"]:before,
+.icon-file-text[data-name$=".config"]:before,
+.icon-file-binary[data-name$=".config"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".manifest"]:before,
+.icon-file-text[data-name$=".manifest"]:before,
+.icon-file-binary[data-name$=".manifest"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jl"]:before,
+.icon-file-text[data-name$=".jl"]:before,
+.icon-file-binary[data-name$=".jl"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cfc"]:before,
+.icon-file-text[data-name$=".cfc"]:before,
+.icon-file-binary[data-name$=".cfc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #a7d0c9;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cfm"]:before,
+.icon-file-text[data-name$=".cfm"]:before,
+.icon-file-binary[data-name$=".cfm"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cfml"]:before,
+.icon-file-text[data-name$=".cfml"]:before,
+.icon-file-binary[data-name$=".cfml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".less"]:before,
+.icon-file-text[data-name$=".less"]:before,
+.icon-file-binary[data-name$=".less"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13c";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".css"]:before,
+.icon-file-text[data-name$=".css"]:before,
+.icon-file-binary[data-name$=".css"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13c";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".styl"]:before,
+.icon-file-text[data-name$=".styl"]:before,
+.icon-file-binary[data-name$=".styl"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13c";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".slim"]:before,
+.icon-file-text[data-name$=".slim"]:before,
+.icon-file-binary[data-name$=".slim"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07d";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".skim"]:before,
+.icon-file-text[data-name$=".skim"]:before,
+.icon-file-binary[data-name$=".skim"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f07d";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".json"]:before,
+.icon-file-text[data-name$=".json"]:before,
+.icon-file-binary[data-name$=".json"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".json5"]:before,
+.icon-file-text[data-name$=".json5"]:before,
+.icon-file-binary[data-name$=".json5"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hjson"]:before,
+.icon-file-text[data-name$=".hjson"]:before,
+.icon-file-binary[data-name$=".hjson"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ndjson"]:before,
+.icon-file-text[data-name$=".ndjson"]:before,
+.icon-file-binary[data-name$=".ndjson"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cson"]:before,
+.icon-file-text[data-name$=".cson"]:before,
+.icon-file-binary[data-name$=".cson"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".yml"]:before,
+.icon-file-text[data-name$=".yml"]:before,
+.icon-file-binary[data-name$=".yml"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".yaml"]:before,
+.icon-file-text[data-name$=".yaml"]:before,
+.icon-file-binary[data-name$=".yaml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #c97071;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ex"]:before,
+.icon-file-text[data-name$=".ex"]:before,
+.icon-file-binary[data-name$=".ex"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f113';
+  color: #825078;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".exs"]:before,
+.icon-file-text[data-name$=".exs"]:before,
+.icon-file-binary[data-name$=".exs"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f113';
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eex"]:before,
+.icon-file-text[data-name$=".eex"]:before,
+.icon-file-binary[data-name$=".eex"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f113';
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".html.eex"]:before,
+.icon-file-text[data-name$=".html.eex"]:before,
+.icon-file-binary[data-name$=".html.eex"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".json.eex"]:before,
+.icon-file-text[data-name$=".json.eex"]:before,
+.icon-file-binary[data-name$=".json.eex"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f096";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mix.exs"]:before,
+.icon-file-text[data-name$="mix.exs"]:before,
+.icon-file-binary[data-name$="mix.exs"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f113';
+  color: #c7a4c0;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mix.ex"]:before,
+.icon-file-text[data-name$="mix.ex"]:before,
+.icon-file-binary[data-name$="mix.ex"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f113';
+  color: #c7a4c0;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".erl"]:before,
+.icon-file-text[data-name$=".erl"]:before,
+.icon-file-binary[data-name$=".erl"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: '\e6b1';
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".beam"]:before,
+.icon-file-text[data-name$=".beam"]:before,
+.icon-file-binary[data-name$=".beam"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: '\e6b1';
+  color: #742c2d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eot"]:before,
+.icon-file-text[data-name$=".eot"]:before,
+.icon-file-binary[data-name$=".eot"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90f";
+  font-size: 14px;
+  left: 1px;
+  top: -1px;
+  color: #b2c38b;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ttf"]:before,
+.icon-file-text[data-name$=".ttf"]:before,
+.icon-file-binary[data-name$=".ttf"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90f";
+  font-size: 14px;
+  left: 1px;
+  top: -1px;
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".otf"]:before,
+.icon-file-text[data-name$=".otf"]:before,
+.icon-file-binary[data-name$=".otf"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90f";
+  font-size: 14px;
+  left: 1px;
+  top: -1px;
+  color: #ee9e2e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".woff"]:before,
+.icon-file-text[data-name$=".woff"]:before,
+.icon-file-binary[data-name$=".woff"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90f";
+  font-size: 14px;
+  left: 1px;
+  top: -1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".woff2"]:before,
+.icon-file-text[data-name$=".woff2"]:before,
+.icon-file-binary[data-name$=".woff2"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90f";
+  font-size: 14px;
+  left: 1px;
+  top: -1px;
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".fs"]:before,
+.icon-file-text[data-name$=".fs"]:before,
+.icon-file-binary[data-name$=".fs"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a7";
+  left: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".fsx"]:before,
+.icon-file-text[data-name$=".fsx"]:before,
+.icon-file-binary[data-name$=".fsx"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a7";
+  left: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".fsi"]:before,
+.icon-file-text[data-name$=".fsi"]:before,
+.icon-file-binary[data-name$=".fsi"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a7";
+  left: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gitconfig"]:before,
+.icon-file-text[data-name$=".gitconfig"]:before,
+.icon-file-binary[data-name$=".gitconfig"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gitignore"]:before,
+.icon-file-text[data-name$=".gitignore"]:before,
+.icon-file-binary[data-name$=".gitignore"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gitignore_global"]:before,
+.icon-file-text[data-name$=".gitignore_global"]:before,
+.icon-file-binary[data-name$=".gitignore_global"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gitkeep"]:before,
+.icon-file-text[data-name$=".gitkeep"]:before,
+.icon-file-binary[data-name$=".gitkeep"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gitattributes"]:before,
+.icon-file-text[data-name$=".gitattributes"]:before,
+.icon-file-binary[data-name$=".gitattributes"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gitmodules"]:before,
+.icon-file-text[data-name$=".gitmodules"]:before,
+.icon-file-binary[data-name$=".gitmodules"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e602";
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".html"]:before,
+.icon-file-text[data-name$=".html"]:before,
+.icon-file-binary[data-name$=".html"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".htm"]:before,
+.icon-file-text[data-name$=".htm"]:before,
+.icon-file-binary[data-name$=".htm"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".shtml"]:before,
+.icon-file-text[data-name$=".shtml"]:before,
+.icon-file-binary[data-name$=".shtml"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".haml"]:before,
+.icon-file-text[data-name$=".haml"]:before,
+.icon-file-binary[data-name$=".haml"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f15b";
+  font-size: 15px;
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jsp"]:before,
+.icon-file-text[data-name$=".jsp"]:before,
+.icon-file-binary[data-name$=".jsp"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ctp"]:before,
+.icon-file-text[data-name$=".ctp"]:before,
+.icon-file-binary[data-name$=".ctp"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ejs"]:before,
+.icon-file-text[data-name$=".ejs"]:before,
+.icon-file-binary[data-name$=".ejs"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".swig"]:before,
+.icon-file-text[data-name$=".swig"]:before,
+.icon-file-binary[data-name$=".swig"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cshtml"]:before,
+.icon-file-text[data-name$=".cshtml"]:before,
+.icon-file-binary[data-name$=".cshtml"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hbs"]:before,
+.icon-file-text[data-name$=".hbs"]:before,
+.icon-file-binary[data-name$=".hbs"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".handlebars"]:before,
+.icon-file-text[data-name$=".handlebars"]:before,
+.icon-file-binary[data-name$=".handlebars"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mustache"]:before,
+.icon-file-text[data-name$=".mustache"]:before,
+.icon-file-binary[data-name$=".mustache"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".emblem"]:before,
+.icon-file-text[data-name$=".emblem"]:before,
+.icon-file-binary[data-name$=".emblem"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".em"]:before,
+.icon-file-text[data-name$=".em"]:before,
+.icon-file-binary[data-name$=".em"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tpl"]:before,
+.icon-file-text[data-name$=".tpl"]:before,
+.icon-file-binary[data-name$=".tpl"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0eb";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".twig"]:before,
+.icon-file-text[data-name$=".twig"]:before,
+.icon-file-binary[data-name$=".twig"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f1bb";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hgignore"]:before,
+.icon-file-text[data-name$=".hgignore"]:before,
+.icon-file-binary[data-name$=".hgignore"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".mailmap"]:before,
+.icon-file-text[data-name=".mailmap"]:before,
+.icon-file-binary[data-name=".mailmap"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".editorconfig"]:before,
+.icon-file-text[data-name$=".editorconfig"]:before,
+.icon-file-binary[data-name$=".editorconfig"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".csscomb.json"]:before,
+.icon-file-text[data-name=".csscomb.json"]:before,
+.icon-file-binary[data-name=".csscomb.json"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".csslintrc"]:before,
+.icon-file-text[data-name$=".csslintrc"]:before,
+.icon-file-binary[data-name$=".csslintrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jshintrc"]:before,
+.icon-file-text[data-name$=".jshintrc"]:before,
+.icon-file-binary[data-name$=".jshintrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jshintignore"]:before,
+.icon-file-text[data-name$=".jshintignore"]:before,
+.icon-file-binary[data-name$=".jshintignore"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".babelrc"]:before,
+.icon-file-text[data-name$=".babelrc"]:before,
+.icon-file-binary[data-name$=".babelrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".babelignore"]:before,
+.icon-file-text[data-name$=".babelignore"]:before,
+.icon-file-binary[data-name$=".babelignore"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jscsrc"]:before,
+.icon-file-text[data-name$=".jscsrc"]:before,
+.icon-file-binary[data-name$=".jscsrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".module"]:before,
+.icon-file-text[data-name$=".module"]:before,
+.icon-file-binary[data-name$=".module"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".htaccess"]:before,
+.icon-file-text[data-name=".htaccess"]:before,
+.icon-file-binary[data-name=".htaccess"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".htpasswd"]:before,
+.icon-file-text[data-name=".htpasswd"]:before,
+.icon-file-binary[data-name=".htpasswd"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="nodemon.json"]:before,
+.icon-file-text[data-name="nodemon.json"]:before,
+.icon-file-binary[data-name="nodemon.json"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".nodemonignore"]:before,
+.icon-file-text[data-name=".nodemonignore"]:before,
+.icon-file-binary[data-name=".nodemonignore"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02f";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".npmrc"]:before,
+.icon-file-text[data-name=".npmrc"]:before,
+.icon-file-binary[data-name=".npmrc"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f17b";
+  font-size: 18px;
+  top: 5px;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".npmignore"]:before,
+.icon-file-text[data-name=".npmignore"]:before,
+.icon-file-binary[data-name=".npmignore"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f17b";
+  font-size: 18px;
+  top: 5px;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="npm-debug.log"]:before,
+.icon-file-text[data-name="npm-debug.log"]:before,
+.icon-file-binary[data-name="npm-debug.log"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f17b";
+  font-size: 18px;
+  top: 5px;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="package.json"]:before,
+.icon-file-text[data-name="package.json"]:before,
+.icon-file-binary[data-name="package.json"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f17b";
+  font-size: 18px;
+  top: 5px;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".bowerrc"]:before,
+.icon-file-text[data-name=".bowerrc"]:before,
+.icon-file-binary[data-name=".bowerrc"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e64d";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="bower.json"]:before,
+.icon-file-text[data-name="bower.json"]:before,
+.icon-file-binary[data-name="bower.json"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e64d";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".sass"]:before,
+.icon-file-text[data-name$=".sass"]:before,
+.icon-file-binary[data-name$=".sass"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e64b";
+  top: 0;
+  color: #b3008f;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".scss"]:before,
+.icon-file-text[data-name$=".scss"]:before,
+.icon-file-binary[data-name$=".scss"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e64b";
+  top: 0;
+  color: #ff4ddb;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".php"]:before,
+.icon-file-text[data-name$=".php"]:before,
+.icon-file-binary[data-name$=".php"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f147";
+  font-size: medium;
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hh"]:before,
+.icon-file-text[data-name$=".hh"]:before,
+.icon-file-binary[data-name$=".hh"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f147";
+  font-size: medium;
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".blade.php"]:before,
+.icon-file-text[data-name$=".blade.php"]:before,
+.icon-file-binary[data-name$=".blade.php"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e63f";
+  color: #825078;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".py"]:before,
+.icon-file-text[data-name$=".py"]:before,
+.icon-file-binary[data-name$=".py"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f14c";
+  color: #ee9e2e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ipy"]:before,
+.icon-file-text[data-name$=".ipy"]:before,
+.icon-file-binary[data-name$=".ipy"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f14c";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rpy"]:before,
+.icon-file-text[data-name$=".rpy"]:before,
+.icon-file-binary[data-name$=".rpy"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f14c";
+  color: #ff00cc;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rpyb"]:before,
+.icon-file-text[data-name$=".rpyb"]:before,
+.icon-file-binary[data-name$=".rpyb"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f094";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rpyc"]:before,
+.icon-file-text[data-name$=".rpyc"]:before,
+.icon-file-binary[data-name$=".rpyc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f094";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Capfile"]:before,
+.icon-file-text[data-name="Capfile"]:before,
+.icon-file-binary[data-name="Capfile"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="Gemfile"]:before,
+.icon-file-text[data-name$="Gemfile"]:before,
+.icon-file-binary[data-name$="Gemfile"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="Gemfile.lock"]:before,
+.icon-file-text[data-name$="Gemfile.lock"]:before,
+.icon-file-binary[data-name$="Gemfile.lock"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Guardfile"]:before,
+.icon-file-text[data-name="Guardfile"]:before,
+.icon-file-binary[data-name="Guardfile"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="Rakefile"]:before,
+.icon-file-text[data-name$="Rakefile"]:before,
+.icon-file-binary[data-name$="Rakefile"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gemspec"]:before,
+.icon-file-text[data-name$=".gemspec"]:before,
+.icon-file-binary[data-name$=".gemspec"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".ruby-gemset"]:before,
+.icon-file-text[data-name=".ruby-gemset"]:before,
+.icon-file-binary[data-name=".ruby-gemset"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".ruby-version"]:before,
+.icon-file-text[data-name=".ruby-version"]:before,
+.icon-file-binary[data-name=".ruby-version"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".rspec"]:before,
+.icon-file-text[data-name=".rspec"]:before,
+.icon-file-binary[data-name=".rspec"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f047";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rb"]:before,
+.icon-file-text[data-name$=".rb"]:before,
+.icon-file-binary[data-name$=".rb"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ru"]:before,
+.icon-file-text[data-name$=".ru"]:before,
+.icon-file-binary[data-name$=".ru"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rake"]:before,
+.icon-file-text[data-name$=".rake"]:before,
+.icon-file-binary[data-name$=".rake"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".erb"]:before,
+.icon-file-text[data-name$=".erb"]:before,
+.icon-file-binary[data-name$=".erb"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".opal"]:before,
+.icon-file-text[data-name$=".opal"]:before,
+.icon-file-binary[data-name$=".opal"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f047";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="_spec.rb"]:before,
+.icon-file-text[data-name$="_spec.rb"]:before,
+.icon-file-binary[data-name$="_spec.rb"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f047";
+  color: #b2c38b;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="rails"]:before,
+.icon-file-text[data-name="rails"]:before,
+.icon-file-binary[data-name="rails"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e63b";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".pp"]:before,
+.icon-file-text[data-name$=".pp"]:before,
+.icon-file-binary[data-name$=".pp"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0c3";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".feature"]:before,
+.icon-file-text[data-name$=".feature"]:before,
+.icon-file-binary[data-name$=".feature"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f02b";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".js"]:before,
+.icon-file-text[data-name$=".js"]:before,
+.icon-file-binary[data-name$=".js"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f128";
+  font-size: medium;
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".es6"]:before,
+.icon-file-text[data-name$=".es6"]:before,
+.icon-file-binary[data-name$=".es6"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f128";
+  font-size: medium;
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".es"]:before,
+.icon-file-text[data-name$=".es"]:before,
+.icon-file-binary[data-name$=".es"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f128";
+  font-size: medium;
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jsx"]:before,
+.icon-file-text[data-name$=".jsx"]:before,
+.icon-file-binary[data-name$=".jsx"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f101";
+  left: -3px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tsx"]:before,
+.icon-file-text[data-name$=".tsx"]:before,
+.icon-file-binary[data-name$=".tsx"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f101";
+  left: -3px;
+  color: #9dc0ce;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".react.js"]:before,
+.icon-file-text[data-name$=".react.js"]:before,
+.icon-file-binary[data-name$=".react.js"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f100";
+  top: 3px;
+  left: -2px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ts"]:before,
+.icon-file-text[data-name$=".ts"]:before,
+.icon-file-binary[data-name$=".ts"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  content: "\e912";
+  font-size: 14px;
+  left: -1px;
+  top: 2px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ls"]:before,
+.icon-file-text[data-name$=".ls"]:before,
+.icon-file-binary[data-name$=".ls"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e914";
+  font-size: 14px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".raml"]:before,
+.icon-file-text[data-name$=".raml"]:before,
+.icon-file-binary[data-name$=".raml"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e913";
+  font-size: 14px;
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".elm"]:before,
+.icon-file-text[data-name$=".elm"]:before,
+.icon-file-binary[data-name$=".elm"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f102";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".org"]:before,
+.icon-file-text[data-name$=".org"]:before,
+.icon-file-binary[data-name$=".org"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e917";
+  font-size: 14px;
+  left: 1px;
+  color: #66783e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="build.boot"]:before,
+.icon-file-text[data-name$="build.boot"]:before,
+.icon-file-binary[data-name$="build.boot"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f103";
+  left: 2px;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="project.clj"]:before,
+.icon-file-text[data-name$="project.clj"]:before,
+.icon-file-binary[data-name$="project.clj"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f105";
+  left: 3px;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".coffee"]:before,
+.icon-file-text[data-name$=".coffee"]:before,
+.icon-file-binary[data-name$=".coffee"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0f4";
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cjsx"]:before,
+.icon-file-text[data-name$=".cjsx"]:before,
+.icon-file-binary[data-name$=".cjsx"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0f4";
+  color: #573421;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".litcoffee"]:before,
+.icon-file-text[data-name$=".litcoffee"]:before,
+.icon-file-binary[data-name$=".litcoffee"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0f4";
+  color: #be7953;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".iced"]:before,
+.icon-file-text[data-name$=".iced"]:before,
+.icon-file-binary[data-name$=".iced"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0f4";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".js.erb"]:before,
+.icon-file-text[data-name$=".js.erb"]:before,
+.icon-file-binary[data-name$=".js.erb"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f128";
+  font-size: medium;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".coffee.erb"]:before,
+.icon-file-text[data-name$=".coffee.erb"]:before,
+.icon-file-binary[data-name$=".coffee.erb"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f0f4";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".html.erb"]:before,
+.icon-file-text[data-name$=".html.erb"]:before,
+.icon-file-binary[data-name$=".html.erb"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".pl"]:before,
+.icon-file-text[data-name$=".pl"]:before,
+.icon-file-binary[data-name$=".pl"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f142";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".pm"]:before,
+.icon-file-text[data-name$=".pm"]:before,
+.icon-file-binary[data-name$=".pm"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f142";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".t"]:before,
+.icon-file-text[data-name$=".t"]:before,
+.icon-file-binary[data-name$=".t"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f142";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".java"]:before,
+.icon-file-text[data-name$=".java"]:before,
+.icon-file-binary[data-name$=".java"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f125";
+  font-size: medium;
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".go"]:before,
+.icon-file-text[data-name$=".go"]:before,
+.icon-file-binary[data-name$=".go"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e624";
+  font-weight: bolder;
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.85px;
+  -webkit-transform: scale(1.15, 1.1);
+  font-size: medium;
+  background-color: #060b0a;
+  color: #6A9FB5;
+}
+.selected > .file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".go"]:before,
+.selected > .icon-file-text[data-name$=".go"]:before,
+.selected > .icon-file-binary[data-name$=".go"]:before {
+  -webkit-text-stroke-width: 0px !important;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gohtml"]:before,
+.icon-file-text[data-name$=".gohtml"]:before,
+.icon-file-binary[data-name$=".gohtml"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f13b";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".scala"]:before,
+.icon-file-text[data-name$=".scala"]:before,
+.icon-file-binary[data-name$=".scala"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f154";
+  font-size: medium;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hs"]:before,
+.icon-file-text[data-name$=".hs"]:before,
+.icon-file-binary[data-name$=".hs"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f121";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rs"]:before,
+.icon-file-text[data-name$=".rs"]:before,
+.icon-file-binary[data-name$=".rs"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a8";
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rlib"]:before,
+.icon-file-text[data-name$=".rlib"]:before,
+.icon-file-binary[data-name$=".rlib"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6a8";
+  color: #be7953;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".c"]:before,
+.icon-file-text[data-name$=".c"]:before,
+.icon-file-binary[data-name$=".c"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f106";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".h"]:before,
+.icon-file-text[data-name$=".h"]:before,
+.icon-file-binary[data-name$=".h"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f106";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cpp"]:before,
+.icon-file-text[data-name$=".cpp"]:before,
+.icon-file-binary[data-name$=".cpp"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hpp"]:before,
+.icon-file-text[data-name$=".hpp"]:before,
+.icon-file-binary[data-name$=".hpp"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cxx"]:before,
+.icon-file-text[data-name$=".cxx"]:before,
+.icon-file-binary[data-name$=".cxx"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cc"]:before,
+.icon-file-text[data-name$=".cc"]:before,
+.icon-file-binary[data-name$=".cc"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hxx"]:before,
+.icon-file-text[data-name$=".hxx"]:before,
+.icon-file-binary[data-name$=".hxx"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ipp"]:before,
+.icon-file-text[data-name$=".ipp"]:before,
+.icon-file-binary[data-name$=".ipp"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10b";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".m"]:before,
+.icon-file-text[data-name$=".m"]:before,
+.icon-file-binary[data-name$=".m"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f13e";
+  font-size: medium;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mm"]:before,
+.icon-file-text[data-name$=".mm"]:before,
+.icon-file-binary[data-name$=".mm"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f13e";
+  font-size: medium;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".swift"]:before,
+.icon-file-text[data-name$=".swift"]:before,
+.icon-file-binary[data-name$=".swift"]:before {
+  font-family: "devicons";
+  text-align: center;
+  top: 3px;
+  content: "\e655";
+  font-size: large;
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".d"]:before,
+.icon-file-text[data-name$=".d"]:before,
+.icon-file-binary[data-name$=".d"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6af";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".di"]:before,
+.icon-file-text[data-name$=".di"]:before,
+.icon-file-binary[data-name$=".di"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e6af";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cs"]:before,
+.icon-file-text[data-name$=".cs"]:before,
+.icon-file-binary[data-name$=".cs"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10c";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".vb"]:before,
+.icon-file-text[data-name$=".vb"]:before,
+.icon-file-binary[data-name$=".vb"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".dart"]:before,
+.icon-file-text[data-name$=".dart"]:before,
+.icon-file-binary[data-name$=".dart"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e698";
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".sp"]:before,
+.icon-file-text[data-name$=".sp"]:before,
+.icon-file-binary[data-name$=".sp"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e668";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".inc"]:before,
+.icon-file-text[data-name$=".inc"]:before,
+.icon-file-binary[data-name$=".inc"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e668";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".secret"]:before,
+.icon-file-text[data-name$=".secret"]:before,
+.icon-file-binary[data-name$=".secret"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f08c";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mdown"]:before,
+.icon-file-text[data-name$=".mdown"]:before,
+.icon-file-binary[data-name$=".mdown"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".markdown"]:before,
+.icon-file-text[data-name$=".markdown"]:before,
+.icon-file-binary[data-name$=".markdown"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mkd"]:before,
+.icon-file-text[data-name$=".mkd"]:before,
+.icon-file-binary[data-name$=".mkd"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mkdown"]:before,
+.icon-file-text[data-name$=".mkdown"]:before,
+.icon-file-binary[data-name$=".mkdown"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rmd"]:before,
+.icon-file-text[data-name$=".rmd"]:before,
+.icon-file-binary[data-name$=".rmd"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ron"]:before,
+.icon-file-text[data-name$=".ron"]:before,
+.icon-file-binary[data-name$=".ron"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".md"]:before,
+.icon-file-text[data-name$=".md"]:before,
+.icon-file-binary[data-name$=".md"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c9";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tt"]:before,
+.icon-file-text[data-name$=".tt"]:before,
+.icon-file-binary[data-name$=".tt"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "TT";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tt2"]:before,
+.icon-file-text[data-name$=".tt2"]:before,
+.icon-file-binary[data-name$=".tt2"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "TT";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tt3"]:before,
+.icon-file-text[data-name$=".tt3"]:before,
+.icon-file-binary[data-name$=".tt3"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "TT";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".sql"]:before,
+.icon-file-text[data-name$=".sql"]:before,
+.icon-file-binary[data-name$=".sql"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f10e";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".txt"]:before,
+.icon-file-text[data-name$=".txt"]:before,
+.icon-file-binary[data-name$=".txt"]:before {
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".o"]:before,
+.icon-file-text[data-name$=".o"]:before,
+.icon-file-binary[data-name$=".o"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".out"]:before,
+.icon-file-text[data-name$=".out"]:before,
+.icon-file-binary[data-name$=".out"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".s"]:before,
+.icon-file-text[data-name$=".s"]:before,
+.icon-file-binary[data-name$=".s"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".asm"]:before,
+.icon-file-text[data-name$=".asm"]:before,
+.icon-file-binary[data-name$=".asm"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f094";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".sh"]:before,
+.icon-file-text[data-name$=".sh"]:before,
+.icon-file-binary[data-name$=".sh"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".bash"]:before,
+.icon-file-text[data-name$=".bash"]:before,
+.icon-file-binary[data-name$=".bash"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".bashrc"]:before,
+.icon-file-text[data-name=".bashrc"]:before,
+.icon-file-binary[data-name=".bashrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".zsh"]:before,
+.icon-file-text[data-name$=".zsh"]:before,
+.icon-file-binary[data-name$=".zsh"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".zshrc"]:before,
+.icon-file-text[data-name=".zshrc"]:before,
+.icon-file-binary[data-name=".zshrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".fish"]:before,
+.icon-file-text[data-name$=".fish"]:before,
+.icon-file-binary[data-name$=".fish"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name=".fishrc"]:before,
+.icon-file-text[data-name=".fishrc"]:before,
+.icon-file-binary[data-name=".fishrc"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="composer.json"]:before,
+.icon-file-text[data-name="composer.json"]:before,
+.icon-file-binary[data-name="composer.json"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e683";
+  font-weight: bolder;
+  top: 4px;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 0.9px;
+  font-size: medium;
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="GRUNTFILE.js"]:before,
+.icon-file-text[data-name="GRUNTFILE.js"]:before,
+.icon-file-binary[data-name="GRUNTFILE.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Gruntfile.js"]:before,
+.icon-file-text[data-name="Gruntfile.js"]:before,
+.icon-file-binary[data-name="Gruntfile.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="gruntfile.js"]:before,
+.icon-file-text[data-name="gruntfile.js"]:before,
+.icon-file-binary[data-name="gruntfile.js"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e611";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="GRUNTFILE.coffee"]:before,
+.icon-file-text[data-name="GRUNTFILE.coffee"]:before,
+.icon-file-binary[data-name="GRUNTFILE.coffee"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Gruntfile.coffee"]:before,
+.icon-file-text[data-name="Gruntfile.coffee"]:before,
+.icon-file-binary[data-name="Gruntfile.coffee"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="gruntfile.coffee"]:before,
+.icon-file-text[data-name="gruntfile.coffee"]:before,
+.icon-file-binary[data-name="gruntfile.coffee"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e611";
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="GULPFILE.js"]:before,
+.icon-file-text[data-name="GULPFILE.js"]:before,
+.icon-file-binary[data-name="GULPFILE.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Gulpfile.js"]:before,
+.icon-file-text[data-name="Gulpfile.js"]:before,
+.icon-file-binary[data-name="Gulpfile.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="gulpfile.js"]:before,
+.icon-file-text[data-name="gulpfile.js"]:before,
+.icon-file-binary[data-name="gulpfile.js"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e610";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="GULPFILE.coffee"]:before,
+.icon-file-text[data-name="GULPFILE.coffee"]:before,
+.icon-file-binary[data-name="GULPFILE.coffee"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Gulpfile.coffee"]:before,
+.icon-file-text[data-name="Gulpfile.coffee"]:before,
+.icon-file-binary[data-name="Gulpfile.coffee"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="gulpfile.coffee"]:before,
+.icon-file-text[data-name="gulpfile.coffee"]:before,
+.icon-file-binary[data-name="gulpfile.coffee"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e610";
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="GULPFILE.babel.js"]:before,
+.icon-file-text[data-name="GULPFILE.babel.js"]:before,
+.icon-file-binary[data-name="GULPFILE.babel.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Gulpfile.babel.js"]:before,
+.icon-file-text[data-name="Gulpfile.babel.js"]:before,
+.icon-file-binary[data-name="Gulpfile.babel.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="gulpfile.babel.js"]:before,
+.icon-file-text[data-name="gulpfile.babel.js"]:before,
+.icon-file-binary[data-name="gulpfile.babel.js"]:before {
+  font-family: "icomoon";
+  font-size: 18px;
+  text-align: center;
+  top: 3px;
+  content: "\e610";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="Cargo.toml"]:before,
+.icon-file-text[data-name$="Cargo.toml"]:before,
+.icon-file-binary[data-name$="Cargo.toml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c4";
+  color: #e1ad83;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="Cargo.lock"]:before,
+.icon-file-text[data-name$="Cargo.lock"]:before,
+.icon-file-binary[data-name$="Cargo.lock"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c4";
+  color: #a35f27;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="ionic.project"]:before,
+.icon-file-text[data-name="ionic.project"]:before,
+.icon-file-binary[data-name="ionic.project"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f14b";
+  font-size: 18px;
+  left: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".conf"]:before,
+.icon-file-text[data-name$=".conf"]:before,
+.icon-file-binary[data-name$=".conf"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f146b";
+  font-size: 15px;
+  left: 1px;
+  color: #66783e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="apache.conf"]:before,
+.icon-file-text[data-name="apache.conf"]:before,
+.icon-file-binary[data-name="apache.conf"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f102';
+  top: 3px;
+  left: 0;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="apache2.conf"]:before,
+.icon-file-text[data-name="apache2.conf"]:before,
+.icon-file-binary[data-name="apache2.conf"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f102';
+  top: 3px;
+  left: 0;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="httpd.conf"]:before,
+.icon-file-text[data-name="httpd.conf"]:before,
+.icon-file-binary[data-name="httpd.conf"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f102';
+  top: 3px;
+  left: 0;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".deb"]:before,
+.icon-file-text[data-name$=".deb"]:before,
+.icon-file-binary[data-name$=".deb"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f111';
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rpm"]:before,
+.icon-file-text[data-name$=".rpm"]:before,
+.icon-file-binary[data-name$=".rpm"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f14e';
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".dmg"]:before,
+.icon-file-text[data-name$=".dmg"]:before,
+.icon-file-binary[data-name$=".dmg"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: '\f141';
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name^=".travis"]:before,
+.icon-file-text[data-name^=".travis"]:before,
+.icon-file-binary[data-name^=".travis"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e67e";
+  font-size: medium;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name^="Dockerfile"]:before,
+.icon-file-text[data-name^="Dockerfile"]:before,
+.icon-file-binary[data-name^="Dockerfile"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f106";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".dockerignore"]:before,
+.icon-file-text[data-name$=".dockerignore"]:before,
+.icon-file-binary[data-name$=".dockerignore"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\f106";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tf"]:before,
+.icon-file-text[data-name$=".tf"]:before,
+.icon-file-binary[data-name$=".tf"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e916";
+  font-size: 14px;
+  color: #825078;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".sls"]:before,
+.icon-file-text[data-name$=".sls"]:before,
+.icon-file-binary[data-name$=".sls"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e915";
+  font-size: 14px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".xaml"]:before,
+.icon-file-text[data-name$=".xaml"]:before,
+.icon-file-binary[data-name$=".xaml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f05f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".lua"]:before,
+.icon-file-text[data-name$=".lua"]:before,
+.icon-file-binary[data-name$=".lua"]:before {
+  font-family: "FontAwesome";
+  font-size: small;
+  text-align: center;
+  content: "\f186";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ps1"]:before,
+.icon-file-text[data-name$=".ps1"]:before,
+.icon-file-binary[data-name$=".ps1"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".psd1"]:before,
+.icon-file-text[data-name$=".psd1"]:before,
+.icon-file-binary[data-name$=".psd1"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".psm1"]:before,
+.icon-file-text[data-name$=".psm1"]:before,
+.icon-file-binary[data-name$=".psm1"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ps1xml"]:before,
+.icon-file-text[data-name$=".ps1xml"]:before,
+.icon-file-binary[data-name$=".ps1xml"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f0c8";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="README.md"]:before,
+.icon-file-text[data-name="README.md"]:before,
+.icon-file-binary[data-name="README.md"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="Readme.md"]:before,
+.icon-file-text[data-name="Readme.md"]:before,
+.icon-file-binary[data-name="Readme.md"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name="readme.md"]:before,
+.icon-file-text[data-name="readme.md"]:before,
+.icon-file-binary[data-name="readme.md"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f007";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".adoc"]:before,
+.icon-file-text[data-name$=".adoc"]:before,
+.icon-file-binary[data-name$=".adoc"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".asc"]:before,
+.icon-file-text[data-name$=".asc"]:before,
+.icon-file-binary[data-name$=".asc"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".asciidoc"]:before,
+.icon-file-text[data-name$=".asciidoc"]:before,
+.icon-file-binary[data-name$=".asciidoc"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e918";
+  font-size: 14px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".png"]:before,
+.icon-file-text[data-name$=".png"]:before,
+.icon-file-binary[data-name$=".png"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gif"]:before,
+.icon-file-text[data-name$=".gif"]:before,
+.icon-file-binary[data-name$=".gif"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jpg"]:before,
+.icon-file-text[data-name$=".jpg"]:before,
+.icon-file-binary[data-name$=".jpg"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ico"]:before,
+.icon-file-text[data-name$=".ico"]:before,
+.icon-file-binary[data-name$=".ico"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".svg"]:before,
+.icon-file-text[data-name$=".svg"]:before,
+.icon-file-binary[data-name$=".svg"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f15c";
+  color: #ee9e2e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".PNG"]:before,
+.icon-file-text[data-name$=".PNG"]:before,
+.icon-file-binary[data-name$=".PNG"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".GIF"]:before,
+.icon-file-text[data-name$=".GIF"]:before,
+.icon-file-binary[data-name$=".GIF"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".JPG"]:before,
+.icon-file-text[data-name$=".JPG"]:before,
+.icon-file-binary[data-name$=".JPG"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ICO"]:before,
+.icon-file-text[data-name$=".ICO"]:before,
+.icon-file-binary[data-name$=".ICO"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f012";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".SVG"]:before,
+.icon-file-text[data-name$=".SVG"]:before,
+.icon-file-binary[data-name$=".SVG"]:before {
+  font-family: "FontMfizz";
+  font-size: small;
+  text-align: center;
+  content: "\f15c";
+  color: #ee9e2e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="avi"]:before,
+.icon-file-text[data-name$="avi"]:before,
+.icon-file-binary[data-name$="avi"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mp4"]:before,
+.icon-file-text[data-name$="mp4"]:before,
+.icon-file-binary[data-name$="mp4"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mov"]:before,
+.icon-file-text[data-name$="mov"]:before,
+.icon-file-binary[data-name$="mov"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mkv"]:before,
+.icon-file-text[data-name$="mkv"]:before,
+.icon-file-binary[data-name$="mkv"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="h264"]:before,
+.icon-file-text[data-name$="h264"]:before,
+.icon-file-binary[data-name$="h264"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #66783e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="webm"]:before,
+.icon-file-text[data-name$="webm"]:before,
+.icon-file-binary[data-name$="webm"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="wmv"]:before,
+.icon-file-text[data-name$="wmv"]:before,
+.icon-file-binary[data-name$="wmv"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #825078;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="ogv"]:before,
+.icon-file-text[data-name$="ogv"]:before,
+.icon-file-binary[data-name$="ogv"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #a35f27;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="ogg"]:before,
+.icon-file-text[data-name$="ogg"]:before,
+.icon-file-binary[data-name$="ogg"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="3gp"]:before,
+.icon-file-text[data-name$="3gp"]:before,
+.icon-file-binary[data-name$="3gp"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="m4v"]:before,
+.icon-file-text[data-name$="m4v"]:before,
+.icon-file-binary[data-name$="m4v"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #ee9e2e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mpg"]:before,
+.icon-file-text[data-name$="mpg"]:before,
+.icon-file-binary[data-name$="mpg"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #742c2d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="mpeg"]:before,
+.icon-file-text[data-name$="mpeg"]:before,
+.icon-file-binary[data-name$="mpeg"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="3gpp"]:before,
+.icon-file-text[data-name$="3gpp"]:before,
+.icon-file-binary[data-name$="3gpp"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #9dc0ce;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$="ogm"]:before,
+.icon-file-text[data-name$="ogm"]:before,
+.icon-file-binary[data-name$="ogm"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f057";
+  color: #742c2d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".bat"]:before,
+.icon-file-text[data-name$=".bat"]:before,
+.icon-file-binary[data-name$=".bat"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cmd"]:before,
+.icon-file-text[data-name$=".cmd"]:before,
+.icon-file-binary[data-name$=".cmd"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+  color: #AA759F;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".exe"]:before,
+.icon-file-text[data-name$=".exe"]:before,
+.icon-file-binary[data-name$=".exe"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".com"]:before,
+.icon-file-text[data-name$=".com"]:before,
+.icon-file-binary[data-name$=".com"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".reg"]:before,
+.icon-file-text[data-name$=".reg"]:before,
+.icon-file-binary[data-name$=".reg"]:before {
+  font-family: "devicons";
+  font-size: large;
+  text-align: center;
+  top: 3px;
+  content: "\e60f";
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tex"]:before,
+.icon-file-text[data-name$=".tex"]:before,
+.icon-file-binary[data-name$=".tex"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e600";
+  font-size: 8px;
+  top: 0;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".sty"]:before,
+.icon-file-text[data-name$=".sty"]:before,
+.icon-file-binary[data-name$=".sty"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e600";
+  font-size: 8px;
+  top: 0;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cls"]:before,
+.icon-file-text[data-name$=".cls"]:before,
+.icon-file-binary[data-name$=".cls"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e600";
+  font-size: 8px;
+  top: 0;
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".bib"]:before,
+.icon-file-text[data-name$=".bib"]:before,
+.icon-file-binary[data-name$=".bib"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e601";
+  font-size: 8px;
+  top: -2px;
+  color: #F4BF75;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".csv"]:before,
+.icon-file-text[data-name$=".csv"]:before,
+.icon-file-binary[data-name$=".csv"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f043";
+  color: #c97071;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".tsv"]:before,
+.icon-file-text[data-name$=".tsv"]:before,
+.icon-file-binary[data-name$=".tsv"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f043";
+  color: #b2c38b;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gp"]:before,
+.icon-file-text[data-name$=".gp"]:before,
+.icon-file-binary[data-name$=".gp"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gnuplot"]:before,
+.icon-file-text[data-name$=".gnuplot"]:before,
+.icon-file-binary[data-name$=".gnuplot"]:before {
+  font-family: "Octicons Regular";
+  font-size: medium;
+  text-align: center;
+  content: "\f043";
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ms"]:before,
+.icon-file-text[data-name$=".ms"]:before,
+.icon-file-binary[data-name$=".ms"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mce"]:before,
+.icon-file-text[data-name$=".mce"]:before,
+.icon-file-binary[data-name$=".mce"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".mcr"]:before,
+.icon-file-text[data-name$=".mcr"]:before,
+.icon-file-binary[data-name$=".mcr"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e900";
+  font-size: 15px;
+  color: #46788d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".kv"]:before,
+.icon-file-text[data-name$=".kv"]:before,
+.icon-file-binary[data-name$=".kv"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e901";
+  font-size: 17px;
+  top: 3px;
+  color: #573421;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cr"]:before,
+.icon-file-text[data-name$=".cr"]:before,
+.icon-file-binary[data-name$=".cr"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ecr"]:before,
+.icon-file-text[data-name$=".ecr"]:before,
+.icon-file-binary[data-name$=".ecr"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e902";
+  font-size: 15px;
+  left: 1px;
+  color: #75B5AA;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gradle"]:before,
+.icon-file-text[data-name$=".gradle"]:before,
+.icon-file-binary[data-name$=".gradle"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e903";
+  font-size: 14px;
+  top: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".groovy"]:before,
+.icon-file-text[data-name$=".groovy"]:before,
+.icon-file-binary[data-name$=".groovy"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".grt"]:before,
+.icon-file-text[data-name$=".grt"]:before,
+.icon-file-binary[data-name$=".grt"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gtpl"]:before,
+.icon-file-text[data-name$=".gtpl"]:before,
+.icon-file-binary[data-name$=".gtpl"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gsp"]:before,
+.icon-file-text[data-name$=".gsp"]:before,
+.icon-file-binary[data-name$=".gsp"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".gvy"]:before,
+.icon-file-text[data-name$=".gvy"]:before,
+.icon-file-binary[data-name$=".gvy"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e904";
+  font-size: 14px;
+  left: -1px;
+  color: #9dc0ce;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rd"]:before,
+.icon-file-text[data-name$=".rd"]:before,
+.icon-file-binary[data-name$=".rd"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".rsx"]:before,
+.icon-file-text[data-name$=".rsx"]:before,
+.icon-file-binary[data-name$=".rsx"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".Rprofile"]:before,
+.icon-file-text[data-name$=".Rprofile"]:before,
+.icon-file-binary[data-name$=".Rprofile"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".R"]:before,
+.icon-file-text[data-name$=".R"]:before,
+.icon-file-binary[data-name$=".R"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".r"]:before,
+.icon-file-text[data-name$=".r"]:before,
+.icon-file-binary[data-name$=".r"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e905";
+  font-size: 13px;
+  left: 0;
+  top: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".vue"]:before,
+.icon-file-text[data-name$=".vue"]:before,
+.icon-file-binary[data-name$=".vue"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e906";
+  font-size: 14px;
+  top: 3px;
+  color: #b2c38b;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hx"]:before,
+.icon-file-text[data-name$=".hx"]:before,
+.icon-file-binary[data-name$=".hx"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".hxsl"]:before,
+.icon-file-text[data-name$=".hxsl"]:before,
+.icon-file-binary[data-name$=".hxsl"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e907";
+  font-size: 15px;
+  top: 1px;
+  left: 1px;
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".scad"]:before,
+.icon-file-text[data-name$=".scad"]:before,
+.icon-file-binary[data-name$=".scad"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e911";
+  font-size: 14px;
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".postcss"]:before,
+.icon-file-text[data-name$=".postcss"]:before,
+.icon-file-binary[data-name$=".postcss"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e910";
+  font-size: 14px;
+  color: #742c2d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ada"]:before,
+.icon-file-text[data-name$=".ada"]:before,
+.icon-file-binary[data-name$=".ada"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".adb"]:before,
+.icon-file-text[data-name$=".adb"]:before,
+.icon-file-binary[data-name$=".adb"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ads"]:before,
+.icon-file-text[data-name$=".ads"]:before,
+.icon-file-binary[data-name$=".ads"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90b";
+  font-size: 17px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".apl"]:before,
+.icon-file-text[data-name$=".apl"]:before,
+.icon-file-binary[data-name$=".apl"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e909";
+  font-size: 15px;
+  color: #742c2d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".dyalog"]:before,
+.icon-file-text[data-name$=".dyalog"]:before,
+.icon-file-binary[data-name$=".dyalog"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90c";
+  font-size: 14px;
+  left: 1px;
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".f"]:before,
+.icon-file-text[data-name$=".f"]:before,
+.icon-file-binary[data-name$=".f"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".f90"]:before,
+.icon-file-text[data-name$=".f90"]:before,
+.icon-file-binary[data-name$=".f90"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #90A959;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".f03"]:before,
+.icon-file-text[data-name$=".f03"]:before,
+.icon-file-binary[data-name$=".f03"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".f08"]:before,
+.icon-file-text[data-name$=".f08"]:before,
+.icon-file-binary[data-name$=".f08"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".f77"]:before,
+.icon-file-text[data-name$=".f77"]:before,
+.icon-file-binary[data-name$=".f77"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".f95"]:before,
+.icon-file-text[data-name$=".f95"]:before,
+.icon-file-binary[data-name$=".f95"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #b3008f;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".for"]:before,
+.icon-file-text[data-name$=".for"]:before,
+.icon-file-binary[data-name$=".for"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #4d9085;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".fpp"]:before,
+.icon-file-text[data-name$=".fpp"]:before,
+.icon-file-binary[data-name$=".fpp"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90a";
+  font-size: 14px;
+  left: 1px;
+  top: 1px;
+  color: #ee9e2e;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".lsp"]:before,
+.icon-file-text[data-name$=".lsp"]:before,
+.icon-file-binary[data-name$=".lsp"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e908";
+  font-size: 12px;
+  top: 1px;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".lisp"]:before,
+.icon-file-text[data-name$=".lisp"]:before,
+.icon-file-binary[data-name$=".lisp"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e908";
+  font-size: 12px;
+  top: 1px;
+  color: #742c2d;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".cl"]:before,
+.icon-file-text[data-name$=".cl"]:before,
+.icon-file-binary[data-name$=".cl"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e908";
+  font-size: 12px;
+  top: 1px;
+  color: #D28445;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".l"]:before,
+.icon-file-text[data-name$=".l"]:before,
+.icon-file-binary[data-name$=".l"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e908";
+  font-size: 12px;
+  top: 1px;
+  color: #8F5536;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".ny"]:before,
+.icon-file-text[data-name$=".ny"]:before,
+.icon-file-binary[data-name$=".ny"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e908";
+  font-size: 12px;
+  top: 1px;
+  color: #6A9FB5;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".jade"]:before,
+.icon-file-text[data-name$=".jade"]:before,
+.icon-file-binary[data-name$=".jade"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90d";
+  font-size: 12px;
+  top: 1px;
+  color: #AC4142;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eslintrc"]:before,
+.icon-file-text[data-name$=".eslintrc"]:before,
+.icon-file-binary[data-name$=".eslintrc"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eslintrc.js"]:before,
+.icon-file-text[data-name$=".eslintrc.js"]:before,
+.icon-file-binary[data-name$=".eslintrc.js"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eslintrc.json"]:before,
+.icon-file-text[data-name$=".eslintrc.json"]:before,
+.icon-file-binary[data-name$=".eslintrc.json"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eslintrc.yaml"]:before,
+.icon-file-text[data-name$=".eslintrc.yaml"]:before,
+.icon-file-binary[data-name$=".eslintrc.yaml"]:before,
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eslintrc.yml"]:before,
+.icon-file-text[data-name$=".eslintrc.yml"]:before,
+.icon-file-binary[data-name$=".eslintrc.yml"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90e";
+  font-size: 14px;
+  left: 1px;
+  color: #c7a4c0;
+}
+.file-icons-tab-pane-icon atom-pane .tab-bar .tab .title[data-path][data-name$=".eslintignore"]:before,
+.icon-file-text[data-name$=".eslintignore"]:before,
+.icon-file-binary[data-name$=".eslintignore"]:before {
+  font-family: "file-icons";
+  font-size: large;
+  text-align: center;
+  top: 2px;
+  content: "\e90e";
+  font-size: 14px;
+  left: 1px;
+  color: #AA759F;
+}
+body.file-icons-colourless .icon-file-text:before,
+body.file-icons-colourless .icon-file-directory:before,
+body.file-icons-colourless .icon-file-media:before,
+body.file-icons-colourless .icon-book:before,
+body.file-icons-colourless atom-pane ul.tab-bar li.tab .title:before {
+  color: inherit !important;
+}
+body.file-icons-force-show-icons .tree-view .entry > .header > .name:before,
+body.file-icons-force-show-icons .tree-view .entry > .name:before {
+  display: inherit;
+}
+body.file-icons-on-changes .file.entry.list-item:not(.status-modified) .name.icon:before {
+  color: inherit !important;
+}

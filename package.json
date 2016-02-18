@@ -1,12 +1,15 @@
 {
-  "name": "glupe-base",
+  "name": "noidey",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "pm2 start config/pm2.json",
     "build:js": "bin/build-js",
+    "watch:js": "bin/watch-js",
+    "taskw": "bin/taskw",
     "build": "npm run build:js",
+    "copy:assets": "bin/copy-assets",
     "lint": "standard",
     "test": "npm run lint"
   },
@@ -14,7 +17,9 @@
   "license": "ISC",
   "dependencies": {
     "boom": "3.1.2",
+    "brace": "0.7.0",
     "browserify": "13.0.0",
+    "chokidar": "1.4.2",
     "exorcist": "0.4.0",
     "glupe": "0.0.1",
     "good": "6.5.0",
@@ -22,10 +27,24 @@
     "good-file": "5.1.2",
     "handlebars": "4.0.5",
     "hapi": "13.0.0",
+    "incremental-dom": "git+https://github.com/davidjamesstone/incremental-dom.git",
     "inert": "3.2.0",
+    "is-utf8": "0.2.1",
     "joi": "7.2.3",
+    "ncp": "2.0.0",
+    "nes": "3.0.0",
+    "page.js": "^4.13.3",
+    "rimraf": "2.5.1",
+    "slideout": "0.1.12",
     "standard": "6.0.4",
+    "supermodels.js": "^0.1.0",
+    "taskr": "file:../taskr",
     "vision": "4.0.1",
+    "vsd-shared": "0.0.1",
     "watchify": "3.7.0"
+  },
+  "devDependencies": {
+    "node-sass": "^3.4.2",
+    "superviewify": "0.0.8"
   }
 }

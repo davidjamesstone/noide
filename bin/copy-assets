@@ -1,0 +1,1 @@
+rm -rf server/public/devicons && cp -R node_modules/devicons/!PNG server/public/devicons
