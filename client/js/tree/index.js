@@ -1,10 +1,14 @@
 var patch = require('incremental-dom').patch
 var view = require('./index.html')
+var noide = require('../noide')
 
-function Tree (el, fsos) {
+function Tree (el, fsos, state) {
+  fsos.on('change', render)
+  state.on('change:current', render)
+
   function onclick (fso) {
     if (!fso.isDirectory) {
-      // noide.open(this.href)
+      noide.openFile(fso)
     } else {
       fso.expanded = !fso.expanded
       render()
@@ -12,16 +16,14 @@ function Tree (el, fsos) {
     return false
   }
 
-  var tree
-  function update () {
-    view(tree, view, true, onclick)
+  function update (tree) {
+    view(tree, view, true, state.current, onclick)
   }
 
   function render () {
-    tree = makeTree(fsos)
+    var tree = makeTree(fsos)
     patch(el, update, tree)
   }
-  // render()
 
   function makeTree (data) {
     function treeify (list, idAttr, parentAttr, childrenAttr) {
@@ -35,7 +37,6 @@ function Tree (el, fsos) {
         obj[childrenAttr] = []
       }
 
-      list = list.sort('isDirectory')
       for (i = 0; i < list.length; i++) {
         obj = list[i]
         var parent = lookup[obj[parentAttr]]
@@ -51,7 +52,6 @@ function Tree (el, fsos) {
     }
     return treeify(data, 'path', 'dir', 'children')
   }
-  // tree[0].expanded = true
 
   this.render = render
 }

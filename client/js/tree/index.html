@@ -1,16 +1,38 @@
-<template name="tree" args="data tree isRoot onclick">
-  <ul id="{isRoot ? 'tree' : null}" class="{isRoot ? 'tree' : ''}">
+<template name="tree" args="data tree isRoot current onclick">
+  <ul class="{isRoot ? 'tree' : ''}">
      <li each="fso, fso.path in data">
        <a href="#"
-        onclick="{onclick.call(this, fso)}"
-        class="{'name icon ' + (fso.isDirectory ? 'icon-file-directory' : 'icon-file-text')}"
-        data-name="{fso.name}"
-        data-path="{fso.relativePath}">
-        <span>{fso.name}</span>
+        onclick="{onclick(fso)}">
+
+    <if condition="fso.isDirectory">
+      <small if="fso.expanded" class="expanded">▼</small>
+      <small if="!fso.expanded" class="collapsed">▶</small>
+    </if>
+        <span data-name="{fso.name}"
+              data-path="{fso.relativePath}"
+              class="{'name icon ' + (fso.isDirectory ? 'icon-file-directory' : 'icon-file-text')}">
+         {fso.name}
+       </span>
       </a>
+      <span if="fso.isFile && fso === current" class="triangle-left"></span>
       <if condition="fso.isDirectory && fso.expanded">
         <script>
-          tree(fso.children, tree, false, onclick)
+          fso.children.sort(function(a, b) {
+            if (a.isDirectory) {
+              if (b.isDirectory) {
+                return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
+              } else {
+                return -1
+              }
+            } else {
+              if (b.isDirectory) {
+                return 1
+              } else {
+                return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
+              }
+            }
+          })
+          tree(fso.children, tree, false, current, onclick)
         </script>
       </if>
      </li>

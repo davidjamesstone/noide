@@ -1,0 +1,16 @@
+<template name="recent" args="files current onClick onClickClose">
+  <ul>
+     <li each="file, file.path in files">
+       <a class="close" onclick="{onClickClose(file)}">x</a>
+       <a href="#"
+        onclick="{onClick(file)}"
+        class="name icon icon-file-text"
+        title="{file.path}"
+        data-name="{file.name}"
+        data-path="{file.relativePath}">
+        <span>{file.name}</span>
+      </a>
+      <span if="file === current" class="triangle-left"></span>
+     </li>
+   </ul>
+ </template>

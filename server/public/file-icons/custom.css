@@ -1,18 +1,80 @@
+html {
+  font-size: 14px;
+}
+body {
+  /*font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400;*/
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+}
+
 .name.icon {
   text-decoration: none;
+}
+
+.name.icon::before {
+  width: 20px;
+  display: inline-block;
+  height: 20px;
 }
 
 .name.icon span {
   margin-left: 4px;
   color: lightgray;
+  vertical-align: top;
 }
 
 .name.icon.icon-file-directory:before {
     color: #d3d6d5;
     content: '\e613';
     display: inline-block;
-    font-family: icomoon;
+    font-family: 'icomoon';
     font-size: 13px;
     position: relative;
     top: -1px;
+}
+
+.triangle-left {
+  right: 0;
+  position: absolute;
+}
+
+.triangle-left::before {
+  content: "\25C0";
+  color: #666;
+}
+
+.icon-bar {
+  background-color: #fff;
+  height: 4px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+#recent {
+  overflow: auto;
+  max-height: 300px;
+}
+
+#recent ul {
+  padding-left: 12px;
+  margin: 0;
+}
+
+#recent ul li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+#recent ul li a.close {
+  color: #666;
+  cursor: pointer;
+  visibility: hidden;
+  font-size: 9px;
+}
+
+#recent ul li:hover a.close {
+  visibility: visible;
 }
