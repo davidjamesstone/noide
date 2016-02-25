@@ -1,8 +1,8 @@
-<template name="tree" args="data tree isRoot current onclick">
+<template name="tree" args="data tree isRoot current onClick">
   <ul class="{isRoot ? 'tree' : ''}">
      <li each="fso, fso.path in data">
        <a href="#"
-        onclick="{onclick(fso)}">
+        onclick="{onClick(fso)}">
 
     <if condition="fso.isDirectory">
       <small if="fso.expanded" class="expanded">▼</small>
@@ -32,7 +32,7 @@
               }
             }
           })
-          tree(fso.children, tree, false, current, onclick)
+          tree(fso.children, tree, false, current, onClick)
         </script>
       </if>
      </li>

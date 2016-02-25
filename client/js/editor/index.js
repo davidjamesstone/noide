@@ -1,22 +1,12 @@
-var ace = require('brace')
-require('brace/ext/language_tools')
-require('brace/mode/css')
-require('brace/mode/html')
-require('brace/mode/javascript')
-require('brace/mode/markdown')
-require('brace/mode/json')
-require('brace/mode/xml')
-require('brace/theme/monokai')
-
 var config = require('../../../config/client')
 
 function Editor () {
-  var editor = ace.edit('editor')
+  var editor = window.ace.edit('editor')
 
   // enable autocompletion and snippets
   editor.setOptions({
-    enableBasicAutocompletion: true,
     enableSnippets: true,
+    enableBasicAutocompletion: true,
     enableLiveAutocompletion: false
   })
 

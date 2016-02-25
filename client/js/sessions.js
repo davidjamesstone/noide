@@ -1,10 +1,10 @@
-var ace = require('brace')
+// var ace = require('brace')
 var supermodels = require('supermodels.js')
 var config = require('../../config/client')
 var modes = require('./modes')
 var Session = require('./session')
-var EditSession = ace.EditSession
-var UndoManager = ace.UndoManager
+var EditSession = window.ace.require('ace/edit_session').EditSession
+var UndoManager = window.ace.require('ace/undomanager').UndoManager
 
 var schema = {
   items: [Session],

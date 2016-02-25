@@ -1,5 +1,5 @@
 <template name="recent" args="files current onClick onClickClose">
-  <ul>
+  <ul style="{display: files.length ? '' : 'none'}">
      <li each="file, file.path in files">
        <a class="close" onclick="{onClickClose(file)}">x</a>
        <a href="#"
