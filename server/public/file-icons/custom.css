@@ -52,6 +52,10 @@ body {
   margin-bottom: 2px;
 }
 
+#recent ul li:hover .triangle-left {
+  display: none;
+}
+
 #recent {
   overflow: auto;
   max-height: 300px;
@@ -73,10 +77,13 @@ body {
 }
 
 #recent ul li a.close {
-  color: #666;
+  color: #ddd;
   cursor: pointer;
   visibility: hidden;
-  font-size: 9px;
+  font-size: 10px;
+  margin-right: 3px;
+  padding-top: 4px;
+  float: right;
 }
 
 #recent ul li:hover a.close {

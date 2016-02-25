@@ -66,45 +66,51 @@ client.onConnect = function () {
           return handleError(err)
         }
       })
-    //
-    // client.subscribe('/unlink', function (payload) {
-    //   if (err) {
-    //     throw err
-    //   }
-    //
-    //   var data = payload
-    //   if (data.path === state.path) {
-    //     if (window.confirm('File has been removed - close this tab?')) {
-    //       window.close()
-    //     }
-    //   }
-    // }, function (err) {
-    //   if (err) {
-    //     return handleError(err)
-    //   }
-    // })
-    //
-    // var lastConsolePid
-    // client.subscribe('/io', function (payload) {
-    //   if (err) {
-    //     return handleError(err)
-    //   }
-    //   if (lastConsolePid !== payload.pid) {
-    //     lastConsolePid = payload.pid
-    //   }
-    // }, function (err) {
-    //   if (err) {
-    //     return handleError(err)
-    //   }
-    // })
-    //
-    // client.subscribe('/io/pids', function (payload) {
-    //   if (err) {
-    //     return handleError(err)
-    //   }
-    // }, function (err) {
-    //   return handleError(err)
-    // })
+      //
+      // client.subscribe('/unlink', function (payload) {
+      //   if (err) {
+      //     throw err
+      //   }
+      //
+      //   var data = payload
+      //   if (data.path === state.path) {
+      //     if (window.confirm('File has been removed - close this tab?')) {
+      //       window.close()
+      //     }
+      //   }
+      // }, function (err) {
+      //   if (err) {
+      //     return handleError(err)
+      //   }
+      // })
+      //
+      var lastConsolePid
+      client.subscribe('/io', function (payload) {
+        if (err) {
+          return handleError(err)
+        }
+var d
+        if (lastConsolePid !== payload.pid) {
+          lastConsolePid = payload.pid
+          console.log(lastConsolePid)
+        }
+        console.log(payload.data)
+      }, function (err) {
+        if (err) {
+          return handleError(err)
+        }
+      })
+
+      client.subscribe('/io/pids', function (payload) {
+        if (err) {
+          return handleError(err)
+        }
+        console.log(payload)
+      }, function (err) {
+        if (err) {
+          return handleError(err)
+        }
+      })
     }
   })
 }
@@ -264,11 +270,11 @@ function saveAll () {
 
 var schema = {
   connected: prop(Boolean).value(false),
-  get files () { return files },
-  get state () { return state },
-  get client () { return client },
-  get editor () { return editor },
-  get sessions () { return sessions },
+  get files() { return files },
+  get state() { return state },
+  get client() { return client },
+  get editor() { return editor },
+  get sessions() { return sessions },
   openFile: openFile,
   closeFile: closeFile,
   readFile: readFile,

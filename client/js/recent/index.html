@@ -1,7 +1,6 @@
 <template name="recent" args="files current onClick onClickClose">
   <ul style="{display: files.length ? '' : 'none'}">
      <li each="file, file.path in files">
-       <a class="close" onclick="{onClickClose(file)}">x</a>
        <a href="#"
         onclick="{onClick(file)}"
         class="name icon icon-file-text"
@@ -10,6 +9,7 @@
         data-path="{file.relativePath}">
         <span>{file.name}</span>
       </a>
+      <a class="close" onclick="{onClickClose(file)}">✖</a>
       <span if="file === current" class="triangle-left"></span>
      </li>
    </ul>

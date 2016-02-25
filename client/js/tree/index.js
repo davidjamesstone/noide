@@ -6,7 +6,7 @@ function Tree (el, fsos, state) {
   fsos.on('change', render)
   state.on('change:current', render)
 
-  function onclick (fso) {
+  function onClick (fso) {
     if (!fso.isDirectory) {
       noide.openFile(fso)
     } else {
@@ -17,7 +17,7 @@ function Tree (el, fsos, state) {
   }
 
   function update (tree) {
-    view(tree, view, true, state.current, onclick)
+    view(tree, view, true, state.current, onClick)
   }
 
   function render () {

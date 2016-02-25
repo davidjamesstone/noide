@@ -48,14 +48,14 @@ module.exports = {
 
       server.publish('/io/pids', Object.keys(procs))
     },
-    // validate: {
-    //   payload: {
-    //     task: Joi.object().required().keys({
-    //       command: Joi.string().required(),
-    //       args: Joi.string(),
-    //       options: Joi.string()
-    //     })
-    //   }
-    // }
+    validate: {
+      payload: {
+        task: Joi.object().required().keys({
+          command: Joi.string().required(),
+          args: Joi.array(),
+          options: Joi.object()
+        })
+      }
+    }
   }
 }
