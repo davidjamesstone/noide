@@ -5,7 +5,10 @@ module.exports = {
   path: '/watched',
   config: {
     handler: function (request, reply) {
-      return reply(fsw.watched)
+      return reply({
+        watched: fsw.watched,
+        cwd: process.cwd()
+      })
     }
   }
 }

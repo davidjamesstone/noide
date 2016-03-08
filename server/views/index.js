@@ -5,7 +5,7 @@ module.exports = {
     html: require('handlebars')
   },
   relativeTo: __dirname,
-  layout: true,
+  // layout: true,
   isCached: config.views.isCached,
   partialsPath: 'partials',
   helpersPath: 'helpers',

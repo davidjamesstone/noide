@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-
-var Taskw = require('taskr')
-var tasks = [
-  { paths: './client', command: 'npm', args: ['run', 'build:js'] }
-]
-
-var taskw = new Taskw(tasks)

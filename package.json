@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2 start config/pm2.json",
-    "build:js": "bin/build-js",
-    "watch:js": "bin/watch-js",
+    "build:app:js": "bin/build-app-js",
+    "build:core:js": "bin/build-core-js",
+    "build:css": "bin/build-css",
+    "watch": "bin/watch",
     "taskw": "bin/taskw",
     "build": "npm run build:js",
     "copy:assets": "bin/copy-assets",
-    "lint": "standard",
+    "lint": "standard ./client/**/*.js",
+    "lint-all": "standard",
     "test": "npm run lint"
   },
   "author": "",
@@ -32,19 +35,25 @@
     "joi": "7.2.3",
     "ncp": "2.0.0",
     "nes": "3.0.0",
+    "page": "^1.6.4",
     "page.js": "4.13.3",
+    "querystring": "^0.2.0",
     "rimraf": "2.5.1",
     "slideout": "0.1.12",
+    "spawn-args": "^0.1.0",
     "standard": "6.0.4",
     "standard-format": "2.1.1",
     "supermodels.js": "0.1.0",
     "vision": "4.0.1",
     "vsd-shared": "0.0.1",
-    "watchify": "3.7.0",
-    "wisk": "0.0.1"
+    "watchify": "3.7.0"
   },
   "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.1",
     "node-sass": "3.4.2",
-    "superviewify": "0.0.8"
+    "superviewify": "0.0.8",
+    "wisk": "0.0.1"
   }
 }

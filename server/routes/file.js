@@ -18,15 +18,15 @@ module.exports = {
             : Boom.badRequest('Invalid request', err))
         }
 
-        var relativeDir = Path.relative(process.cwd(), file.dir)
-        var relativePath = Path.relative(process.cwd(), file.path)
-        file.relativePath = relativePath
+        // var relativeDir = Path.relative(process.cwd(), file.dir)
+        // var relativePath = Path.relative(process.cwd(), file.path)
+        // file.relativePath = relativePath
 
         var watched = watcher.watched
         var paths = Object.keys(watched)
         var fsos = paths
-          .filter(path => { return !watched[path].isDirectory })
-          .map(path => {
+          .filter((path) => { return !watched[path].isDirectory })
+          .map((path) => {
             var fso = watched[path]
             fso.relativePath = Path.relative(process.cwd(), path)
             return fso
@@ -56,4 +56,3 @@ module.exports = {
     }
   }
 }
-// Cache-Control: max-age=

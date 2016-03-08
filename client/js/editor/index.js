@@ -26,12 +26,17 @@ function Editor () {
   }])
 
   editor.setTheme('ace/theme/' + config.ace.theme)
-
+  this.setReadOnly = function (value) {
+    editor.setReadOnly(value)
+  }
   this.addCommands = function () {
     editor.commands.addCommands.apply(editor.commands, arguments)
   }
   this.setSession = function (editSession) {
     editor.setSession(editSession)
+  }
+  this.resize = function () {
+    editor.resize()
   }
 }
 

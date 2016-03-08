@@ -3,7 +3,7 @@ var isUtf8 = require('is-utf8')
 var p = require('path')
 var common = require('./common')
 var ncp = require('ncp').ncp
-var FileSystemObject = require('vsd-shared').FileSystemObject
+var FileSystemObject = require('./file-system-object')
 var rimraf = require('rimraf')
 
 ncp.limit = 6

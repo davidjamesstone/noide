@@ -1,9 +1,17 @@
 module.exports = [{
   watch: {
-    paths: 'client'
+    paths: ['client/**/*.js', 'client/**/*.html']
   },
   tasks: [{
     command: 'npm',
-    args: ['run', 'build:js']
+    args: ['run', 'build:app:js']
+  }]
+}, {
+  watch: {
+    paths: 'client/**/*.scss'
+  },
+  tasks: [{
+    command: 'npm',
+    args: ['run', 'build:css']
   }]
 }]

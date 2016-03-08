@@ -1,3 +1,4 @@
+var page = require('page')
 var Nes = require('nes/client')
 var supermodels = require('supermodels.js')
 var Sessions = require('./sessions')
@@ -35,18 +36,15 @@ client.onConnect = function () {
       return handleError(err)
     }
 
+    var watched = payload.watched
     var files = noide.files
-    files.splice.apply(files, [0, files.length].concat(new Fsos(payload)))
+    files.splice.apply(files, [0, files.length].concat(new Fsos(watched)))
 
     if (!stateLoaded) {
       loadState()
       stateLoaded = true
 
       noide.client.subscribe('/change', function (payload) {
-        if (err) {
-          throw err
-        }
-
         sessions.items.forEach(function (session) {
           var file = session.file
           if (payload.path === file.path) {
@@ -68,10 +66,6 @@ client.onConnect = function () {
       })
       //
       // client.subscribe('/unlink', function (payload) {
-      //   if (err) {
-      //     throw err
-      //   }
-      //
       //   var data = payload
       //   if (data.path === state.path) {
       //     if (window.confirm('File has been removed - close this tab?')) {
@@ -84,32 +78,9 @@ client.onConnect = function () {
       //   }
       // })
       //
-      var lastConsolePid
-      client.subscribe('/io', function (payload) {
-        if (err) {
-          return handleError(err)
-        }
-var d
-        if (lastConsolePid !== payload.pid) {
-          lastConsolePid = payload.pid
-          console.log(lastConsolePid)
-        }
-        console.log(payload.data)
-      }, function (err) {
-        if (err) {
-          return handleError(err)
-        }
-      })
 
-      client.subscribe('/io/pids', function (payload) {
-        if (err) {
-          return handleError(err)
-        }
-        console.log(payload)
-      }, function (err) {
-        if (err) {
-          return handleError(err)
-        }
+      page({
+        hashbang: true
       })
     }
   })
@@ -268,17 +239,43 @@ function saveAll () {
   })
 }
 
+function run (command, name, callback) {
+  if (typeof name === 'function') {
+    callback = name
+    name = command
+  }
+  if (!name) {
+    name = command
+  }
+
+  client.request({
+    path: '/io',
+    payload: {
+      name: name,
+      command: command
+    },
+    method: 'POST'
+  }, function (err, payload) {
+    if (err) {
+      handleError(err)
+    }
+    callback && callback(err, payload)
+  })
+}
+
 var schema = {
   connected: prop(Boolean).value(false),
-  get files() { return files },
-  get state() { return state },
-  get client() { return client },
-  get editor() { return editor },
-  get sessions() { return sessions },
+  get files () { return files },
+  get state () { return state },
+  get client () { return client },
+  get editor () { return editor },
+  get sessions () { return sessions },
+  run: run,
   openFile: openFile,
   closeFile: closeFile,
   readFile: readFile,
-  writeFile: writeFile
+  writeFile: writeFile,
+  handleError: handleError
 }
 
 var Noide = supermodels(schema)

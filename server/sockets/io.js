@@ -1,6 +1,6 @@
 
 var fsw = require('../services/file-system-watcher')
-var FileSystemObject = require('vsd-shared').FileSystemObject
+var FileSystemObject = require('../file-system-object')
 var watcher = fsw.watcher
 
 module.exports = function (server) {

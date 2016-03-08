@@ -1,0 +1,140 @@
+<!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="/public/css/tree.css">
+<link rel="stylesheet" href="/public/file-icons/style.css">
+<link rel="stylesheet" href="/public/file-icons/custom.css">
+<!-- <link rel="stylesheet" href="/public/css/normalize.css">
+<link rel="stylesheet" href="/public/css/skeleton.css"> -->
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+  }
+  html, body, main, #panel {
+    height: 100%;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  #main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    background-color: #232222;
+    -webkit-transition: width .5s;
+    transition: width .5s;
+    overflow: auto;
+  }
+
+  #sidebar a {
+    color: #fff;
+  }
+
+  #workspaces {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    -webkit-transition: left .5s;
+    transition: left .5s;
+  }
+
+  #workspaces .workspace {
+    position: absolute;
+    top: 0;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+  }
+
+  #workspaces.editor #editor {
+    display: block;
+  }
+
+  #processes {
+    color: white;
+    position: absolute;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #processes .list {
+    position: absolute;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #processes .output {
+    position: absolute;
+    top: 0;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+  }
+
+  #main.no-sidebar #sidebar {
+    width: 0;
+  }
+
+  #main.no-sidebar #workspace {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
+  }
+</style>
+
+<script src="/public/ace-builds/src-min-noconflict/ace.js"></script>
+<script src="/public/ace-builds/src-min-noconflict/ext-language_tools.js"></script>
+
+<button class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+
+<main id="main">
+  <nav id="sidebar">
+    <div id="recent">
+    </div>
+    <div id="tree">
+    </div>
+  </nav>
+  <div id="workspaces">
+    <div id="editor" class="workspace">
+    </div>
+    <div id="processes">
+      <div class="list"></div>
+      <div class="output"></div>
+    </div>
+  </div>
+</main>
+
+<script src="/public/js/index.js"></script>

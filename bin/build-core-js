@@ -1,0 +1,1 @@
+browserify client/core.js -o server/public/js/core.js

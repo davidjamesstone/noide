@@ -1,95 +1,53 @@
-<!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
-<link rel="stylesheet" href="/public/css/tree.css">
-<link rel="stylesheet" href="/public/file-icons/style.css">
-<link rel="stylesheet" href="/public/file-icons/custom.css">
-<!-- <link rel="stylesheet" href="/public/css/normalize.css">
-<link rel="stylesheet" href="/public/css/skeleton.css"> -->
-
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: black;
-  }
-  html, body, main, #panel {
-    height: 100%;
-  }
-  body {
-    width: 100%;
-    height: 100%;
-  }
-
-  #menu {
-    /*display: none;*/
-    background-color: #232222;
-  }
-
-  #menu a {
-    /*display: none;*/
-    color: #fff;
-  }
-
-  .slideout-menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 0;
-    width: 256px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    display: none;
-  }
-
-  .slideout-panel {
-    position: relative;
-    z-index: 1;
-  }
-
-  .slideout-open,
-  .slideout-open body,
-  .slideout-open .slideout-panel {
-    overflow: hidden;
-  }
-
-  .slideout-open .slideout-menu {
-    display: block;
-  }
-
-  .js-slideout-toggle {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    width: 40px;
-    height: 40px;
-  }
-</style>
-
-<script>
-  // window._noide = {{{dataJSON}}}
-</script>
-
-<script src="/public/ace-builds/src-min-noconflict/ace.js"></script>
-<script src="/public/ace-builds/src-min-noconflict/ext-language_tools.js"></script>
-
-<button class="js-slideout-toggle">
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-</button>
-<nav id="menu">
-  <div id="recent">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="{{meta.favicon}}">
+    <title>{{meta.title}}</title>
+    <meta name="description" content="{{meta.description}}">
+    <meta name="author" content="{{meta.author}}">
+    <meta name="keywords" content="{{meta.keywords}}">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/public/seti-file-icons/index.css">
+    <!-- <link rel="stylesheet" href="/public/file-icons/style.css"> -->
+    <script src="/public/ace-builds/src-min-noconflict/ace.js"></script>
+    <script src="/public/ace-builds/src-min-noconflict/ext-language_tools.js"></script>
+</head>
+<body>
+<header>
+  <button class="sidebar-toggle">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</header>
+<main>
+  <nav id="sidebar">
+    <div id="tree">
+    </div>
+  </nav>
+	<div id="sidebar-workspaces" class="splitter"></div>
+	<article id="workspaces">
+    <div class="workspace">
+      <div id="editor">
+      </div>
+    </div>
+  </article>
+	<div id="workspaces-info" class="splitter"></div>
+	<aside id="info">
+    <div id="recent">
+    </div>
+	</aside>
+</main>
+<div id="main-footer" class="splitter horizontal"></div>
+<footer>
+  <div id="processes">
   </div>
-  <div id="tree">
-  </div>
-</nav>
-<div id="panel">
-  <div id="editor" style="height: 100%; width: 100%;">{{file.contents}}</div>
-</div>
+</footer>
+<script src="/public/js/core.js"></script>
 <script src="/public/js/index.js"></script>
+</body>
+</html>

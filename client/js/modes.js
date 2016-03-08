@@ -16,6 +16,7 @@ module.exports = function (file) {
     '.sass': 'ace/mode/sass',
     '.txt': 'ace/mode/text',
     '.typescript': 'ace/mode/typescript',
+    '.gitignore': 'ace/mode/gitignore',
     '.xml': 'ace/mode/xml'
   }
 
