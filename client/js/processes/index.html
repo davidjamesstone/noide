@@ -29,19 +29,22 @@
     <div class="list">
       <ul if="model.processes.length" class="nav nav-tabs">
        <li each="process, process.pid in model.processes">
+         <a href="http://www.google.co.uk?q={process.pid}">[{process.pid}]</a>
          <a onclick="{showOutput(process)}">{process.name || process.command}<span>[{process.pid}]</span></span>
          <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
-         <button if="process.isAlive" class="btn btn-default" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
+         <button key="kill" if="process.isAlive" class="btn btn-default" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
          <if condition="!process.isAlive">
-           <button class="btn btn-default" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
-           <button class="btn btn-default" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
+           <button key="resurrect" class="btn btn-default" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
+           <button key="remove" class="btn btn-default" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
          </if>
        </li>
       </ul>
     </div>
-    <script>
+    <placeholder key="list-output" id="list-output" class="splitter"></placeholder>
+    <placeholder key="output" class="output"></placeholder>
+    <!-- <script>
       IncrementalDOM.elementPlaceholder('div', 'list-output', ['id', 'list-output', 'class', 'splitter'])
       IncrementalDOM.elementPlaceholder('div', 'output', ['class', 'output'])
-    </script>
+    </script> -->
   </div>
  </template>
