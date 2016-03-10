@@ -134,6 +134,7 @@ function Processes (el, noide) {
       editor.setTheme('ace/theme/terminal')
       editor.setReadOnly(true)
       editor.renderer.setShowGutter(false)
+      editor.setHighlightActiveLine(false)
       editor.setShowPrintMargin(false)
       splitter(document.getElementById('list-output'))
     }

@@ -177,32 +177,6 @@ body {
   color: #222;
 }
 
-.name.icon {
-  text-decoration: none;
-}
-
-.name.icon::before {
-  width: 20px;
-  display: inline-block;
-  height: 20px;
-}
-
-.name.icon span {
-  margin-left: 4px;
-  color: lightgray;
-  vertical-align: top;
-}
-
-.name.icon.icon-file-directory:before {
-    color: #3D9276;
-    content: '\e613';
-    display: inline-block;
-    font-family: 'icomoon';
-    font-size: 13px;
-    position: relative;
-    top: -1px;
-}
-
 .triangle-left {
   right: 0;
   position: absolute;
@@ -256,9 +230,49 @@ body {
  .tree li .expanded, .tree li .collapsed {
    position: absolute;
    font-size: 7px;
-   left: 5px;
+   left: 0;
    top: 4px;
    color: #666;
+ }
+
+ .tree span.name.icon.icon-file-text, .tree span.name.icon.icon-file-directory {
+   position: absolute;
+   top: -5px;
+ }
+
+ .tree span.name.icon.icon-file-directory {
+   position: absolute;
+   top: 2px;
+ }
+
+  .tree .name.icon.icon-file-directory:before {
+      color: #3D9276;
+      content: '\e613';
+      display: inline-block;
+      font-family: 'icomoon';
+      font-size: 13px;
+      position: relative;
+      top: -1px;
+      left: 0;
+  }
+
+  .file-name {
+    padding-left: 16px;
+  }
+ .name.icon {
+   text-decoration: none;
+ }
+
+ .name.icon::before {
+   width: 20px;
+   display: inline-block;
+   height: 20px;
+ }
+
+ .name.icon span {
+   margin-left: 4px;
+   color: lightgray;
+   vertical-align: top;
  }
 
 

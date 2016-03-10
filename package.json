@@ -29,7 +29,6 @@
     "good-file": "5.1.2",
     "handlebars": "4.0.5",
     "hapi": "13.0.0",
-    "incremental-dom": "git+https://github.com/davidjamesstone/incremental-dom.git",
     "inert": "3.2.0",
     "is-utf8": "0.2.1",
     "joi": "7.2.3",
@@ -51,9 +50,10 @@
   "devDependencies": {
     "bootstrap-sass": "^3.3.6",
     "font-awesome": "^4.5.0",
+    "incremental-dom": "^0.3.0",
     "jquery": "^2.2.1",
     "node-sass": "3.4.2",
-    "superviewify": "0.0.8",
+    "superviewify": "0.0.9",
     "wisk": "0.0.1"
   }
 }

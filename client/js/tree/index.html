@@ -3,18 +3,16 @@
      <li each="fso, fso.path in data">
        <if condition="fso.isFile">
          <a href="{'/file?path=' + fso.relativePath}">
-           <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-text">
-            {fso.name}
-          </span>
+           <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-text"></span>
+           <span class="file-name" >{fso.name}</span>
          </a>
        </if>
        <if condition="fso.isDirectory">
          <a onclick="{onClick(fso)}">
            <small if="fso.expanded" class="expanded">▼</small>
            <small if="!fso.expanded" class="collapsed">▶</small>
-           <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-directory">
-            {fso.name}
-          </span>
+           <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-directory"></span>
+           <span class="file-name" >{fso.name}</span>
          </a>
        </if>
       <span if="fso.isFile && fso === current" class="triangle-left"></span>
