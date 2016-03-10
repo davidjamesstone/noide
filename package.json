@@ -10,7 +10,7 @@
     "build:css": "bin/build-css",
     "watch": "bin/watch",
     "taskw": "bin/taskw",
-    "build": "npm run build:js",
+    "build": "npm run build:core:js && npm run build:app:js && npm run build:css",
     "copy:assets": "bin/copy-assets",
     "lint": "standard ./client/**/*.js",
     "lint-all": "standard",
