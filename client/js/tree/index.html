@@ -1,6 +1,6 @@
 <template name="tree" args="data tree isRoot current onClick">
   <ul class="{isRoot ? 'tree' : ''}">
-     <li each="fso, fso.path in data">
+     <li each="fso, fso.path in data" class="{fso === current ? 'selected' : ''}">
        <if condition="fso.isFile">
          <a href="{'/file?path=' + fso.relativePath}">
            <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-text"></span>
@@ -12,7 +12,7 @@
            <small if="fso.expanded" class="expanded">▼</small>
            <small if="!fso.expanded" class="collapsed">▶</small>
            <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-directory"></span>
-           <span class="file-name" >{fso.name}</span>
+           <span class="dir-name" >{fso.name}</span>
          </a>
        </if>
       <span if="fso.isFile && fso === current" class="triangle-left"></span>

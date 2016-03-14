@@ -1,0 +1,17 @@
+<template name="recent" args="files current onClickClose">
+   <div style="{display: files.length ? '' : 'none'}" class="list-group">
+    <a each="file, file.relativePath in files"
+      title="{file.relativePath}"
+      href="{'/file?path=' + file.relativePath}"
+      class="{'list-group-item' + (file === current ? ' active' : '')}">
+      <span class="close" onclick="{onClickClose(file)}">×</span>
+      <span
+        data-name="{file.name}"
+        data-path="{file.relativePath}"
+        class="name icon icon-file-text">{file.name}</span>
+      <if condition="false">
+        <p class="list-group-item-text">{'./' + (file.relativePath !== file.name ? file.relativeDir : '')}</p>
+      </if>
+    </a>
+  </div>
+ </template>

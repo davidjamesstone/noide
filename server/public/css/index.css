@@ -8051,6 +8051,113 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .fa-percent:before {
   content: ""; }
 
+/**
+ * Tree view
+ */
+#tree {
+  display: table; }
+
+.tree,
+.tree ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  font-size: small; }
+
+.tree li {
+  margin: 0;
+  padding: 2px 0 2px 12px;
+  position: relative;
+  white-space: nowrap; }
+  .tree li.file {
+    padding-left: 16px; }
+
+.tree li a {
+  text-decoration: none; }
+
+.tree li .expanded,
+.tree li .collapsed {
+  position: absolute;
+  font-size: 7px;
+  left: 4px;
+  top: 6px;
+  color: #666; }
+
+.tree span.name.icon.icon-file-text,
+.tree span.name.icon.icon-file-directory {
+  position: absolute;
+  top: -5px; }
+
+.tree span.name.icon.icon-file-directory {
+  position: absolute;
+  top: 2px; }
+
+.tree .name.icon.icon-file-directory:before {
+  color: #3D9276;
+  content: '\e613';
+  display: inline-block;
+  font-family: 'icomoon';
+  font-size: 13px;
+  position: relative;
+  top: -1px;
+  left: 0; }
+
+.file-name {
+  padding-left: 16px; }
+
+.dir-name {
+  padding-left: 20px; }
+
+.name.icon {
+  text-decoration: none; }
+
+.name.icon::before {
+  width: 20px;
+  display: inline-block;
+  height: 20px; }
+
+.name.icon span {
+  margin-left: 4px;
+  color: lightgray;
+  vertical-align: top; }
+
+.triangle-left {
+  right: 0;
+  position: absolute; }
+
+.triangle-left::before {
+  content: "\25C0";
+  color: #666; }
+
+#recent ul li:hover .triangle-left {
+  display: none; }
+
+#recent .close {
+  cursor: pointer;
+  visibility: hidden;
+  font-weight: normal;
+  font-size: 10px;
+  position: absolute;
+  right: 5px; }
+
+#recent a:hover .close {
+  visibility: visible; }
+
+#recent .list-group-item {
+  padding: 2px 4px; }
+
+#recent .name.icon:before {
+  left: 0;
+  top: 5px; }
+
+#recent span.name {
+  font-size: small;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
 html, body {
   background-color: black;
   height: 100%;
@@ -8059,9 +8166,11 @@ html, body {
   margin: 0; }
 
 body {
+  color: #222;
   overflow: hidden;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 header {
   display: none;
@@ -8187,18 +8296,6 @@ aside {
 #processes .output {
   flex: auto; }
 
-body {
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
-
-.triangle-left {
-  right: 0;
-  position: absolute; }
-
-.triangle-left::before {
-  content: "\25C0";
-  color: #666; }
-
 .circle::before {
   content: "\25CF"; }
 
@@ -8216,91 +8313,3 @@ body {
   height: 4px;
   display: block;
   margin-bottom: 2px; }
-
-/**
- * Tree view
- */
-.tree,
-.tree ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow: hidden; }
-
-.tree li {
-  margin: 0;
-  padding: 2px 0 2px 12px;
-  position: relative;
-  white-space: nowrap; }
-
-.tree li a {
-  text-decoration: none; }
-
-.tree li .expanded, .tree li .collapsed {
-  position: absolute;
-  font-size: 7px;
-  left: 0;
-  top: 4px;
-  color: #666; }
-
-.tree span.name.icon.icon-file-text, .tree span.name.icon.icon-file-directory {
-  position: absolute;
-  top: -5px; }
-
-.tree span.name.icon.icon-file-directory {
-  position: absolute;
-  top: 2px; }
-
-.tree .name.icon.icon-file-directory:before {
-  color: #3D9276;
-  content: '\e613';
-  display: inline-block;
-  font-family: 'icomoon';
-  font-size: 13px;
-  position: relative;
-  top: -1px;
-  left: 0; }
-
-.file-name {
-  padding-left: 16px; }
-
-.name.icon {
-  text-decoration: none; }
-
-.name.icon::before {
-  width: 20px;
-  display: inline-block;
-  height: 20px; }
-
-.name.icon span {
-  margin-left: 4px;
-  color: lightgray;
-  vertical-align: top; }
-
-#recent ul li:hover .triangle-left {
-  display: none; }
-
-#recent .close {
-  cursor: pointer;
-  visibility: hidden;
-  font-weight: normal;
-  font-size: 10px;
-  position: absolute;
-  right: 5px; }
-
-#recent a:hover .close {
-  visibility: visible; }
-
-#recent .list-group-item {
-  padding: 2px 4px; }
-
-#recent .name.icon:before {
-  left: 0;
-  top: 5px; }
-
-#recent span.name {
-  font-size: small;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }

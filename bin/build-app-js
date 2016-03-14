@@ -1,1 +1,1 @@
-browserify client/js/index.js -t [superviewify] -o server/public/js/index.js -d
+browserify client/index.js -t [superviewify] -o server/public/js/index.js -d

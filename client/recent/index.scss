@@ -1,0 +1,35 @@
+#recent ul li:hover .triangle-left {
+  display: none;
+}
+
+#recent {
+}
+
+#recent .close {
+  cursor: pointer;
+  visibility: hidden;
+  font-weight: normal;
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+}
+
+#recent a:hover .close {
+  visibility: visible;
+}
+
+#recent .list-group-item {
+ padding: 2px 4px;
+}
+
+#recent .name.icon:before {
+ left: 0;
+ top: 5px;
+}
+
+#recent span.name {
+ font-size: small;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+}

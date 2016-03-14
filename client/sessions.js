@@ -1,5 +1,5 @@
 var supermodels = require('supermodels.js')
-var config = require('../../config/client')
+var config = require('../config/client')
 var modes = require('./modes')
 var Session = require('./session')
 var EditSession = window.ace.require('ace/edit_session').EditSession
@@ -36,4 +36,8 @@ var schema = {
   }
 }
 
-module.exports = supermodels(schema)
+var Sessions = supermodels(schema)
+
+var sessions = new Sessions()
+
+module.exports = sessions

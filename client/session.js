@@ -1,0 +1,16 @@
+var supermodels = require('supermodels.js')
+var File = require('./file')
+var prop = supermodels.prop()
+
+module.exports = supermodels({
+  file: File,
+  editSession: Object,
+  created: prop(Date).value(Date.now),
+  modified: prop(Date).value(Date.now),
+  get isClean () {
+    return this.editSession.getUndoManager().isClean()
+  },
+  get isDirty () {
+    return !this.isClean
+  }
+})

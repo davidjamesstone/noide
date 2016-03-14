@@ -1,17 +1,12 @@
-var page = require('page')
 var patch = require('incremental-dom').patch
 var view = require('./index.html')
-var noide = require('../noide')
 
 function Tree (el, fsos, state) {
   fsos.on('change', render)
   state.on('change:current', render)
 
   function onClick (fso) {
-    if (!fso.isDirectory) {
-      // page.show('/file?path=' + fso.path, fso)
-      // noide.openFile(fso)
-    } else {
+    if (fso.isDirectory) {
       fso.expanded = !fso.expanded
       render()
     }

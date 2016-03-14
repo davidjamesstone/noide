@@ -1,7 +1,7 @@
 var page = require('page')
 var qs = require('querystring')
 var noide = require('./noide')
-var Tree = require('./tree')
+var Tree = require('../tree/controller')
 var Recent = require('./recent')
 var splitter = require('./splitter')
 
