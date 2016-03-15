@@ -2,11 +2,12 @@ var config = require('../../config/client')
 
 var editor = window.ace.edit('editor')
 
-// enable autocompletion and snippets
+// Set editor options
 editor.setOptions({
   enableSnippets: true,
   enableBasicAutocompletion: true,
-  enableLiveAutocompletion: false
+  enableLiveAutocompletion: false,
+  fontSize: config.ace.fontSize
 })
 
 editor.commands.addCommands([{

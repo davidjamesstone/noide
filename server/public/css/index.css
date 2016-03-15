@@ -8055,6 +8055,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
  * Tree view
  */
 #tree {
+  width: 100%;
   display: table; }
 
 .tree,

@@ -22,18 +22,15 @@ function loadState (files) {
   storage = storage ? JSON.parse(storage) : {}
 
   var dir, file, i
-  var recent = []
+  this.recent = new Files()
 
   if (storage.recent) {
     for (i = 0; i < storage.recent.length; i++) {
       file = files.findByPath(storage.recent[i])
       if (file) {
-        recent.push(file)
+        this.recent.items.push(file)
       }
     }
-    this.recent = new Files({
-      items: recent
-    })
   }
 
   if (storage.expanded) {
