@@ -93,8 +93,14 @@ aside {
 }
 
 #workspaces .workspace {
+  display: none;
   position: relative;
   flex: auto;
+}
+
+#workspaces.welcome .workspace.welcome,
+#workspaces.editor .workspace.editor {
+  display: block;
 }
 
 #workspaces.editor #editor {
@@ -104,6 +110,11 @@ aside {
   left: 0;
   right: 0;
 }
+
+
+
+
+
 
 #processes {
   display: flex;

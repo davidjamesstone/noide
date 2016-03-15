@@ -23,14 +23,10 @@ function closeFile (file) {
         if (sessions.items.length) {
           // Open the first session
           page('/file?path=' + sessions.items[0].file.relativePath)
-          // openFile(sessions.items[0].file)
         } else if (state.recent.items.length) {
-          // Open the next file
-          // openFile(state.recent[0])
           page('/file?path=' + state.recent.items[0].relativePath)
         } else {
-          state.current = null
-          // editor.setSession(null)
+          page('/')
         }
       }
     }

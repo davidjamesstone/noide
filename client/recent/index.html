@@ -1,4 +1,9 @@
 <template name="recent" args="files current onClickClose">
+  <!-- <if condition="!files.length">
+    <div key="no-recent" class="alert alert-info">
+      No recent files
+    </div>
+  </if> -->
    <div style="{display: files.length ? '' : 'none'}" class="list-group">
     <a each="file, file.relativePath in files"
       title="{file.relativePath}"

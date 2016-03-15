@@ -1,7 +1,6 @@
 const Nes = require('nes')
 const Glupe = require('glupe')
 const config = require('./config')
-
 const sock = require('./server/sockets/file-system-watcher')
 
 Glupe.compose(__dirname, config, function (err, server) {

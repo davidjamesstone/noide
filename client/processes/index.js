@@ -1,12 +1,14 @@
-var patch = require('../patch')
+var patch = require('incremental-dom').patch
 var view = require('./index.html')
 var Model = require('./model')
 var Task = require('./task')
 var Process = require('./process')
 var splitter = require('../splitter')
+var client = require('../client')
+var fs = require('../fs')
+var util = require('../util')
 
-function Processes (el, noide) {
-  var client = noide.client
+function Processes (el) {
   var editor
 
   client.subscribe('/io', function (payload) {
@@ -25,7 +27,7 @@ function Processes (el, noide) {
     }
   }, function (err) {
     if (err) {
-      return noide.handleError(err)
+      return util.handleError(err)
     }
   })
 
@@ -35,7 +37,7 @@ function Processes (el, noide) {
 
   client.subscribe('/io/pids', loadPids, function (err) {
     if (err) {
-      return noide.handleError(err)
+      return util.handleError(err)
     }
   })
 
@@ -43,7 +45,7 @@ function Processes (el, noide) {
     path: '/io/pids'
   }, function (err, payload) {
     if (err) {
-      noide.handleError(err)
+      util.handleError(err)
     }
     loadPids(payload)
   })
@@ -90,9 +92,9 @@ function Processes (el, noide) {
   }
 
   function readTasks () {
-    noide.readFile('package.json', function (err, payload) {
+    fs.readFile('package.json', function (err, payload) {
       if (err) {
-        noide.handleError(err)
+        util.handleError(err)
       }
 
       var pkg = {}
@@ -120,8 +122,12 @@ function Processes (el, noide) {
 
   readTasks()
 
+  function update (model) {
+    view(model, showOutput)
+  }
+
   function render () {
-    patch(el, view, model, showOutput)
+    patch(el, update, model)
 
     if (!editor) {
       var outputEl = el.querySelector('.output')
@@ -132,7 +138,7 @@ function Processes (el, noide) {
       editor.renderer.setShowGutter(false)
       editor.setHighlightActiveLine(false)
       editor.setShowPrintMargin(false)
-      splitter(document.getElementById('list-output'))
+      splitter(document.getElementById('list-output'), editor.resize.bind(editor))
     }
   }
 

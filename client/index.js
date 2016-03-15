@@ -6,12 +6,13 @@ var sessions = require('./sessions')
 var Files = require('./files')
 var Tree = require('./tree')
 var Recent = require('./recent')
+var Processes = require('./processes')
 var util = require('./util')
 var splitter = require('./splitter')
 var editor = require('./editor')
 var client = require('./client')
 
-var mainEl = document.getElementById('main')
+var processesEl = document.getElementById('processes')
 var recentEl = document.getElementById('recent')
 var treeEl = document.getElementById('tree')
 var workspacesEl = document.getElementById('workspaces')
@@ -21,10 +22,6 @@ window.onbeforeunload = function () {
     return 'Unsaved changes will be lost - are you sure you want to leave?'
   }
 }
-
-splitter(document.getElementById('sidebar-workspaces'))
-splitter(document.getElementById('workspaces-info'))
-splitter(document.getElementById('main-footer'))
 
 client.connect(function (err) {
   if (err) {
@@ -44,6 +41,31 @@ client.connect(function (err) {
     // Load the state from localStorage
     state.load(files)
 
+    // Subscribe to watched file changes
+    // that happen on the file system
+    // Reload the session if the changes
+    // do not match the state of the file
+    client.subscribe('/change', function (payload) {
+      sessions.items.forEach(function (session) {
+        var file = session.file
+        if (payload.path === file.path) {
+          if (payload.stat.mtime !== file.stat.mtime) {
+            fs.readFile(file.path, function (err, payload) {
+              if (err) {
+                return util.handleError(err)
+              }
+              file.stat = payload.stat
+              session.editSession.setValue(payload.contents)
+            })
+          }
+        }
+      })
+    }, function (err) {
+      if (err) {
+        return util.handleError(err)
+      }
+    })
+
     // Save state on page unload
     window.onunload = function () {
       console.log('log')
@@ -56,13 +78,26 @@ client.connect(function (err) {
     //   files: files
     // })
 
-    // Build the tree
+    // Build the tree pane
     var treeView = new Tree(treeEl, files, state)
     treeView.render()
 
-    // Build the recent list
+    // Build the recent list pane
     var recentView = new Recent(recentEl, state)
     recentView.render()
+
+    // Build the procsses pane
+    var processesView = new Processes(processesEl)
+    processesView.render()
+
+    function resizeEditor () {
+      editor.resize()
+      processesView.editor.resize()
+    }
+
+    splitter(document.getElementById('sidebar-workspaces'), resizeEditor)
+    splitter(document.getElementById('workspaces-info'), resizeEditor)
+    splitter(document.getElementById('main-footer'), resizeEditor)
 
     page('/', function (ctx) {
       workspacesEl.className = 'welcome'

@@ -8141,7 +8141,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   font-weight: normal;
   font-size: 10px;
   position: absolute;
-  right: 5px; }
+  right: 5px;
+  z-index: 1; }
 
 #recent a:hover .close {
   visibility: visible; }
@@ -8230,8 +8231,13 @@ aside {
   display: flex; }
 
 #workspaces .workspace {
+  display: none;
   position: relative;
   flex: auto; }
+
+#workspaces.welcome .workspace.welcome,
+#workspaces.editor .workspace.editor {
+  display: block; }
 
 #workspaces.editor #editor {
   position: absolute;
