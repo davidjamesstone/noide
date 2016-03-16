@@ -8,6 +8,7 @@ var Process = require('./process')
 var schema = {
   tasks: [Task],
   command: String,
+  current: Process,
   processes: [Process],
   get dead () {
     return this.processes.filter(function (item) {

@@ -19,24 +19,33 @@
       <!-- <button type="submit">Run</button>
       <button if="model.dead.length" type="button" onclick="{model.removeAllDead()}">Clear</button> -->
     </form>
-    <ul hidden="true" class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Profile</a></li>
-      <li role="presentation"><a href="#">Messages</a></li>
+    <ul class="nav nav-tabs">
+      <li each="process, process.pid in model.processes">
+        <a onclick="{showOutput(process)}">
+          <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
+          {process.name || process.command}<span>[{process.pid}]</span>
+          <button key="kill-tab" if="process.isAlive" class="btn btn-default btn-xs" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
+          <if condition="!process.isAlive">
+            <button key="resurrect-tab" class="btn btn-default btn-xs" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
+            <button key="remove-tab" class="btn btn-default btn-xs" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
+          </if>
+        </a>
+      </li>
     </ul>
   </div>
   <div class="processes">
     <div class="list">
       <ul if="model.processes.length" class="nav nav-tabs">
        <li each="process, process.pid in model.processes">
-         <a hidden="true" href="http://www.google.co.uk?q={process.pid}">[{process.pid}]</a>
-         <a onclick="{showOutput(process)}">{process.name || process.command}<span>[{process.pid}]</span></span>
-         <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
-         <button key="kill" if="process.isAlive" class="btn btn-default btn-xs" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
-         <if condition="!process.isAlive">
-           <button key="resurrect" class="btn btn-default btn-xs" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
-           <button key="remove" class="btn btn-default btn-xs" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
-         </if>
+         <a onclick="{showOutput(process)}">
+           <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
+           {process.name || process.command}<span>[{process.pid}]</span>
+           <button key="kill" if="process.isAlive" class="btn btn-default btn-xs" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
+           <if condition="!process.isAlive">
+             <button key="resurrect" class="btn btn-default btn-xs" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
+             <button key="remove" class="btn btn-default btn-xs" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
+           </if>
+         </a>
        </li>
       </ul>
     </div>

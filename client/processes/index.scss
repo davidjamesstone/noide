@@ -1,0 +1,96 @@
+#processes {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#processes .control {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+
+  form {
+    flex: auto;
+    max-width: 400px;
+    white-space: nowrap;
+  }
+
+  ul.nav {
+    flex: auto;
+    white-space: nowrap;
+    a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+
+#processes .processes {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+
+  .list {
+    width: 200px;
+    &:empty {
+      width: 0;
+    }
+    &:not(:empty) {
+      min-width: 100px;
+    }
+  }
+
+  .output {
+    flex: auto;
+  }
+}
+
+/*#processes .list form input {
+  height: 26px;
+  background-color: #484848;
+  border: solid 1px #989898;
+  padding: 0;
+  text-indent: 15px;
+  color: white;
+  width: 200px;
+}*/
+
+/*#processes .list form::before {
+  content: ">";
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  font-size: small;
+  color: #fff;
+  font-weight: bold;
+}*/
+
+/*#processes .list ul {
+  flex: auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+#processes .list li {
+  display: inline-block;
+}*/
+
+#processes .output {
+  flex: auto;
+}
+
+.circle::before {
+  content: "\25CF";
+}
+.circle.alive::before {
+  color: orange;
+}
+.circle.alive.active::before {
+  color: green;
+}
+.circle.dead::before {
+  color: red;
+}
