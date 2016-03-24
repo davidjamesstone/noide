@@ -13,7 +13,7 @@ function closeFile (file) {
 
   if (close) {
     // Remove from recent files
-    state.recent.items.splice(state.recent.items.indexOf(file), 1)
+    state.recent.remove(file)
 
     if (session) {
       // Remove session
@@ -36,13 +36,12 @@ function closeFile (file) {
 function Recent (el) {
   function onClickClose (file) {
     closeFile(file)
+    render()
   }
 
   function render () {
     patch(el, view, state.recent.items, state.current, onClickClose)
   }
-
-  state.on('change', render)
 
   this.render = render
 }

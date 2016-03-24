@@ -1,29 +1,58 @@
-var patch = require('incremental-dom').patch
+var patch = require('../patch')
 var view = require('./index.html')
-var Model = require('./model')
+var model = require('./model')
 var Task = require('./task')
 var Process = require('./process')
-var splitter = require('../splitter')
 var client = require('../client')
+var io = require('../io')
 var fs = require('../fs')
 var util = require('../util')
 
 function Processes (el) {
-  var editor
+  var editor, commandEl
+
+  /**
+   * Sets the isActive state on the process.
+   * Processes are activated when they receive some data.
+   * After a short delay, this is reset to inactive.
+   */
+  function setProcessActiveState (process, value) {
+    if (process.isActive !== value) {
+      var timeout = process._timeout
+      if (timeout) {
+        clearTimeout(timeout)
+      }
+
+      process.isActive = value
+      if (process.isActive) {
+        process._timeout = setTimeout(function () {
+          console.log('timeout')
+          setProcessActiveState(process, false)
+        }, 1500)
+      }
+      render()
+    }
+  }
 
   client.subscribe('/io', function (payload) {
-    var process = model.processes.find(function (item) {
-      return item.pid === payload.pid
-    })
+    var process = model.findProcessByPid(payload.pid)
 
     if (process) {
       var session = process.session
+
+      // Insert data chunk
       session.insert({
         row: session.getLength(),
         column: 0
       }, payload.data)
+
+      // Move to the end of the output
       session.getSelection().moveCursorFileEnd()
-      process.isActive = true
+
+      // Set the process active state to true
+      setProcessActiveState(process, true)
+
+      render()
     }
   }, function (err) {
     if (err) {
@@ -31,8 +60,97 @@ function Processes (el) {
     }
   })
 
-  function showOutput (process) {
-    editor.setSession(process.session)
+  var actions = {
+    run: function (command, name) {
+      io.run(command, name, function (err, payload) {
+        if (err) {
+          return util.handleError(err)
+        }
+      })
+    },
+    remove: function (process) {
+      if (model.remove(process)) {
+        render()
+      }
+    },
+    removeAllDead: function () {
+      var died = model.removeAllDead()
+      if (died.length) {
+        render()
+      }
+    },
+    resurrect: function (process) {
+      model.remove(process)
+      this.run(process.command, process.name)
+      render()
+    },
+    kill: function (process) {
+      client.request({
+        method: 'POST',
+        path: '/io/kill',
+        payload: {
+          pid: process.pid
+        }
+      }, function (err, payload) {
+        if (err) {
+          util.handleError(err)
+        }
+      })
+    },
+    setCommand: function (command) {
+      model.command = command
+      render()
+      commandEl.focus()
+    },
+    setCurrent: function (process) {
+      model.current = process
+      if (model.current) {
+        editor.setSession(model.current.session)
+      }
+      render()
+    }
+  }
+
+  function loadPids (procs) {
+    console.log('procs', procs)
+    var proc
+    var born = []
+
+    // Find any new processes
+    for (var i = 0; i < procs.length; i++) {
+      proc = procs[i]
+
+      var process = model.processes.find(function (item) {
+        return item.pid === proc.pid
+      })
+
+      if (!process) {
+        // New child process found. Add it
+        // and set it's cached buffer into session
+        process = new Process(proc)
+        process.session.setValue(proc.buffer)
+        born.push(process)
+      }
+    }
+
+    // Shut down processes that have died
+    model.processes.forEach(function (item) {
+      var match = procs.find(function (check) {
+        return item.pid === check.pid
+      })
+      if (!match) {
+        // item.pid = 0
+        item.isAlive = false
+        setProcessActiveState(item, false)
+      }
+    })
+
+    // Insert any new child processes
+    if (born.length) {
+      Array.prototype.push.apply(model.processes, born)
+      actions.setCurrent(born[0])
+    }
+    render()
   }
 
   client.subscribe('/io/pids', loadPids, function (err) {
@@ -49,47 +167,6 @@ function Processes (el) {
     }
     loadPids(payload)
   })
-
-  function loadPids (procs) {
-    console.log('procs', procs)
-    var proc
-    var born = []
-
-    // find any new processes
-    for (var i = 0; i < procs.length; i++) {
-      proc = procs[i]
-
-      var process = model.processes.find(function (item) {
-        return item.pid === proc.pid
-      })
-
-      if (!process) {
-        // new child process found. Add it
-        // and set it's cached buffer into session
-        process = new Process(proc)
-        process.session.setValue(proc.buffer)
-        born.push(process)
-      }
-    }
-
-    // shut down processes that have died
-    model.processes.forEach(function (item) {
-      var match = procs.find(function (check) {
-        return item.pid === check.pid
-      })
-      if (!match) {
-        // item.pid = 0
-        item.isAlive = false
-        item.isActive = false
-      }
-    })
-
-    // insert any new child processes
-    if (born.length) {
-      model.processes.splice.apply(model.processes, [0, 0].concat(born))
-      showOutput(born[0])
-    }
-  }
 
   function readTasks () {
     fs.readFile('package.json', function (err, payload) {
@@ -116,21 +193,19 @@ function Processes (el) {
           }))
         }
         model.tasks = tasks
+        render()
       }
     })
   }
 
   readTasks()
 
-  function update (model) {
-    view(model, showOutput)
-  }
-
   function render () {
-    patch(el, update, model)
+    patch(el, view, model, actions)
 
     if (!editor) {
       var outputEl = el.querySelector('.output')
+      commandEl = el.querySelector('input[name="command"]')
       editor = window.ace.edit(outputEl)
 
       editor.setTheme('ace/theme/terminal')
@@ -138,13 +213,9 @@ function Processes (el) {
       editor.renderer.setShowGutter(false)
       editor.setHighlightActiveLine(false)
       editor.setShowPrintMargin(false)
-      splitter(document.getElementById('list-output'), editor.resize.bind(editor))
+    // splitter(document.getElementById('list-output'), editor.resize.bind(editor))
     }
   }
-
-  var model = new Model()
-
-  model.on('change', render)
 
   this.model = model
   this.render = render

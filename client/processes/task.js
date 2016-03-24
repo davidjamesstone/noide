@@ -1,9 +1,6 @@
-var supermodels = require('supermodels.js')
-var prop = require('../prop')
-
-var schema = {
-  name: prop(String).required(),
-  command: prop(String).required()
+function Task (data) {
+  this.name = data.name
+  this.command = data.command
 }
 
-module.exports = supermodels(schema)
+module.exports = Task

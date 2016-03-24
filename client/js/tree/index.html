@@ -8,7 +8,7 @@
          </a>
        </if>
        <if condition="fso.isDirectory">
-         <a onclick="{onClick(fso)}">
+         <a xonclick="{onClick(fso)}" href="{'/file?path=' + fso.relativePath}">
            <small if="fso.expanded" class="expanded">▼</small>
            <small if="!fso.expanded" class="collapsed">▶</small>
            <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-directory"></span>

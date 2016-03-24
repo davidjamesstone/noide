@@ -35,14 +35,15 @@ function Tree (el, files, state) {
       file.expanded = !file.expanded
       render()
     }
+    return true
   }
 
   function render () {
     patch(el, view, makeTree(files), true, state.current, onClick)
   }
 
-  files.on('change', render)
-  state.on('change:current', render)
+  // files.on('change', render)
+  // state.on('change:current', render)
 
   this.render = render
 }

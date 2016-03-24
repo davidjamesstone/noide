@@ -6,7 +6,6 @@ module.exports = {
   method: 'PUT',
   path: '/writefile',
   config: {
-    id: 'writefile',
     handler: function (request, reply) {
       var path = request.payload.path
       var contents = request.payload.contents

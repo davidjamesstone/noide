@@ -8135,6 +8135,9 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 #recent ul li:hover .triangle-left {
   display: none; }
 
+#recent .list-group {
+  margin-bottom: 0; }
+
 #recent .close {
   cursor: pointer;
   visibility: hidden;
@@ -8168,11 +8171,15 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 #processes .control {
   display: flex;
   flex-direction: row;
-  height: 30px; }
+  height: 30px;
+  min-height: 30px; }
   #processes .control form {
     flex: auto;
-    max-width: 400px;
-    white-space: nowrap; }
+    width: 300px;
+    min-width: 400px;
+    max-width: 600px;
+    white-space: nowrap;
+    border-right: 30px solid #282828; }
   #processes .control ul.nav {
     flex: auto;
     white-space: nowrap; }
@@ -8184,14 +8191,6 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   flex: auto;
   display: flex;
   flex-direction: row; }
-  #processes .processes .list {
-    width: 200px; }
-    #processes .processes .list:empty {
-      width: 0; }
-    #processes .processes .list:not(:empty) {
-      min-width: 100px; }
-  #processes .processes .output {
-    flex: auto; }
 
 /*#processes .list form input {
   height: 26px;
@@ -8245,14 +8244,12 @@ html, body {
   margin: 0; }
 
 body {
-  color: #222;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 header {
-  display: none;
   height: 75px;
   min-height: 75px; }
 
@@ -8317,11 +8314,11 @@ aside {
   display: block; }
 
 #workspaces.editor #editor {
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  position: absolute; }
 
 .icon-bar {
   background-color: #fff;

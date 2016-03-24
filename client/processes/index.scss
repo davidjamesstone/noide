@@ -8,16 +8,28 @@
   display: flex;
   flex-direction: row;
   height: 30px;
+  min-height: 30px;
 
   form {
     flex: auto;
-    max-width: 400px;
+    width: 300px;
+    min-width: 400px;
+    max-width: 600px;
     white-space: nowrap;
+    border-right: 30px solid #282828;
   }
 
   ul.nav {
     flex: auto;
     white-space: nowrap;
+    // overflow-x: scroll;
+    // overflow-y: hidden;
+
+    > li {
+      // float: none;
+      // display: inline-block;
+    }
+
     a {
       padding-top: 5px;
       padding-bottom: 5px;
@@ -30,20 +42,6 @@
   flex: auto;
   display: flex;
   flex-direction: row;
-
-  .list {
-    width: 200px;
-    &:empty {
-      width: 0;
-    }
-    &:not(:empty) {
-      min-width: 100px;
-    }
-  }
-
-  .output {
-    flex: auto;
-  }
 }
 
 /*#processes .list form input {

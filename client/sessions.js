@@ -1,12 +1,10 @@
-var supermodels = require('supermodels.js')
 var config = require('../config/client')
 var modes = require('./modes')
-var Session = require('./session')
 var EditSession = window.ace.require('ace/edit_session').EditSession
 var UndoManager = window.ace.require('ace/undomanager').UndoManager
 
-var schema = {
-  items: [Session],
+var sessions = {
+  items: [],
   get dirty () {
     return this.items.filter(function (item) {
       return !item.isClean
@@ -25,19 +23,21 @@ var schema = {
     editSession.setUseSoftTabs(config.ace.useSoftTabs)
     editSession.setUndoManager(new UndoManager())
 
-    var session = new Session({
+    var session = {
       file: file,
-      editSession: editSession
-    })
+      editSession: editSession,
+      get isClean () {
+        return this.editSession.getUndoManager().isClean()
+      },
+      get isDirty () {
+        return !this.isClean
+      }
+    }
 
     this.items.push(session)
 
     return session
   }
 }
-
-var Sessions = supermodels(schema)
-
-var sessions = new Sessions()
 
 module.exports = sessions

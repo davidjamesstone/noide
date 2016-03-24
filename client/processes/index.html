@@ -1,42 +1,46 @@
-<template args="model showOutput">
+<template args="model actions">
   <div class="control">
-    <form onsubmit="{model.run(this.command.value)}">
+    <form onsubmit="{actions.run(this.command.value)}">
       <div class="input-group">
           <div class="input-group-btn dropup">
             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Task <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li each="task, task.name in model.tasks">
-                <a href="#" onclick="{model.command = 'npm run ' + task.name; jQuery('#command').focus()}">{task.name}</a>
-                <!-- <button onclick="{model.run('npm run ' + task.name, task.name)}">{task.name}</button> -->
+                <a href="#" onclick="{actions.setCommand('npm run ' + task.name)}">{task.name}</a>
               </li>
             </ul>
-          </div><!-- /btn-group -->
-          <input type="text" class="form-control input-sm" name="command" id="command" value="{model.command}" required autocomplete="off">
+          </div>
+          <input type="text" class="form-control input-sm" name="command"
+           value="{model.command}" required autocomplete="off" placeholder=">">
           <span class="input-group-btn">
-            <button class="btn btn-default btn-sm" type="submit">Run</button>
+            <button class="btn btn-default btn-sm" type="submit" title="Run command">Run</button>
+            <button if="model.dead.length" class="btn btn-success btn-sm" type="button" title="Remove dead processes" onclick="{actions.removeAllDead()}">Clear completed</button>
           </span>
-        </div><!-- /input-group -->
-      <!-- <button type="submit">Run</button>
-      <button if="model.dead.length" type="button" onclick="{model.removeAllDead()}">Clear</button> -->
+        </div>
     </form>
-    <ul class="nav nav-tabs">
-      <li each="process, process.pid in model.processes">
-        <a onclick="{showOutput(process)}">
+    <ul class="nav nav-tabs xnav-justified">
+      <li each="process, process.pid in model.processes" class="{process === model.current ? 'dropup active' : 'dropup'}">
+        <a onclick="{actions.setCurrent(process)}" class="dropdown-toggle" data-toggle="dropdown">
           <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
-          {process.name || process.command}<span>[{process.pid}]</span>
-          <button key="kill-tab" if="process.isAlive" class="btn btn-default btn-xs" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
-          <if condition="!process.isAlive">
-            <button key="resurrect-tab" class="btn btn-default btn-xs" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
-            <button key="remove-tab" class="btn btn-default btn-xs" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
-          </if>
+          {process.name || process.command}
+          <span class="caret"></span>
         </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Process [{process.pid}]</li>
+          <li role="separator" class="divider"></li>
+          <li><a key="kill-tab" if="process.isAlive" onclick="{actions.kill(process)}"><i class="fa fa-stop"> Stop</i></a></li>
+          <if condition="!process.isAlive">
+            <li><a key="resurrect-tab" onclick="{actions.resurrect(process)}"><i class="fa fa-refresh"></i> Resurrect</a></li>
+            <li><a key="remove-tab" onclick="{actions.remove(process)}"><i class="fa fa-close"> Close</i></a></li>
+          </if>
+        </ul>
       </li>
     </ul>
   </div>
-  <div class="processes">
-    <div class="list">
+  <div class="processes" style="{display: model.current ? '' : 'none'}">
+    <!-- <div class="list">
       <ul if="model.processes.length" class="nav nav-tabs">
-       <li each="process, process.pid in model.processes">
+       <li each="process, process.pid in model.processes" class="{ process === model.current ? 'active' : '' }">
          <a onclick="{showOutput(process)}">
            <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
            {process.name || process.command}<span>[{process.pid}]</span>
@@ -49,7 +53,7 @@
        </li>
       </ul>
     </div>
-    <placeholder key="list-output" id="list-output" class="splitter"></placeholder>
+    <placeholder key="list-output" id="list-output" class="splitter"></placeholder> -->
     <placeholder key="output" class="output"></placeholder>
     <!-- <script>
       IncrementalDOM.elementPlaceholder('div', 'list-output', ['id', 'list-output', 'class', 'splitter'])

@@ -2,15 +2,19 @@ var page = require('page')
 var qs = require('querystring')
 var fs = require('./fs')
 var state = require('./state')
+var client = require('./client')
 var sessions = require('./sessions')
-var Files = require('./files')
+var files = require('./files')
 var Tree = require('./tree')
+var Fso = require('./fso')
 var Recent = require('./recent')
 var Processes = require('./processes')
 var util = require('./util')
 var splitter = require('./splitter')
 var editor = require('./editor')
-var client = require('./client')
+var fileEditor = require('./file-editor')
+var linter = require('./standard')
+var watch = require('./watch')
 
 var processesEl = document.getElementById('processes')
 var recentEl = document.getElementById('recent')
@@ -34,49 +38,22 @@ client.connect(function (err) {
     }
 
     // Initialize the files
-    var files = new Files({
-      items: payload.watched
+    files.items = payload.watched.map(function (item) {
+      return new Fso(item)
     })
-
-    // Load the state from localStorage
-    state.load(files)
 
     // Subscribe to watched file changes
     // that happen on the file system
-    // Reload the session if the changes
-    // do not match the state of the file
-    client.subscribe('/change', function (payload) {
-      sessions.items.forEach(function (session) {
-        var file = session.file
-        if (payload.path === file.path) {
-          if (payload.stat.mtime !== file.stat.mtime) {
-            fs.readFile(file.path, function (err, payload) {
-              if (err) {
-                return util.handleError(err)
-              }
-              file.stat = payload.stat
-              session.editSession.setValue(payload.contents)
-            })
-          }
-        }
-      })
-    }, function (err) {
-      if (err) {
-        return util.handleError(err)
-      }
-    })
+    watch(files)
+
+    // Load the state from localStorage
+    state.load(files)
 
     // Save state on page unload
     window.onunload = function () {
       console.log('log')
       state.save(files)
     }
-
-    // Create a new noide instance
-    // var noide = new Noide({
-    //   state: state,
-    //   files: files
-    // })
 
     // Build the tree pane
     var treeView = new Tree(treeEl, files, state)
@@ -90,6 +67,7 @@ client.connect(function (err) {
     var processesView = new Processes(processesEl)
     processesView.render()
 
+    /* Initialize the splitters */
     function resizeEditor () {
       editor.resize()
       processesView.editor.resize()
@@ -99,13 +77,16 @@ client.connect(function (err) {
     splitter(document.getElementById('workspaces-info'), resizeEditor)
     splitter(document.getElementById('main-footer'), resizeEditor)
 
+    /* Initialize the linter */
+    linter()
+
     page('/', function (ctx) {
       workspacesEl.className = 'welcome'
     })
 
     page('/file', function (ctx, next) {
-      var path = qs.parse(ctx.querystring).path
-      var file = files.find(path)
+      var relativePath = qs.parse(ctx.querystring).path
+      var file = files.findByPath(relativePath)
 
       if (!file) {
         return next()
@@ -119,20 +100,22 @@ client.connect(function (err) {
         // Update state
         state.current = file
 
-        var items = state.recent.items
-        if (items.indexOf(file) < 0) {
-          items.unshift(file)
+        var recent = state.recent
+        if (!recent.find(file)) {
+          recent.items.unshift(file)
         }
 
         // Set the editor session
         editor.setSession(session.editSession)
         editor.resize()
+
+        recentView.render()
       }
 
       if (session) {
         setSession()
       } else {
-        fs.readFile(path, function (err, payload) {
+        fs.readFile(relativePath, function (err, payload) {
           if (err) {
             return util.handleError(err)
           }
@@ -150,5 +133,8 @@ client.connect(function (err) {
     page({
       hashbang: true
     })
+
+    window.files = files
+    window.fileEditor = fileEditor
   })
 })

@@ -1,0 +1,26 @@
+<template name="fileMenu" args="model">
+  <script>
+    var file = model.file
+  </script>
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">{file.name}</li>
+    <li><a onclick="{model.rename(file.active)}"><i class="fa fa-pencil"></i>&nbsp;Rename</a>
+    </li>
+    <li class="divider"></li>
+    <li><a onclick="{model.setPasteBuffer(file, 'cut')}"><i class="fa fa-scissors"></i>&nbsp;Cut</a>
+    </li>
+    <li><a onclick="{model.setPasteBuffer(file, 'copy')}"><i class="fa fa-copy"></i>&nbsp;Copy</a>
+    </li>
+    <li if="model.showPaste(file)">
+      <a onclick="{model.paste(file)}"><i class="fa fa-paste"></i>&nbsp;Paste</a>
+    </li>
+    <li class="divider"></li>
+    <li><a onclick="{model.mkfile(finder.active)}"><i class="fa fa-file"></i>&nbsp;Add new file</a>
+    </li>
+    <li><a ng-click="{model.mkdir(finder.active)}"><i class="fa fa-folder"></i>&nbsp;Add new folder</a>
+    </li>
+    <li class="divider"></li>
+    <li><a ng-click="{model.delete(finder.active)}"><i class="fa fa-trash"></i>&nbsp;Delete</a>
+    </li>
+  </ul>
+</template>

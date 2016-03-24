@@ -10,7 +10,6 @@ $component-active-bg:       #484848 !default;
 @import 'recent/index.scss';
 @import 'processes/index.scss';
 
-
 html, body {
   background-color: black;
 	height: 100%;
@@ -20,7 +19,6 @@ html, body {
 }
 
 body {
-  color: #222;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -28,7 +26,7 @@ body {
 }
 
 header {
-  display: none;
+  // display: none;
 	height: 75px;
 	min-height: 75px;
 }
@@ -71,6 +69,7 @@ aside {
   background-color: #292929;
 	cursor: col-resize;
 }
+
 .splitter.horizontal {
 	border-width: 1px 0;
 	height: 4px;
@@ -105,19 +104,12 @@ aside {
 }
 
 #workspaces.editor #editor {
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  position: absolute;
 }
-
-
-
-
-
-
-
 
 .icon-bar {
   background-color: #fff;
