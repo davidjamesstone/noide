@@ -7,11 +7,6 @@ function File (data) {
   }
 }
 Object.defineProperties(File.prototype, {
-  id: {
-    get: function () {
-      return this.relativePath
-    }
-  },
   isFile: {
     get: function () {
       return !this.isDirectory

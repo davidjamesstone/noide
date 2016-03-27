@@ -1,6 +1,7 @@
 var page = require('page')
 var patch = require('../patch')
 var state = require('../state')
+// var files = require('../files')
 var view = require('./index.html')
 var sessions = require('../sessions')
 
@@ -17,13 +18,16 @@ function closeFile (file) {
 
     if (session) {
       // Remove session
-      sessions.items.splice(sessions.items.indexOf(session), 1)
+      sessions.remove(session)
 
+      // If it's the current file getting closed,
+      // navigate back to the previous session/file
       if (state.current === file) {
         if (sessions.items.length) {
           // Open the first session
           page('/file?path=' + sessions.items[0].file.relativePath)
         } else if (state.recent.items.length) {
+          // Open the first recent file
           page('/file?path=' + state.recent.items[0].relativePath)
         } else {
           page('/')
@@ -43,7 +47,14 @@ function Recent (el) {
     patch(el, view, state.recent.items, state.current, onClickClose)
   }
 
+  // files.on('change', render)
   this.render = render
+
+  render()
 }
 
-module.exports = Recent
+var recentEl = document.getElementById('recent')
+
+var recentView = new Recent(recentEl)
+
+module.exports = recentView

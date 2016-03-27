@@ -5,6 +5,9 @@ var state = require('./state')
 var client = require('./client')
 var sessions = require('./sessions')
 var files = require('./files')
+var Tree = require('./tree')
+var Recent = require('./recent')
+var Processes = require('./processes')
 var util = require('./util')
 var splitter = require('./splitter')
 var editor = require('./editor')
@@ -12,6 +15,9 @@ var fileEditor = require('./file-editor')
 var linter = require('./standard')
 var watch = require('./watch')
 
+var processesEl = document.getElementById('processes')
+var recentEl = document.getElementById('recent')
+var treeEl = document.getElementById('tree')
 var workspacesEl = document.getElementById('workspaces')
 
 window.onbeforeunload = function () {
@@ -31,7 +37,9 @@ client.connect(function (err) {
     }
 
     // Initialize the files
-    payload.watched.forEach(files.add, files)
+    payload.watched.forEach(function (item) {
+      files.add(item)
+    })
 
     // Load the state from localStorage
     state.load(files)
@@ -43,17 +51,20 @@ client.connect(function (err) {
     }
 
     // Build the tree pane
-    var treeView = require('./tree')
+    var treeView = new Tree(treeEl, files, state)
+    treeView.render()
 
     // Build the recent list pane
-    var recentView = require('./recent')
+    var recentView = new Recent(recentEl, state)
+    recentView.render()
 
     // Build the procsses pane
-    var processesView = require('./processes')
+    var processesView = new Processes(processesEl)
+    processesView.render()
 
     // Subscribe to watched file changes
     // that happen on the file system
-    watch(files)
+    watch(files, treeView, recentView)
 
     /* Initialize the splitters */
     function resizeEditor () {
@@ -68,7 +79,7 @@ client.connect(function (err) {
     /* Initialize the linter */
     linter()
 
-    function setWorkspace (className) {
+    function setWorkspaceClassName (className) {
       workspacesEl.className = className || 'welcome'
     }
 
@@ -79,7 +90,7 @@ client.connect(function (err) {
     })
 
     page('/', function (ctx) {
-      setWorkspace()
+      setWorkspaceClassName()
     })
 
     page('/file', function (ctx, next) {
@@ -93,22 +104,21 @@ client.connect(function (err) {
       var session = sessions.find(file)
 
       function setSession () {
-        setWorkspace('editor')
+        setWorkspaceClassName('editor')
 
         // Update state
         state.current = file
 
         var recent = state.recent
         if (!recent.find(file)) {
-          recent.add(file)
+          recent.items.unshift(file)
         }
-
-        treeView.render()
-        recentView.render()
 
         // Set the editor session
         editor.setSession(session.editSession)
         editor.resize()
+
+        recentView.render()
       }
 
       if (session) {
@@ -126,11 +136,24 @@ client.connect(function (err) {
     })
 
     page('*', function (ctx) {
-      setWorkspace('not-found')
+      setWorkspaceClassName('not-found')
     })
 
     page({
       hashbang: true
+    })
+
+    var Files = require('./js/fsos')
+    var f = new Files({
+      items: payload.watched
+    })
+
+    window.f = f
+    f.on('change', function () {
+      console.log(arguments)
+    })
+    f.items.on('change', function () {
+      console.log(arguments)
     })
 
     window.files = files

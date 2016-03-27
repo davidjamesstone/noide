@@ -9,6 +9,7 @@ $component-active-bg:       #484848 !default;
 @import 'tree/index.scss';
 @import 'recent/index.scss';
 @import 'processes/index.scss';
+@import 'file-menu/index.scss';
 
 html, body {
   background-color: black;
@@ -116,4 +117,14 @@ aside {
   height: 4px;
   display: block;
   margin-bottom: 2px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
 }

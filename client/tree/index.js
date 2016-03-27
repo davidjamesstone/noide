@@ -1,5 +1,8 @@
 var patch = require('../patch')
 var view = require('./view.html')
+var fileMenu = require('../file-menu')
+var state = require('../state')
+var files = require('../files')
 
 function makeTree (files) {
   function treeify (list, idAttr, parentAttr, childrenAttr) {
@@ -29,23 +32,32 @@ function makeTree (files) {
   return treeify(files.items, 'path', 'dir', 'children')
 }
 
-function Tree (el, files, state) {
+function Tree (el) {
   function onClick (file) {
     if (file.isDirectory) {
       file.expanded = !file.expanded
       render()
     }
-    return true
+    return false
+  }
+
+  function showMenu (e, file) {
+    e.stopPropagation()
+    fileMenu.show(e.pageX + 'px', e.pageY + 'px', file)
   }
 
   function render () {
-    patch(el, view, makeTree(files), true, state.current, onClick)
+    patch(el, view, makeTree(files), true, state.current, showMenu, onClick)
   }
 
   // files.on('change', render)
-  // state.on('change:current', render)
-
   this.render = render
+
+  render()
 }
 
-module.exports = Tree
+var treeEl = document.getElementById('tree')
+
+var treeView = new Tree(treeEl)
+
+module.exports = treeView

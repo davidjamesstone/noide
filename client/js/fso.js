@@ -11,8 +11,7 @@ var schema = {
   stat: Object,
   get isFile () {
     return !this.isDirectory
-  },
-  expanded: Boolean
+  }
 }
 
 module.exports = supermodels(schema)

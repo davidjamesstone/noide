@@ -15,6 +15,12 @@ var sessions = {
       return item.file === file
     })
   },
+  remove: function (session) {
+    var idx = this.items.indexOf(session)
+    if (idx > -1) {
+      this.items.splice(idx, 1)
+    }
+  },
   add: function (file, contents) {
     var editSession = new EditSession(contents, modes(file))
     editSession.setMode(modes(file))

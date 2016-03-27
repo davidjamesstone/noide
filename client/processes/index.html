@@ -1,3 +1,4 @@
+
 <template args="model actions">
   <div class="control">
     <form onsubmit="{actions.run(this.command.value)}">
@@ -28,10 +29,10 @@
         <ul class="dropdown-menu">
           <li class="dropdown-header">Process [{process.pid}]</li>
           <li role="separator" class="divider"></li>
-          <li><a key="kill-tab" if="process.isAlive" onclick="{actions.kill(process)}"><i class="fa fa-stop"> Stop</i></a></li>
+          <li><a key="kill-tab" if="process.isAlive" onclick="{actions.kill(process)}"><i class="fa fa-stop"></i> Stop</a></li>
           <if condition="!process.isAlive">
             <li><a key="resurrect-tab" onclick="{actions.resurrect(process)}"><i class="fa fa-refresh"></i> Resurrect</a></li>
-            <li><a key="remove-tab" onclick="{actions.remove(process)}"><i class="fa fa-close"> Close</i></a></li>
+            <li><a key="remove-tab" onclick="{actions.remove(process)}"><i class="fa fa-close"></i> Close</a></li>
           </if>
         </ul>
       </li>

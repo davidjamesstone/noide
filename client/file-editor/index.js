@@ -12,6 +12,8 @@ function FileEditor (el) {
     model.file = file
     model.mode = mode
     patch(el, view, model)
+    var input = el.querySelector('input')
+    input.select()
   }
 
   this.show = show
@@ -20,6 +22,7 @@ FileEditor.prototype.rename = function (file) {
   this.show(file, 'rename')
 }
 
-var fileEditor = new FileEditor(document.getElementById('file-editor'))
+var fileEditorEl = document.getElementById('file-editor')
+var fileEditor = new FileEditor(fileEditorEl)
 
 module.exports = fileEditor

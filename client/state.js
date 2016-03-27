@@ -19,23 +19,23 @@ function loadState (files) {
   var storage = window.localStorage.getItem(storageKey)
   storage = storage ? JSON.parse(storage) : {}
 
-  var dir, file, i
+  var file, i
   this.recent = new Fsos()
 
   if (storage.recent) {
     for (i = 0; i < storage.recent.length; i++) {
       file = files.findByPath(storage.recent[i])
       if (file) {
-        this.recent.items.push(file)
+        this.recent.add(file)
       }
     }
   }
 
   if (storage.expanded) {
     for (i = 0; i < storage.expanded.length; i++) {
-      dir = files.findByPath(storage.expanded[i])
-      if (dir) {
-        dir.expanded = true
+      file = files.findByPath(storage.expanded[i])
+      if (file && file.isDirectory) {
+        file.expanded = true
       }
     }
   }

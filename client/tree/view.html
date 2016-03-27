@@ -1,6 +1,6 @@
-<template name="tree" args="data isRoot current onClick">
-  <ul class="{isRoot ? 'tree' : ''}">
-    <li each="fso, fso.path in data" class="{fso.isDirectory ? 'dir' : 'file' + (fso === current ? ' selected' : '')}">
+<template name="tree" args="data isRoot current showMenu onClick">
+  <ul class="{isRoot ? 'tree noselect' : 'noselect'}">
+    <li each="fso, fso.path in data" oncontextmenu="{showMenu($event, fso)}" class="{fso.isDirectory ? 'dir' : 'file' + (fso === current ? ' selected' : '')}">
       <if condition="fso.isFile">
         <a href="/file?path={fso.relativePath}">
           <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-text"></span>
@@ -42,7 +42,7 @@
           //   onClick: data.onClick
           // }
 
-          tree(fso.children, false, current, onClick)
+          tree(fso.children, false, current, showMenu, onClick)
         </script>
       </if>
     </li>

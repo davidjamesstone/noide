@@ -229,4 +229,10 @@ function Processes (el) {
   })
 }
 
-module.exports = Processes
+var processesEl = document.getElementById('processes')
+
+var processesView = new Processes(processesEl)
+
+processesView.render()
+
+module.exports = processesView

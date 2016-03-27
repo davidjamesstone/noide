@@ -8076,7 +8076,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     padding-left: 16px; }
 
 .tree li a {
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 .tree li .expanded,
 .tree li .collapsed {
@@ -8176,8 +8177,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   #processes .control form {
     flex: auto;
     width: 300px;
-    min-width: 400px;
-    max-width: 600px;
+    min-width: 280px;
+    max-width: 500px;
     white-space: nowrap;
     border-right: 30px solid #282828; }
   #processes .control ul.nav {
@@ -8235,6 +8236,12 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 
 .circle.dead::before {
   color: red; }
+
+#file-menu {
+  position: absolute; }
+  #file-menu ul.dropdown-menu {
+    display: block;
+    font-size: small; }
 
 html, body {
   background-color: black;
@@ -8325,3 +8332,18 @@ aside {
   height: 4px;
   display: block;
   margin-bottom: 2px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* non-prefixed version, currently
+                                  not supported by any browser */ }
