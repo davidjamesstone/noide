@@ -38,7 +38,6 @@ client.connect(function (err) {
 
     // Save state on page unload
     window.onunload = function () {
-      console.log('log')
       state.save(files)
     }
 
@@ -53,7 +52,7 @@ client.connect(function (err) {
 
     // Subscribe to watched file changes
     // that happen on the file system
-    watch(files)
+    watch(treeView, recentView)
 
     /* Initialize the splitters */
     function resizeEditor () {

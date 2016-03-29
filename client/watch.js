@@ -2,8 +2,10 @@ var fs = require('./fs')
 var client = require('./client')
 var util = require('./util')
 var sessions = require('./sessions')
+var files = require('./files')
+var state = require('./state')
 
-function watch (files, treeView, recentView) {
+function watch (treeView, recentView) {
   function handleError (err) {
     if (err) {
       return util.handleError(err)
@@ -32,28 +34,28 @@ function watch (files, treeView, recentView) {
   }, handleError)
 
   client.subscribe('/fs/add', function (payload) {
-    console.log(payload)
     files.add(payload)
     treeView.render()
   }, handleError)
 
   client.subscribe('/fs/addDir', function (payload) {
-    console.log(payload)
     files.add(payload)
     treeView.render()
   }, handleError)
 
   client.subscribe('/fs/unlink', function (payload) {
-    console.log(payload)
     var file = files.findByPath(payload.relativePath)
     if (file) {
       files.remove(file)
       treeView.render()
+      if (state.recent.find(file)) {
+        state.recent.remove(file)
+        recentView.closeFile(file)
+      }
     }
   }, handleError)
 
   client.subscribe('/fs/unlinkDir', function (payload) {
-    console.log(payload)
     var file = files.findByPath(payload.relativePath)
     if (file) {
       files.remove(file)

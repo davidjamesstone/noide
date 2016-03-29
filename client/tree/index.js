@@ -50,7 +50,6 @@ function Tree (el) {
     patch(el, view, makeTree(files), true, state.current, showMenu, onClick)
   }
 
-  // files.on('change', render)
   this.render = render
 
   render()

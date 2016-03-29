@@ -1,7 +1,6 @@
 var page = require('page')
 var patch = require('../patch')
 var state = require('../state')
-// var files = require('../files')
 var view = require('./index.html')
 var sessions = require('../sessions')
 
@@ -47,9 +46,8 @@ function Recent (el) {
     patch(el, view, state.recent.items, state.current, onClickClose)
   }
 
-  // files.on('change', render)
   this.render = render
-
+  this.closeFile = closeFile
   render()
 }
 
