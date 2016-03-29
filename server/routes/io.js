@@ -46,7 +46,7 @@ module.exports = [{
       })
 
       if (!pid) {
-        return reply({ message: `Failed to start child process \'${command}\'` }).code(500)
+        return reply(Boom.badRequest(`Failed to start child process \'${command}\'`))
       }
 
       const socket = request.socket

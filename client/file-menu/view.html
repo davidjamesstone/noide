@@ -3,24 +3,24 @@
     var file = model.file
   </script>
   <ul if="file" class="dropdown-menu" style="{ top: model.y, left: model.x }">
-    <li class="dropdown-header">{file.name}</li>
-    <li><a onclick="{model.rename(file)}"><i class="fa fa-pencil"></i> Rename</a>
+    <li key="header" class="dropdown-header">{file.name}</li>
+    <li key="rename"><a onclick="{model.rename(file)}"><i class="fa fa-pencil"></i> Rename</a>
     </li>
-    <li class="divider"></li>
-    <li><a onclick="{model.setPasteBuffer(file, 'cut')}"><i class="fa fa-scissors"></i> Cut</a>
+    <li key="divider-1" class="divider"></li>
+    <li key="cut"><a onclick="{model.setPasteBuffer(file, 'cut')}"><i class="fa fa-scissors"></i> Cut</a>
     </li>
-    <li><a onclick="{model.setPasteBuffer(file, 'copy')}"><i class="fa fa-copy"></i> Copy</a>
+    <li key="copy"><a onclick="{model.setPasteBuffer(file, 'copy')}"><i class="fa fa-copy"></i> Copy</a>
     </li>
-    <li if="model.showPaste(file)">
+    <li if="model.showPaste(file)" key="paste">
       <a onclick="{model.paste(file)}"><i class="fa fa-paste"></i> Paste</a>
     </li>
-    <li class="divider"></li>
-    <li><a onclick="{model.mkfile(file)}"><i class="fa fa-file"></i> Add new file</a>
+    <li key="divider-2" class="divider"></li>
+    <li key="mkfile"><a onclick="{model.mkfile(file)}"><i class="fa fa-file"></i> Add new file</a>
     </li>
-    <li><a onclick="{model.mkdir(file)}"><i class="fa fa-folder"></i> Add new folder</a>
+    <li key="mkdir"><a onclick="{model.mkdir(file)}"><i class="fa fa-folder"></i> Add new folder</a>
     </li>
-    <li class="divider"></li>
-    <li><a onclick="{model.remove(file)}"><i class="fa fa-trash"></i> Delete</a>
+    <li key="divider-3" class="divider"></li>
+    <li key="delete"><a onclick="{model.remove(file)}"><i class="fa fa-trash"></i> Delete</a>
     </li>
   </ul>
 </template>

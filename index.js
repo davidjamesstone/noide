@@ -65,7 +65,7 @@ Glupe.compose(__dirname, config, function (err, server) {
   }
 
   server.ext('onPostHandler', onPostHandler)
-  server.ext('onPreResponse', preResponse)
+  // server.ext('onPreResponse', preResponse)
 
   server.start(function () {
     if (err) {

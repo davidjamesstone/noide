@@ -2,7 +2,33 @@
   <script>
     var file = model.file
   </script>
-  <form onsubmit="{model.rename(file.relativePath, this.rename.value)}">
+  <form if="model.mode === 'mkfile'" key="mkfile" onsubmit="{model.mkfile(this.filename.value)}">
+    <div class="form-group">
+      <label for="name">Add new file</label>
+      <div class="input-group">
+         <input type="text" class="form-control input-sm" id="filename" value="{file.relativePath + '/'}">
+         <span class="input-group-btn">
+           <button class="btn btn-primary btn-sm" type="submit">OK</button>
+           <button class="btn btn-secondary btn-sm" type="button">Cancel</button>
+         </span>
+       </div>
+    </div>
+    <span class="help-block">Help here...</span>
+  </form>
+  <form if="model.mode === 'mkdir'" key="mkdir" onsubmit="{model.mkdir(this.dirname.value)}">
+    <div class="form-group">
+      <label for="name">Add new folder</label>
+      <div class="input-group">
+         <input type="text" class="form-control input-sm" id="dirname" value="{file.relativePath + '/'}">
+         <span class="input-group-btn">
+           <button class="btn btn-primary btn-sm" type="submit">OK</button>
+           <button class="btn btn-secondary btn-sm" type="button">Cancel</button>
+         </span>
+       </div>
+    </div>
+    <span class="help-block">Help here...</span>
+  </form>
+  <form if="model.mode === 'rename'" key="rename" onsubmit="{model.rename(file.relativePath, this.rename.value)}">
     <div class="form-group">
       <label for="name">Rename</label>
       <div class="input-group">

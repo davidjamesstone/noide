@@ -13,6 +13,12 @@ function FileMenu (el) {
     hide()
   })
 
+  function callback (err, payload) {
+    if (err) {
+      return util.handleError(err)
+    }
+  }
+
   function resetPasteBuffer () {
     copied = null
   }
@@ -27,9 +33,9 @@ function FileMenu (el) {
 
   function showPaste (file) {
     if (copied) {
-      var sourcePath = copied.file.path.toLowerCase()
-      var sourceDir = copied.file.dir.toLowerCase()
-      var destinationDir = (file.isDirectory ? file.path : file.dir).toLowerCase()
+      var sourcePath = copied.file.relativePath.toLowerCase()
+      var sourceDir = copied.file.relativeDir.toLowerCase()
+      var destinationDir = (file.isDirectory ? file.relativePath : file.relativeDir).toLowerCase()
       var isDirectory = copied.file.isDirectory
 
       if (!isDirectory) {
@@ -47,18 +53,13 @@ function FileMenu (el) {
   }
 
   function rename (file) {
-    resetPasteBuffer()
     hide()
+    resetPasteBuffer()
     fileEditor.rename(file)
   }
 
   function paste (file) {
     hide()
-    function callback (err, payload) {
-      if (err) {
-        return util.handleError(err)
-      }
-    }
     if (copied && copied.file) {
       var action = copied.action
       var source = copied.file
@@ -75,21 +76,24 @@ function FileMenu (el) {
   }
 
   function mkfile (file) {
-    fileEditor.mkfile(file)
     hide()
     resetPasteBuffer()
+    fileEditor.mkfile(file)
   }
 
   function mkdir (file) {
-    fileEditor.rename(file)
     hide()
     resetPasteBuffer()
+    fileEditor.mkdir(file.isDirectory ? file : file.parent)
   }
 
   function remove (file) {
-    fileEditor.rename(file)
-    hide()
-    resetPasteBuffer()
+    var path = file.relativePath
+    if (window.confirm('Delete [' + path + ']')) {
+      hide()
+      resetPasteBuffer()
+      fs.remove(path, callback)
+    }
   }
 
   var model = {
