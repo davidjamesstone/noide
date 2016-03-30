@@ -60,9 +60,9 @@ client.connect(function (err) {
       processesView.editor.resize()
     }
 
-    splitter(document.getElementById('sidebar-workspaces'), resizeEditor)
-    splitter(document.getElementById('workspaces-info'), resizeEditor)
-    splitter(document.getElementById('main-footer'), resizeEditor)
+    splitter(document.getElementById('sidebar-workspaces'), false, resizeEditor)
+    splitter(document.getElementById('workspaces-info'), true, resizeEditor)
+    splitter(document.getElementById('main-footer'), true, resizeEditor)
 
     /* Initialize the linter */
     linter()

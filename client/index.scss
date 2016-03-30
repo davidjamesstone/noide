@@ -67,19 +67,40 @@ aside {
 .splitter {
 	border: solid #383737;
 	border-width: 0 1px;
-	width: 4px;
-	min-width: 4px;
+	width: 6px;
+	// min-width: 6px;
   background-color: #292929;
 	cursor: col-resize;
+  position: relative;
+
+  .toggle {
+    background-color: #888;
+    width: 5px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    cursor: pointer;
+    margin: -30px 0 0;
+  }
 }
 
 .splitter.horizontal {
 	border-width: 1px 0;
-	height: 4px;
-	min-height: 4px;
+	height: 6px;
+	// min-height: 6px;
 	width: auto;
 	min-width: auto;
 	cursor: row-resize;
+
+  .toggle {
+    height: 5px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -30px;
+  }
 }
 
 #sidebar {
@@ -88,7 +109,7 @@ aside {
 }
 
 #sidebar a {
-  color: #fff;
+  color: #888;
 }
 
 #workspaces {

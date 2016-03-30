@@ -78,7 +78,7 @@ function FileMenu (el) {
   function mkfile (file) {
     hide()
     resetPasteBuffer()
-    fileEditor.mkfile(file)
+    fileEditor.mkfile(file.isDirectory ? file : file.parent)
   }
 
   function mkdir (file) {

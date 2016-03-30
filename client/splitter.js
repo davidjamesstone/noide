@@ -1,11 +1,15 @@
 var w = window
 var d = document
 
-function splitter (handle, onEndCallback) {
+function splitter (handle, collapseNextElement, onEndCallback) {
   var last
   var horizontal = handle.classList.contains('horizontal')
   var el1 = handle.previousElementSibling
   var el2 = handle.nextElementSibling
+  var collapse = collapseNextElement ? el2 : el1
+  var toggle = document.createElement('a')
+  toggle.classList.add('toggle')
+  handle.appendChild(toggle)
 
   function onDrag (e) {
     if (horizontal) {
@@ -48,11 +52,24 @@ function splitter (handle, onEndCallback) {
   handle.addEventListener('mousedown', function (e) {
     e.preventDefault()
 
-    last = horizontal ? e.clientY : e.clientX
+    if (e.target === toggle) {
+      collapse.style.display = collapse.style.display === 'none' ? 'block' : 'none'
+    } else if (collapse.style.display !== 'none') {
+      last = horizontal ? e.clientY : e.clientX
 
-    w.addEventListener('mousemove', onDrag)
-    w.addEventListener('mouseup', onEndDrag)
+      w.addEventListener('mousemove', onDrag)
+      w.addEventListener('mouseup', onEndDrag)
+    }
   })
+  // handle.addEventListener('click', function (e) {
+  //   e.preventDefault()
+  //   e.stop
+  //
+  //   last = horizontal ? e.clientY : e.clientX
+  //
+  //   w.addEventListener('mousemove', onDrag)
+  //   w.addEventListener('mouseup', onEndDrag)
+  // })
 }
 
 module.exports = splitter

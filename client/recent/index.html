@@ -1,4 +1,4 @@
-<template name="recent" args="files current onClickClose">
+<template name="recent" args="files current onClickClose isDirty">
   <!-- <if condition="!files.length">
     <div key="no-recent" class="alert alert-info">
       No recent files
@@ -7,13 +7,15 @@
    <div style="{display: files.length ? '' : 'none'}" class="list-group">
     <a each="file, file.relativePath in files"
       title="{file.relativePath}"
-      href="{'/file?path=' + file.relativePath}"
+      href="/file?path={file.relativePath}"
       class="{'list-group-item' + (file === current ? ' active' : '')}">
       <span class="close" onclick="{onClickClose(file)}">×</span>
       <span
         data-name="{file.name}"
         data-path="{file.relativePath}"
-        class="name icon icon-file-text">{file.name}</span>
+        class="name icon icon-file-text"></span>
+      <small class="file-name">{file.name}</small>
+      <span if="isDirty(file)">*</span>
       <if condition="false">
         <p class="list-group-item-text">{'./' + (file.relativePath !== file.name ? file.relativeDir : '')}</p>
       </if>

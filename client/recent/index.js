@@ -42,8 +42,13 @@ function Recent (el) {
     render()
   }
 
+  function isDirty (file) {
+    var session = sessions.find(file)
+    return session && session.isDirty
+  }
+
   function render () {
-    patch(el, view, state.recent.items, state.current, onClickClose)
+    patch(el, view, state.recent.items, state.current, onClickClose, isDirty)
   }
 
   this.render = render

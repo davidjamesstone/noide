@@ -8071,6 +8071,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   margin: 0;
   padding: 2px 0 2px 12px;
   position: relative;
+  font-size: 12px;
   white-space: nowrap; }
   .tree li.file {
     padding-left: 16px; }
@@ -8133,9 +8134,6 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   content: "\25C0";
   color: #666; }
 
-#recent ul li:hover .triangle-left {
-  display: none; }
-
 #recent .list-group {
   margin-bottom: 0; }
 
@@ -8143,7 +8141,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   cursor: pointer;
   visibility: hidden;
   font-weight: normal;
-  font-size: 10px;
+  font-size: 11px;
   position: absolute;
   right: 5px;
   z-index: 1; }
@@ -8152,14 +8150,13 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   visibility: visible; }
 
 #recent .list-group-item {
-  padding: 2px 4px; }
+  padding: 8px 8px; }
 
-#recent .name.icon:before {
-  left: 0;
-  top: 5px; }
+#recent .name.icon {
+  top: 2px;
+  position: absolute; }
 
-#recent span.name {
-  font-size: small;
+#recent .file-name {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
@@ -8185,6 +8182,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     flex: auto;
     white-space: nowrap; }
     #processes .control ul.nav a {
+      cursor: pointer;
       padding-top: 5px;
       padding-bottom: 5px; }
 
@@ -8305,25 +8303,40 @@ aside {
 .splitter {
   border: solid #383737;
   border-width: 0 1px;
-  width: 4px;
-  min-width: 4px;
+  width: 6px;
   background-color: #292929;
-  cursor: col-resize; }
+  cursor: col-resize;
+  position: relative; }
+  .splitter .toggle {
+    background-color: #888;
+    width: 5px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    cursor: pointer;
+    margin: -30px 0 0; }
 
 .splitter.horizontal {
   border-width: 1px 0;
-  height: 4px;
-  min-height: 4px;
+  height: 6px;
   width: auto;
   min-width: auto;
   cursor: row-resize; }
+  .splitter.horizontal .toggle {
+    height: 5px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -30px; }
 
 #sidebar {
   background-color: #232222;
   overflow: auto; }
 
 #sidebar a {
-  color: #fff; }
+  color: #888; }
 
 #workspaces {
   display: flex; }
