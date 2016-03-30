@@ -8097,7 +8097,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   top: 2px; }
 
 .tree .name.icon.icon-file-directory:before {
-  color: #3D9276;
+  color: #fff;
   content: '\e613';
   display: inline-block;
   font-family: 'icomoon';
@@ -8242,6 +8242,24 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   #file-menu ul.dropdown-menu {
     display: block;
     font-size: small; }
+    #file-menu ul.dropdown-menu li a {
+      cursor: pointer; }
+
+#file-editor .file-editor {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); }
+  #file-editor .file-editor form {
+    margin: 0 auto;
+    max-width: 550px;
+    background-color: #353535;
+    padding: 15px 20px; }
 
 html, body {
   background-color: black;
@@ -8257,8 +8275,7 @@ body {
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 header {
-  height: 75px;
-  min-height: 75px; }
+  height: 0; }
 
 footer {
   height: 150px;

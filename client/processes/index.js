@@ -7,6 +7,7 @@ var client = require('../client')
 var io = require('../io')
 var fs = require('../fs')
 var util = require('../util')
+var config = require('../../config/client')
 
 function Processes (el) {
   var editor, commandEl
@@ -208,8 +209,10 @@ function Processes (el) {
       commandEl = el.querySelector('input[name="command"]')
       editor = window.ace.edit(outputEl)
 
+      // Set editor options
       editor.setTheme('ace/theme/terminal')
       editor.setReadOnly(true)
+      editor.setFontSize(config.ace.fontSize)
       editor.renderer.setShowGutter(false)
       editor.setHighlightActiveLine(false)
       editor.setShowPrintMargin(false)

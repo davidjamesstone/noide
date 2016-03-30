@@ -1,7 +1,7 @@
 module.exports = {
   ace: {
     tabSize: 2,
-    fontSize: 12,
+    fontSize: 14,
     theme: 'monokai',
     useSoftTabs: true
   }

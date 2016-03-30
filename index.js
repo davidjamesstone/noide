@@ -1,6 +1,7 @@
 const Glupe = require('glupe')
 const config = require('./config')
-const sock = require('./server/sockets/file-system-watcher')
+const sock = require('./server/file-system-watcher')
+const appName = require('./package.json').name
 
 Glupe.compose(__dirname, config, function (err, server) {
   if (err) {
@@ -8,10 +9,10 @@ Glupe.compose(__dirname, config, function (err, server) {
   }
 
   const meta = {
-    title: 'Site title',
-    description: 'Comment on any web page',
-    keywords: 'foo,bar,baz',
-    author: 'uris.co',
+    title: 'Noide',
+    description: 'Web based code editor',
+    keywords: 'code,nodejs,editor,browser',
+    author: 'davidjamesstone@github.com',
     favicon: '/public/favicon.ico'
   }
 
@@ -48,9 +49,9 @@ Glupe.compose(__dirname, config, function (err, server) {
 
       // In the event of 404
       // return the `404` view
-      if (statusCode === 404) {
-        return reply.view('404').code(statusCode)
-      }
+      // if (statusCode === 404) {
+      //   return reply.view('404').code(statusCode)
+      // }
 
       request.log('error', {
         statusCode: statusCode,
@@ -59,24 +60,37 @@ Glupe.compose(__dirname, config, function (err, server) {
       })
 
       // The return the `500` view
-      return reply.view('500').code(statusCode)
+      // return reply.view('500').code(statusCode)
     }
     return reply.continue()
   }
 
   server.ext('onPostHandler', onPostHandler)
-  // server.ext('onPreResponse', preResponse)
+  server.ext('onPreResponse', preResponse)
 
-  server.start(function () {
-    if (err) {
-      throw err
+  /*
+   * Start the server
+   */
+  server.start(function (err) {
+    var details = {
+      name: appName,
+      uri: server.info.uri
     }
 
-    sock(server)
-    server.subscription('/io')
-    server.subscription('/io/pids')
+    if (err) {
+      details.error = err
+      details.message = 'Failed to start ' + details.name
+      server.log('error', details)
+      throw err
+    } else {
+      details.config = config
+      details.message = 'Started ' + details.name
+      server.log('info', details)
+      console.info(details.message)
 
-    server.log('info', 'Server started')
-    console.info('Server running at:', server.info)
+      sock(server)
+      server.subscription('/io')
+      server.subscription('/io/pids')
+    }
   })
 })

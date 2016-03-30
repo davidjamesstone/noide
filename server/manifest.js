@@ -24,6 +24,12 @@ const manifest = {
       plugin: {
         register: 'nes'
       }
+    },
+    {
+      plugin: {
+        register: 'good',
+        options: config.logging
+      }
     }]
 }
 

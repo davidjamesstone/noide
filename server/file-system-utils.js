@@ -68,7 +68,14 @@ exports.copy = function (source, destination, callback) {
 
 exports.writeFile = function (path, contents, callback) {
   fs.writeFile(path, contents, 'utf8', function (err) {
-    callback(err, err ? null : new FileSystemObject(path, false))
+    if (err) {
+      callback(err)
+      return
+    }
+
+    fs.stat(path, function (err, stat) {
+      callback(err, err ? null : new FileSystemObject(path, stat))
+    })
   })
 }
 

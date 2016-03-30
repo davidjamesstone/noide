@@ -10,6 +10,7 @@ $component-active-bg:       #484848 !default;
 @import 'recent/index.scss';
 @import 'processes/index.scss';
 @import 'file-menu/index.scss';
+@import 'file-editor/index.scss';
 
 html, body {
   background-color: black;
@@ -28,8 +29,9 @@ body {
 
 header {
   // display: none;
-	height: 75px;
-	min-height: 75px;
+	// height: 75px;
+	// min-height: 75px;
+	height: 0;
 }
 
 footer {

@@ -1,4 +1,3 @@
-var fs = require('fs')
 var Boom = require('boom')
 var fileutils = require('../file-system-utils')
 
@@ -15,13 +14,7 @@ module.exports = {
           return reply(Boom.badRequest('Write file failed', err))
         }
 
-        fs.stat(path, function (err, stat) {
-          if (err) {
-            return reply(Boom.badRequest('Write file failed', err))
-          }
-          data.stat = stat
-          return reply(data)
-        })
+        return reply(data)
       })
     }
   }

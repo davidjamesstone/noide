@@ -4,18 +4,24 @@ var view = require('./view.html')
 
 function FileEditor (el) {
   var model = {
-    mode: '',
+    mode: null,
+    file: null,
     rename: fs.rename,
     mkfile: fs.mkfile,
     mkdir: fs.mkdir
   }
 
+  function hide () {
+    model.file = null
+    model.mode = null
+    patch(el, view, model, hide)
+  }
+
   function show (file, mode) {
     model.file = file
     model.mode = mode
-    patch(el, view, model)
+    patch(el, view, model, hide)
     var input = el.querySelector('input')
-    // input.select()
     input.focus()
   }
 

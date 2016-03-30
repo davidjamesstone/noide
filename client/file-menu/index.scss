@@ -3,5 +3,8 @@
   ul.dropdown-menu {
     display: block;
     font-size: small;
+    li a {
+      cursor: pointer;
+    }
   }
 }
