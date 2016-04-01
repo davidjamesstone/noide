@@ -6,7 +6,8 @@
           <div class="input-group-btn dropup">
             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Task <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li each="task, task.name in model.tasks">
+              <li if="!model.tasks.length" class="dropdown-header">No npm run-scripts found</li>
+              <li if="model.tasks.length" each="task, task.name in model.tasks">
                 <a href="#" onclick="{actions.setCommand('npm run ' + task.name)}">{task.name}</a>
               </li>
             </ul>
@@ -19,7 +20,7 @@
           </span>
         </div>
     </form>
-    <ul class="nav nav-tabs xnav-justified">
+    <ul class="nav nav-tabs">
       <li each="process, process.pid in model.processes" class="{process === model.current ? 'dropup active' : 'dropup'}">
         <a onclick="{actions.setCurrent(process)}" class="dropdown-toggle" data-toggle="dropdown">
           <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>

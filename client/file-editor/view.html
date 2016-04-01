@@ -7,7 +7,7 @@
       <div class="form-group">
         <label for="name">Add new file</label>
         <div class="input-group">
-          <input type="text" class="form-control input-sm" id="filename" value="{file.relativePath + '/'}">
+          <input type="text" class="form-control input-sm" id="filename" value="{file.relativePath ? file.relativePath + '/' : ''}">
           <span class="input-group-btn">
             <button class="btn btn-primary btn-sm" type="submit">OK</button>
             <button class="btn btn-secondary btn-sm" type="button" onclick="{hide()}">Cancel</button>
@@ -19,7 +19,7 @@
       <div class="form-group">
         <label for="name">Add new folder</label>
         <div class="input-group">
-          <input type="text" class="form-control input-sm" id="dirname" value="{file.relativePath + '/'}">
+          <input type="text" class="form-control input-sm" id="dirname" value="{file.relativePath ? file.relativePath + '/' : ''}">
           <span class="input-group-btn">
             <button class="btn btn-primary btn-sm" type="submit">OK</button>
             <button class="btn btn-secondary btn-sm" type="button" onclick="{hide()}">Cancel</button>

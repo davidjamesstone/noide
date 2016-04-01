@@ -10,12 +10,14 @@ module.exports = function (server) {
       stat = stat || (event === 'unlinkDir')
       var fso = new FileSystemObject(path, stat)
 
+      console.log(watcher.getWatched())
+
       server.publish('/fs/' + event, fso)
       server.publish('/fs/update', {
         file: fso,
         event: event
       })
-      console.log('Watcher event happened', event, fso)
+      server.log('info', `Watcher event happened ${event} ${fso.path}`)
     }
 
     if (event === 'change') {
@@ -29,6 +31,6 @@ module.exports = function (server) {
 
   watcher.on('error', function (err) {
     server.publish('/' + 'error', err)
-    console.error('Watcher error happened', err)
+    server.log('error', err)
   })
 }

@@ -1,6 +1,9 @@
 <template name="tree" args="data isRoot current showMenu onClick">
   <ul class="{isRoot ? 'tree noselect' : 'noselect'}">
-    <li each="fso, fso.path in data" oncontextmenu="{showMenu($event, fso)}" class="{fso.isDirectory ? 'dir' : 'file' + (fso === current ? ' selected' : '')}">
+    <li each="fso, fso.path in data"
+      oncontextmenu="{showMenu($event, fso)}"
+      title="{fso.relativePath}"
+      class="{fso.isDirectory ? 'dir' : 'file' + (fso === current ? ' selected' : '')}">
       <if condition="fso.isFile">
         <a href="/file?path={fso.relativePath}">
           <span data-name="{fso.name}" data-path="{fso.relativePath}" class="name icon icon-file-text"></span>
@@ -18,6 +21,7 @@
       <span if="fso.isFile && fso === current" class="triangle-left"></span>
       <if condition="fso.isDirectory && fso.expanded">
         <script>
+          // sort
           fso.children.sort(function(a, b) {
             if (a.isDirectory) {
               if (b.isDirectory) {
@@ -33,15 +37,7 @@
               }
             }
           })
-
-          // var viewModel = {
-          //   isRoot: false,
-          //   tree: fso.children,
-          //   current: data.current,
-          //   view: data.view,
-          //   onClick: data.onClick
-          // }
-
+          // recurse
           tree(fso.children, false, current, showMenu, onClick)
         </script>
       </if>

@@ -89,9 +89,9 @@ function FileMenu (el) {
 
   function remove (file) {
     var path = file.relativePath
+    hide()
+    resetPasteBuffer()
     if (window.confirm('Delete [' + path + ']')) {
-      hide()
-      resetPasteBuffer()
       fs.remove(path, callback)
     }
   }

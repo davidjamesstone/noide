@@ -8260,7 +8260,6 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     padding: 15px 20px; }
 
 html, body {
-  background-color: black;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -8332,7 +8331,6 @@ aside {
     margin: 0 0 0 -30px; }
 
 #sidebar {
-  background-color: #232222;
   overflow: auto; }
 
 #sidebar a {

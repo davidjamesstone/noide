@@ -34,6 +34,7 @@ var watcher = chokidar.watch(root, {
 
     return false
   },
+  atomic: true,
   ignoreInitial: true
 })
 

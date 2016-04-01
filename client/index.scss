@@ -2,10 +2,7 @@ $border-radius-base:        0px !default;
 $border-radius-large:       0px !default;
 $border-radius-small:       0px !default;
 $component-active-bg:       #484848 !default;
-@import '_variables.scss';
-@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-@import '_bootswatch.scss';
-@import '../node_modules/font-awesome/scss/font-awesome.scss';
+@import 'bootstrap/index.scss';
 @import 'tree/index.scss';
 @import 'recent/index.scss';
 @import 'processes/index.scss';
@@ -13,7 +10,7 @@ $component-active-bg:       #484848 !default;
 @import 'file-editor/index.scss';
 
 html, body {
-  background-color: black;
+  // background-color: black;
 	height: 100%;
 	width: 100%;
 	padding: 0;
@@ -68,7 +65,6 @@ aside {
 	border: solid #383737;
 	border-width: 0 1px;
 	width: 6px;
-	// min-width: 6px;
   background-color: #292929;
 	cursor: col-resize;
   position: relative;
@@ -88,7 +84,6 @@ aside {
 .splitter.horizontal {
 	border-width: 1px 0;
 	height: 6px;
-	// min-height: 6px;
 	width: auto;
 	min-width: auto;
 	cursor: row-resize;
@@ -104,7 +99,6 @@ aside {
 }
 
 #sidebar {
-  background-color: #232222;
   overflow: auto;
 }
 

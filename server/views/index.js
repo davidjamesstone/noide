@@ -5,13 +5,10 @@ module.exports = {
     html: require('handlebars')
   },
   relativeTo: __dirname,
-  // layout: true,
   isCached: config.views.isCached,
-  partialsPath: 'partials',
-  helpersPath: 'helpers',
   context: {
-    siteName: 'name.co',
-    copyrightName: 'co.co',
+    siteName: 'noide',
+    copyrightName: 'noide',
     copyrightYear: (new Date()).getFullYear()
   }
 }

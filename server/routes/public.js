@@ -1,10 +1,12 @@
+var path = require('path')
+
 module.exports = {
   method: 'GET',
   path: '/public/{path*}',
   config: {
     handler: {
       directory: {
-        path: 'server/public',
+        path: path.resolve(__dirname, '../public'),
         listing: true,
         index: true
       }

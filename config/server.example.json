@@ -7,7 +7,7 @@
   "logging": {
     "reporters": [{
       "reporter": "good-console",
-      "events": { "log": ["info","error"], "request": "*", "response": "*", "error": "*" }
+      "events": { "log": ["info", "error"], "request": "*", "response": "*", "error": "*" }
     }, {
       "reporter": "good-file",
       "events": { "log": "info" },

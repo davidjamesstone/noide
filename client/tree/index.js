@@ -47,7 +47,7 @@ function Tree (el) {
   }
 
   function render () {
-    patch(el, view, makeTree(files), true, state.current, showMenu, onClick)
+    patch(el, view, makeTree(files)[0].children, true, state.current, showMenu, onClick)
   }
 
   this.render = render

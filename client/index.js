@@ -54,6 +54,12 @@ client.connect(function (err) {
     // that happen on the file system
     watch(treeView, recentView)
 
+    // Subscribe to editor changes and
+    // update the recent files views
+    editor.on('input', function () {
+      recentView.render()
+    })
+
     /* Initialize the splitters */
     function resizeEditor () {
       editor.resize()

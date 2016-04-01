@@ -169,37 +169,33 @@ function Processes (el) {
     loadPids(payload)
   })
 
-  function readTasks () {
-    fs.readFile('package.json', function (err, payload) {
-      if (err) {
-        util.handleError(err)
-      }
+  fs.readFile('package.json', function (err, payload) {
+    if (err) {
+      return
+    }
 
-      var pkg = {}
-      try {
-        pkg = JSON.parse(payload.contents)
-      } catch (e) {}
+    var pkg = {}
+    try {
+      pkg = JSON.parse(payload.contents)
+    } catch (e) {}
 
-      console.log(pkg)
-      if (pkg.scripts) {
-        var tasks = []
-        for (var script in pkg.scripts) {
-          if (script.substr(0, 3) === 'pre' || script.substr(0, 4) === 'post') {
-            continue
-          }
-
-          tasks.push(new Task({
-            name: script,
-            command: pkg.scripts[script]
-          }))
+    console.log(pkg)
+    if (pkg.scripts) {
+      var tasks = []
+      for (var script in pkg.scripts) {
+        if (script.substr(0, 3) === 'pre' || script.substr(0, 4) === 'post') {
+          continue
         }
-        model.tasks = tasks
-        render()
-      }
-    })
-  }
 
-  readTasks()
+        tasks.push(new Task({
+          name: script,
+          command: pkg.scripts[script]
+        }))
+      }
+      model.tasks = tasks
+      render()
+    }
+  })
 
   function render () {
     patch(el, view, model, actions)
@@ -216,7 +212,6 @@ function Processes (el) {
       editor.renderer.setShowGutter(false)
       editor.setHighlightActiveLine(false)
       editor.setShowPrintMargin(false)
-    // splitter(document.getElementById('list-output'), editor.resize.bind(editor))
     }
   }
 
