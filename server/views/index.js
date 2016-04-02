@@ -5,6 +5,7 @@ module.exports = {
     html: require('handlebars')
   },
   relativeTo: __dirname,
+  partialsPath: 'partials',
   isCached: config.views.isCached,
   context: {
     siteName: 'noide',

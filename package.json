@@ -1,6 +1,6 @@
 {
   "name": "noide",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "boom": "3.1.2",
     "bootstrap-sass": "3.3.6",
     "browserify": "13.0.0",
-    "chokidar": "1.4.2",
+    "chokidar": "1.4.3",
     "extend": "3.0.0",
     "font-awesome": "4.5.0",
     "glupe": "0.0.1",

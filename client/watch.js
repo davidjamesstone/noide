@@ -26,7 +26,7 @@ function watch (treeView, recentView) {
               return util.handleError(err)
             }
             file.stat = payload.stat
-            session.editSession.setValue(payload.contents)
+            session.value(payload.contents)
           })
         }
       }

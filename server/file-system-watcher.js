@@ -6,27 +6,15 @@ module.exports = function (server) {
   server.subscription('/fs/{id}')
 
   watcher.on('all', function (event, path, stat) {
-    function publish () {
-      stat = stat || (event === 'unlinkDir')
-      var fso = new FileSystemObject(path, stat)
+    stat = stat || (event === 'unlinkDir')
+    var fso = new FileSystemObject(path, stat)
 
-      console.log(watcher.getWatched())
-
-      server.publish('/fs/' + event, fso)
-      server.publish('/fs/update', {
-        file: fso,
-        event: event
-      })
-      server.log('info', `Watcher event happened ${event} ${fso.path}`)
-    }
-
-    if (event === 'change') {
-      // This small delay ensures changes instigated
-      // from our application are callbacked first
-      setTimeout(publish, 500)
-    } else {
-      publish()
-    }
+    server.publish('/fs/' + event, fso)
+    server.publish('/fs/update', {
+      file: fso,
+      event: event
+    })
+    server.log('info', `Watcher event happened ${event} ${fso.path}`)
   })
 
   watcher.on('error', function (err) {
