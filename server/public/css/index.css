@@ -8098,7 +8098,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   top: 2px; }
 
 .tree .name.icon.icon-file-directory:before {
-  color: #fff;
+  color: #3A3A3A;
   content: '\e613';
   display: inline-block;
   font-family: 'icomoon';

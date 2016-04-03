@@ -43,7 +43,7 @@ function Tree (el) {
 
   function showMenu (e, file) {
     e.stopPropagation()
-    fileMenu.show(e.pageX + 'px', e.pageY + 'px', file)
+    fileMenu.show((e.pageX - 2) + 'px', (e.pageY - 2) + 'px', file)
   }
 
   function render () {

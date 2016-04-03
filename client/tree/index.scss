@@ -36,15 +36,7 @@
   top: 6px;
   color: #666;
 }
-// .tree li.selected::before {
-//   content: "";
-//   background-color: rgba(0,0,0,0.5);
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   top: 0;
-//   height: 20px;
-// }
+
 .tree span.name.icon.icon-file-text,
 .tree span.name.icon.icon-file-directory {
   position: absolute;
@@ -55,7 +47,7 @@
   top: 2px;
 }
 .tree .name.icon.icon-file-directory:before {
-  color: #fff;
+  color: #3A3A3A;
   content: '\e613';
   display: inline-block;
   font-family: 'icomoon';

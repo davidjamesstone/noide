@@ -1,8 +1,21 @@
 {
   "name": "noide",
   "version": "0.0.8",
-  "description": "",
+  "description": "Web Editor built on hapi and nes websockets using browserify, superviews.js, bootstrap and the ACE editor.",
+  "keywords": [
+    "Browser editor",
+    "Code editor",
+    "Web editor",
+    "IDE",
+    "hapi",
+    "browserify",
+    "nes",
+    "superviews.js"
+  ],
   "main": "index.js",
+  "bin": {
+    "noide": "bin/noide.js"
+  },
   "scripts": {
     "start": "pm2 start config/pm2.json",
     "build:app:js": "bin/build-app-js",
@@ -14,8 +27,6 @@
     "lint": "standard",
     "test": "npm run lint"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "boom": "3.1.2",
     "bootstrap-sass": "3.3.6",
@@ -50,6 +61,16 @@
   "devDependencies": {
     "wisk": "0.0.1"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/davidjamesstone/noide.git"
+  },
+  "bugs": {
+    "url" : "http://github.com/davidjamesstone/noide/issues",
+    "email" : "davidjamesstone@gmail.com"
+  },
+  "author": "David Stone <davidjamesstone@gmail.com>",
+  "license" : "MIT",
   "standard": {
     "ignore": [
       "server/public"
