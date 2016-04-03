@@ -6,6 +6,7 @@ function run (command, name, callback) {
     callback = name
     name = command
   }
+
   if (!name) {
     name = command
   }

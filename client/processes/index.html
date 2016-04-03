@@ -28,7 +28,8 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li class="dropdown-header">Process [{process.pid}]</li>
+          <li if="process.isAlive" class="dropdown-header">Process [{process.pid}]</li>
+          <li if="!process.isAlive" class="dropdown-header">Process [<s>{process.pid}</s>]</li>
           <li role="separator" class="divider"></li>
           <li><a key="kill-tab" if="process.isAlive" onclick="{actions.kill(process)}"><i class="fa fa-stop"></i> Stop</a></li>
           <if condition="!process.isAlive">

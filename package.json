@@ -11,8 +11,7 @@
     "watch": "bin/watch",
     "build": "npm run build:core:js && npm run build:app:js && npm run build:css",
     "copy:assets": "bin/copy-assets",
-    "lint-client": "standard ./client/**/*.js",
-    "lint-all": "standard",
+    "lint": "standard",
     "test": "npm run lint"
   },
   "author": "",

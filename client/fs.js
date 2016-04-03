@@ -19,7 +19,6 @@ function writeFile (path, contents, callback) {
 }
 
 function mkdir (path, callback) {
-  // this._socket.emit('mkdir', path, callback)
   client.request({
     path: '/mkdir',
     payload: {
@@ -30,7 +29,6 @@ function mkdir (path, callback) {
 }
 
 function mkfile (path, callback) {
-  // this._socket.emit('mkfile', path, callback)
   client.request({ path: '/mkfile',
     payload: {
       path: path
@@ -40,7 +38,6 @@ function mkfile (path, callback) {
 }
 
 function copy (source, destination, callback) {
-  // this._socket.emit('copy', source, destination, callback)
   client.request({
     path: '/copy',
     payload: {
@@ -52,7 +49,6 @@ function copy (source, destination, callback) {
 }
 
 function rename (oldPath, newPath, callback) {
-  // this._socket.emit('rename', oldPath, newPath, callback)
   client.request({
     path: '/rename',
     payload: {
@@ -64,7 +60,6 @@ function rename (oldPath, newPath, callback) {
 }
 
 function remove (path, callback) {
-  // this._socket.emit('remove', path, callback)
   client.request({
     path: '/remove',
     payload: {
