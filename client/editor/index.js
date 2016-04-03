@@ -1,4 +1,5 @@
 var state = require('../state')
+var client = require('../client')
 var sessions = require('../sessions')
 var fs = require('../fs')
 var util = require('../util')
@@ -64,6 +65,41 @@ editor.commands.addCommands([{
         editSession.getUndoManager().markClean()
       })
     })
+  },
+  readOnly: false
+}, {
+  name: 'beautify',
+  bindKey: {
+    win: 'Ctrl-B',
+    mac: 'Command-B'
+  },
+  exec: function (editor) {
+    var file = state.current
+    var path
+
+    if (file) {
+      switch (file.ext) {
+        case '.js':
+          path = '/standard-format'
+          break
+        default:
+      }
+
+      if (path) {
+        client.request({
+          path: path,
+          payload: {
+            value: editor.getValue()
+          },
+          method: 'POST'
+        }, function (err, payload) {
+          if (err) {
+            return util.handleError(err)
+          }
+          editor.setValue(payload)
+        })
+      }
+    }
   },
   readOnly: false
 }])

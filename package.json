@@ -35,23 +35,25 @@
     "is-utf8": "0.2.1",
     "joi": "7.2.3",
     "jquery": "2.2.1",
-    "minimist": "^1.2.0",
+    "minimist": "1.2.0",
     "ncp": "2.0.0",
     "nes": "3.0.0",
     "node-sass": "3.4.2",
     "page": "1.6.4",
-    "querystring": "^0.2.0",
+    "querystring": "0.2.0",
     "rimraf": "2.5.1",
-    "slideout": "0.1.12",
     "spawn-args": "0.1.0",
     "standard": "6.0.4",
     "standard-format": "2.1.1",
     "superviewify": "0.0.10",
-    "vision": "4.0.1",
-    "vsd-shared": "0.0.1",
-    "watchify": "3.7.0"
+    "vision": "4.0.1"
   },
   "devDependencies": {
     "wisk": "0.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "server/public"
+    ]
   }
 }

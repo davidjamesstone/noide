@@ -2,6 +2,7 @@ var util = require('./util')
 var state = require('./state')
 var client = require('./client')
 var sessions = require('./sessions')
+// var standardize = require('standard-format')
 
 function linter () {
   function lint () {
@@ -21,11 +22,11 @@ function linter () {
             return util.handleError(err)
           }
           editSession.setAnnotations(payload)
-          setTimeout(lint, 2000)
+          setTimeout(lint, 1500)
         })
       }
     } else {
-      setTimeout(lint, 2000)
+      setTimeout(lint, 1500)
     }
   }
   lint()

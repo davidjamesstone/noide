@@ -114,6 +114,7 @@ client.connect(function (err) {
         // Set the editor session
         editor.setSession(session.editSession)
         editor.resize()
+        editor.focus()
       }
 
       if (session) {

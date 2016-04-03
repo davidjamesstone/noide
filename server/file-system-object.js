@@ -1,14 +1,20 @@
-var path = require('path')
-var Fso = require('vsd-shared').FileSystemObject
+var p = require('path')
 
-function FileSystemObject () {
-  Fso.apply(this, arguments)
-  var relativeDir = path.relative(process.cwd(), this.dir)
+var FileSystemObject = function (path, stat) {
+  this.name = p.basename(path) || path
+  this.path = path
+  this.dir = p.dirname(path)
+  this.isDirectory = typeof stat === 'boolean' ? stat : stat.isDirectory()
+  this.ext = p.extname(path)
+  this.stat = stat
+  var relativeDir = p.relative(process.cwd(), this.dir)
   this.relativeDir = relativeDir
-  var relativePath = path.relative(process.cwd(), this.path)
+  var relativePath = p.relative(process.cwd(), this.path)
   this.relativePath = relativePath
 }
-FileSystemObject.prototype = Object.create(Fso.prototype)
-FileSystemObject.constructor = FileSystemObject
-
+FileSystemObject.prototype = {
+  get isFile () {
+    return !this.isDirectory
+  }
+}
 module.exports = FileSystemObject
