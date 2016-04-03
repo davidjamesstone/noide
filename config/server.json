@@ -1,0 +1,16 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3000,
+    "labels": "web"
+  },
+  "logging": {
+    "reporters": [{
+      "reporter": "good-console",
+      "events": { "log": ["info", "error"], "error": "*" }
+    }]
+  },
+  "views": {
+    "isCached": false
+  }
+}

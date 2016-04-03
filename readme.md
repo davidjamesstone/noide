@@ -19,7 +19,7 @@ Now point your browser to http://localhost:3000/
 
 You should see a page something like this:
 
-![ide](https://raw.github.com/davidjamesstone/noide/screenshot.png "IDE")
+![ide](https://raw.githubusercontent.com/davidjamesstone/noide/master/screenshot.png "IDE")
 
 
 *** WARNING ***
