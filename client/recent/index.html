@@ -5,7 +5,7 @@
     </div>
   </if> -->
    <div style="{display: files.length ? '' : 'none'}" class="list-group">
-    <a each="file, file.relativePath in files.slice().reverse()"
+    <a each="file, file.relativePath in files.reverse()"
       title="{file.relativePath}"
       href="/file?path={file.relativePath}"
       class="{'list-group-item' + (file === current ? ' active' : '')}">

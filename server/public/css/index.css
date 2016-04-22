@@ -8355,11 +8355,26 @@ aside {
   right: 0;
   position: absolute; }
 
+#workspaces.not-found::after {
+  content: "File not found";
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding-top: 30px; }
+
 .icon-bar {
   background-color: #fff;
   height: 4px;
   display: block;
   margin-bottom: 2px; }
+
+.ace_search {
+  box-sizing: initial; }
+  .ace_search .ace_search_field {
+    color: #333; }
+  .ace_search button[action="findAll"] {
+    color: #333;
+    font-size: 10px; }
 
 .noselect {
   -webkit-touch-callout: none;

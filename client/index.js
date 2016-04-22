@@ -1,21 +1,18 @@
 var page = require('page')
 var qs = require('querystring')
 var fs = require('./fs')
-var state = require('./state')
 var client = require('./client')
-var sessions = require('./sessions')
-var files = require('./files')
 var util = require('./util')
 var splitter = require('./splitter')
 var editor = require('./editor')
-var fileEditor = require('./file-editor')
 var linter = require('./standard')
+var noide = require('./noide')
 var watch = require('./watch')
 
 var workspacesEl = document.getElementById('workspaces')
 
 window.onbeforeunload = function () {
-  if (sessions.dirty.length) {
+  if (noide.dirty.length) {
     return 'Unsaved changes will be lost - are you sure you want to leave?'
   }
 }
@@ -30,34 +27,30 @@ client.connect(function (err) {
       return util.handleError(err)
     }
 
-    // Initialize the files
-    payload.watched.forEach(files.add, files)
-
-    // Load the state from localStorage
-    state.load(files)
+    noide.load(payload)
 
     // Save state on page unload
     window.onunload = function () {
-      state.save(files)
+      noide.saveState()
     }
 
     // Build the tree pane
-    var treeView = require('./tree')
+    require('./tree')
 
     // Build the recent list pane
-    var recentView = require('./recent')
+    require('./recent')
 
     // Build the procsses pane
     var processesView = require('./processes')
 
     // Subscribe to watched file changes
     // that happen on the file system
-    watch(treeView, recentView)
+    watch()
 
     // Subscribe to editor changes and
     // update the recent files views
     editor.on('input', function () {
-      recentView.render()
+      noide.onInput()
     })
 
     /* Initialize the splitters */
@@ -70,7 +63,7 @@ client.connect(function (err) {
     splitter(document.getElementById('workspaces-info'), true, resizeEditor)
     splitter(document.getElementById('main-footer'), true, resizeEditor)
 
-    /* Initialize the linter */
+    /* Initialize the standardjs linter */
     linter()
 
     function setWorkspace (className) {
@@ -79,7 +72,7 @@ client.connect(function (err) {
 
     page('*', function (ctx, next) {
       // Update current file state
-      state.current = null
+      noide.current = null
       next()
     })
 
@@ -89,27 +82,23 @@ client.connect(function (err) {
 
     page('/file', function (ctx, next) {
       var relativePath = qs.parse(ctx.querystring).path
-      var file = files.findByPath(relativePath)
+      var file = noide.getFile(relativePath)
 
       if (!file) {
         return next()
       }
 
-      var session = sessions.find(file)
+      var session = noide.getSession(file)
 
       function setSession () {
         setWorkspace('editor')
 
         // Update state
-        state.current = file
+        noide.current = file
 
-        var recent = state.recent
-        if (!recent.find(file)) {
-          recent.add(file)
+        if (!noide.hasRecent(file)) {
+          noide.addRecent(file)
         }
-
-        treeView.render()
-        recentView.render()
 
         // Set the editor session
         editor.setSession(session.editSession)
@@ -125,7 +114,7 @@ client.connect(function (err) {
             return util.handleError(err)
           }
 
-          session = sessions.add(file, payload.contents)
+          session = noide.addSession(file, payload.contents)
           setSession()
         })
       }
@@ -138,8 +127,5 @@ client.connect(function (err) {
     page({
       hashbang: true
     })
-
-    window.files = files
-    window.fileEditor = fileEditor
   })
 })

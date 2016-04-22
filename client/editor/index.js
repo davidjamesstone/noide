@@ -1,6 +1,5 @@
-var state = require('../state')
+var noide = require('../noide')
 var client = require('../client')
-var sessions = require('../sessions')
 var fs = require('../fs')
 var util = require('../util')
 var config = require('../../config/client')
@@ -15,6 +14,16 @@ editor.setOptions({
   fontSize: config.ace.fontSize
 })
 
+function save (file, session) {
+  fs.writeFile(file.path, session.getValue(), function (err, payload) {
+    if (err) {
+      return util.handleError(err)
+    }
+    file.stat = payload.stat
+    noide.markSessionClean(session)
+  })
+}
+
 editor.commands.addCommands([{
   name: 'help',
   bindKey: {
@@ -24,7 +33,7 @@ editor.commands.addCommands([{
   exec: function () {
     $shortcuts.modal('show')
   },
-  readOnly: true // this command should apply in readOnly mode
+  readOnly: true
 }])
 
 editor.setTheme('ace/theme/' + config.ace.theme)
@@ -36,15 +45,9 @@ editor.commands.addCommands([{
     mac: 'Command-S'
   },
   exec: function (editor) {
-    var file = state.current
-    var editSession = sessions.find(file).editSession
-    fs.writeFile(file.path, editSession.getValue(), function (err, payload) {
-      if (err) {
-        return util.handleError(err)
-      }
-      file.stat = payload.stat
-      editSession.getUndoManager().markClean()
-    })
+    var file = noide.current
+    var session = noide.getSession(file)
+    save(file, session)
   },
   readOnly: false
 }, {
@@ -54,16 +57,9 @@ editor.commands.addCommands([{
     mac: 'Command-Option-S'
   },
   exec: function (editor) {
-    sessions.dirty.forEach(function (session) {
+    noide.dirty.forEach(function (session) {
       var file = session.file
-      var editSession = session.editSession
-      fs.writeFile(file.path, editSession.getValue(), function (err, payload) {
-        if (err) {
-          return util.handleError(err)
-        }
-        file.stat = payload.stat
-        editSession.getUndoManager().markClean()
-      })
+      save(file, session)
     })
   },
   readOnly: false
@@ -74,7 +70,7 @@ editor.commands.addCommands([{
     mac: 'Command-B'
   },
   exec: function (editor) {
-    var file = state.current
+    var file = noide.current
     var path
 
     if (file) {

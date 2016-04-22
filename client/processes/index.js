@@ -27,7 +27,6 @@ function Processes (el) {
       process.isActive = value
       if (process.isActive) {
         process._timeout = setTimeout(function () {
-          console.log('timeout')
           setProcessActiveState(process, false)
         }, 1500)
       }
@@ -113,7 +112,6 @@ function Processes (el) {
   }
 
   function loadPids (procs) {
-    console.log('procs', procs)
     var proc
     var born = []
 

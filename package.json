@@ -40,7 +40,7 @@
     "good-file": "5.1.2",
     "handlebars": "4.0.5",
     "hapi": "13.0.0",
-    "incremental-dom": "0.3.0",
+    "incremental-dom": "0.4.1",
     "inert": "3.2.0",
     "is-utf8": "0.2.1",
     "joi": "7.2.3",
@@ -55,7 +55,7 @@
     "spawn-args": "0.1.0",
     "standard": "6.0.4",
     "standard-format": "2.1.1",
-    "superviewify": "0.0.10",
+    "superviewify": "0.4.1",
     "vision": "4.0.1"
   },
   "devDependencies": {

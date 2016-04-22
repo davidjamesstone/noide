@@ -1,8 +1,7 @@
 var patch = require('../patch')
 var view = require('./view.html')
 var fileMenu = require('../file-menu')
-var state = require('../state')
-var files = require('../files')
+var noide = require('../noide')
 
 function makeTree (files) {
   function treeify (list, idAttr, parentAttr, childrenAttr) {
@@ -29,7 +28,7 @@ function makeTree (files) {
 
     return treeList
   }
-  return treeify(files.items, 'path', 'dir', 'children')
+  return treeify(files, 'path', 'dir', 'children')
 }
 
 function Tree (el) {
@@ -47,11 +46,13 @@ function Tree (el) {
   }
 
   function render () {
-    patch(el, view, makeTree(files)[0].children, true, state.current, showMenu, onClick)
+    console.log('Render tree')
+    patch(el, view, makeTree(noide.files)[0].children, true, noide.current, showMenu, onClick)
   }
 
-  this.render = render
-
+  noide.onAddFile(render)
+  noide.onRemoveFile(render)
+  noide.onChangeCurrent(render)
   render()
 }
 

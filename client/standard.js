@@ -1,14 +1,12 @@
 var util = require('./util')
-var state = require('./state')
+var noide = require('./noide')
 var client = require('./client')
-var sessions = require('./sessions')
-// var standardize = require('standard-format')
 
 function linter () {
   function lint () {
-    var file = state.current
+    var file = noide.current
     if (file && file.ext === '.js') {
-      var session = sessions.find(file)
+      var session = noide.getSession(file)
       if (session) {
         var editSession = session.editSession
         client.request({

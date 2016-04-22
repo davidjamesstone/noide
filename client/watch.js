@@ -1,11 +1,9 @@
 var fs = require('./fs')
 var client = require('./client')
 var util = require('./util')
-var sessions = require('./sessions')
-var files = require('./files')
-var state = require('./state')
+var noide = require('./noide')
 
-function watch (treeView, recentView) {
+function watch () {
   function handleError (err) {
     if (err) {
       return util.handleError(err)
@@ -17,7 +15,7 @@ function watch (treeView, recentView) {
   // Reload the session if the changes
   // do not match the state of the file
   client.subscribe('/fs/change', function (payload) {
-    sessions.items.forEach(function (session) {
+    noide.sessions.forEach(function (session) {
       var file = session.file
       if (payload.path === file.path) {
         if (payload.stat.mtime !== file.stat.mtime) {
@@ -26,7 +24,7 @@ function watch (treeView, recentView) {
               return util.handleError(err)
             }
             file.stat = payload.stat
-            session.value(payload.contents)
+            session.setValue(payload.contents, true)
           })
         }
       }
@@ -34,32 +32,24 @@ function watch (treeView, recentView) {
   }, handleError)
 
   client.subscribe('/fs/add', function (payload) {
-    files.add(payload)
-    treeView.render()
+    noide.addFile(payload)
   }, handleError)
 
   client.subscribe('/fs/addDir', function (payload) {
-    files.add(payload)
-    treeView.render()
+    noide.addFile(payload)
   }, handleError)
 
   client.subscribe('/fs/unlink', function (payload) {
-    var file = files.findByPath(payload.relativePath)
+    var file = noide.getFile(payload.relativePath)
     if (file) {
-      files.remove(file)
-      treeView.render()
-      if (state.recent.find(file)) {
-        state.recent.remove(file)
-        recentView.closeFile(file)
-      }
+      noide.removeFile(file)
     }
   }, handleError)
 
   client.subscribe('/fs/unlinkDir', function (payload) {
-    var file = files.findByPath(payload.relativePath)
+    var file = noide.getFile(payload.relativePath)
     if (file) {
-      files.remove(file)
-      treeView.render()
+      noide.removeFile(file)
     }
   }, handleError)
 }

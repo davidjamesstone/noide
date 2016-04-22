@@ -1,3 +1,4 @@
+var page = require('page')
 var patch = require('../patch')
 var fs = require('../fs')
 var view = require('./view.html')
@@ -7,7 +8,17 @@ function FileEditor (el) {
     mode: null,
     file: null,
     rename: fs.rename,
-    mkfile: fs.mkfile,
+    mkfile: function (path) {
+      fs.mkfile(path, function (err, payload) {
+        if (!err) {
+          // Open the new file. Leave a short delay
+          // to allow it to register from the socket
+          setTimeout(function () {
+            page('/file?path=' + payload.relativePath)
+          }, 500)
+        }
+      })
+    },
     mkdir: fs.mkdir
   }
 
