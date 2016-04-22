@@ -196,7 +196,7 @@ function Processes (el) {
   })
 
   function render () {
-    patch(el, view, model, actions)
+    patch(el, view, model, actions, !!editor)
 
     if (!editor) {
       var outputEl = el.querySelector('.output')

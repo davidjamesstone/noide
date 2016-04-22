@@ -1,5 +1,4 @@
-
-<template args="model actions">
+<template args="model actions editorIsInitialized">
   <div class="control">
     <form onsubmit="{actions.run(this.command.value)}">
       <div class="input-group">
@@ -41,26 +40,6 @@
     </ul>
   </div>
   <div class="processes" style="{display: model.current ? '' : 'none'}">
-    <!-- <div class="list">
-      <ul if="model.processes.length" class="nav nav-tabs">
-       <li each="process, process.pid in model.processes" class="{ process === model.current ? 'active' : '' }">
-         <a onclick="{showOutput(process)}">
-           <span class="{'circle ' + (!process.isAlive ? 'dead' : (process.isActive ? 'alive active' : 'alive'))}"></span>
-           {process.name || process.command}<span>[{process.pid}]</span>
-           <button key="kill" if="process.isAlive" class="btn btn-default btn-xs" onclick="{model.kill(process)}"><i class="fa fa-stop"></i></button>
-           <if condition="!process.isAlive">
-             <button key="resurrect" class="btn btn-default btn-xs" onclick="{model.resurrect(process)}"><i class="fa fa-refresh"></i></button>
-             <button key="remove" class="btn btn-default btn-xs" onclick="{model.remove(process)}"><i class="fa fa-close"></i></button>
-           </if>
-         </a>
-       </li>
-      </ul>
-    </div>
-    <placeholder key="list-output" id="list-output" class="splitter"></placeholder> -->
-    <placeholder key="output" class="output"></placeholder>
-    <!-- <script>
-      IncrementalDOM.elementPlaceholder('div', 'list-output', ['id', 'list-output', 'class', 'splitter'])
-      IncrementalDOM.elementPlaceholder('div', 'output', ['class', 'output'])
-    </script> -->
+    <div skip="editorIsInitialized" class="output"></div>
   </div>
  </template>
