@@ -55,7 +55,7 @@
     "spawn-args": "0.1.0",
     "standard": "6.0.4",
     "standard-format": "2.1.1",
-    "superviewify": "0.4.1",
+    "superviewify": "0.4.2",
     "vision": "4.0.1"
   },
   "devDependencies": {
