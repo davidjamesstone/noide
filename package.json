@@ -59,18 +59,18 @@
     "vision": "4.0.1"
   },
   "devDependencies": {
-    "wisk": "0.0.1"
+    "wisk": "1.0.0"
   },
   "repository": {
-    "type" : "git",
-    "url" : "http://github.com/davidjamesstone/noide.git"
+    "type": "git",
+    "url": "http://github.com/davidjamesstone/noide.git"
   },
   "bugs": {
-    "url" : "http://github.com/davidjamesstone/noide/issues",
-    "email" : "davidjamesstone@gmail.com"
+    "url": "http://github.com/davidjamesstone/noide/issues",
+    "email": "davidjamesstone@gmail.com"
   },
   "author": "David Stone <davidjamesstone@gmail.com>",
-  "license" : "MIT",
+  "license": "MIT",
   "standard": {
     "ignore": [
       "server/public"
