@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "pm2 start config/pm2.json",
+    "stop": "pm2 stop noide",
     "build:app:js": "bin/build-app-js",
     "build:core:js": "bin/build-core-js",
     "build:css": "bin/build-css",
