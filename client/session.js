@@ -5,7 +5,6 @@ var ModeList = window.ace.require('ace/ext/modelist')
 
 function Session (file, contents) {
   var editSession = new EditSession(contents, ModeList.getModeForPath(file))
-  editSession.setMode(ModeList.getModeForPath(file))
   editSession.setUseWorker(false)
   editSession.setTabSize(config.ace.tabSize)
   editSession.setUseSoftTabs(config.ace.useSoftTabs)
