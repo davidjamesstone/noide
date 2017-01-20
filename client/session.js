@@ -1,11 +1,11 @@
 var config = require('../config/client')
-var modes = require('./modes')
 var EditSession = window.ace.require('ace/edit_session').EditSession
 var UndoManager = window.ace.require('ace/undomanager').UndoManager
+var ModeList = window.ace.require('ace/ext/modelist')
 
 function Session (file, contents) {
-  var editSession = new EditSession(contents, modes(file))
-  editSession.setMode(modes(file))
+  var editSession = new EditSession(contents, ModeList.getModeForPath(file))
+  editSession.setMode(ModeList.getModeForPath(file))
   editSession.setUseWorker(false)
   editSession.setTabSize(config.ace.tabSize)
   editSession.setUseSoftTabs(config.ace.useSoftTabs)
