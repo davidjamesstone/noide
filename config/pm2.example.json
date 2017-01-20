@@ -1,6 +1,6 @@
 /* Development:*/
 {
-  "name": "glupe-base",
+  "name": "noide",
   "script": "index.js",
   "node_args": "--debug",
   "watch": ["index.js", "server"]
@@ -8,7 +8,7 @@
 
 /* Production:
 {
-  "name": "glupe-base",
+  "name": "noide",
   "script": "index.js",
   "instances": 0,
   "exec_mode": "cluster_mode"
