@@ -6,21 +6,30 @@ noide
 
 It's a useful, lightweight editor that runs in the browser.
 
+This version is a fork that has `config/server.json` configured to 0.0.0.0 (so it servers the network) and the port configured to 80, so it is the default web app. Next to to that there were some bugs where the filename was passed as an object in `client/session.js` and `server/views/index.html` didn't include `ext-modelist.js`
+
 Instructions
 ============
 
-`npm install noide -g`
+cd into the directory you want noide installed, I use `/home/pi`
 
-Then cd to the directory you want to edit and execute
+`git clone https://github.com/rkristelijn/noide.git`
 
-`noide`
+Then cd to the directory you want to edit and execute, say it is `/home/lean-mean`
 
-Now point your browser to http://localhost:3000/
+`sudo node ../noide/index.js`
+
+Now point your browser to http://<hostname>/
 
 You should see a page something like this:
 
 ![ide](https://raw.githubusercontent.com/davidjamesstone/noide/master/screenshot.png "IDE")
 
+in the console you can start both node and angular/cli from the lean-mean application using
+
+`npm start`
+
+`nodemon server.js`
 
 *** WARNING ***
 ================
