@@ -1,6 +1,6 @@
 {
   "name": "noide",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Web Editor built on hapi and nes websockets using browserify, superviews.js, bootstrap and the ACE editor.",
   "keywords": [
     "Browser editor",

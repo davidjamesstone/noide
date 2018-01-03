@@ -1,5 +1,5 @@
 
-noide
+Noide
 ====
 
 `noide` is a web-based code editor built using Node.js.
@@ -30,6 +30,19 @@ in the console you can start both node and angular/cli from the lean-mean applic
 `npm start`
 
 `nodemon server.js`
+
+Config & Arguments
+==================
+You should edit settings in `config/server.json`. However, in case you want to run multiple instances of noide, you can add the following arguments:
+
+@since 0.2.0 (03-JAN-2018)
+
+* `--port <portnr>` e.g. `--port 81`
+* `--host <ip>` e.g. `--host 0.0.0.0`
+
+Note: by default the server starts serving only for localhost (host=127.0.0.1) on port 3000. If you want to serve on lower ports, such as 80 and to the network, use:
+
+`sudo node index.js --port 80 --host 0.0.0.0`
 
 Keyboard shortcuts
 ==================
