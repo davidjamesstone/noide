@@ -9,7 +9,7 @@
     "build:core:js": "bin/build-core-js",
     "build:css": "bin/build-css",
     "watch": "bin/watch",
-    "build": "npm run build:core:js && npm run build:app:js && npm run build:css",
+    "build": "npm run build:core:js && npm run build:app:js",
     "copy:assets": "bin/copy-assets",
     "lint-client": "standard ./client/**/*.js",
     "lint-all": "standard",
@@ -50,7 +50,7 @@
     "font-awesome": "^4.5.0",
     "incremental-dom": "^0.3.0",
     "jquery": "^2.2.1",
-    "node-sass": "3.4.2",
+    "node-sass": "4.6.1",
     "superviewify": "0.0.9",
     "wisk": "0.0.1"
   }

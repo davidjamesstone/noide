@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/public/file-icons/index.css">
     <script src="/public/ace-builds/src-min-noconflict/ace.js"></script>
     <script src="/public/ace-builds/src-min-noconflict/ext-language_tools.js"></script>
+    <script src="/public/ace-builds/src-min-noconflict/ext-modelist.js"></script>
 </head>
 <body>
 <header>
@@ -27,24 +28,24 @@
 </header>
 <main>
   <nav id="sidebar">
-    <div id="tree">
-    </div>
+    <aside id="info">
+      <div id="recent"></div>
+  	</aside>
+  	<div id="workspaces-info" class="splitter horizontal"></div>
+  
+    <div id="tree"></div>
   </nav>
+
 	<div id="sidebar-workspaces" class="splitter"></div>
 	<article id="workspaces">
     <div class="workspace welcome">
-      <h3 class="text-center">Hello there! <small>Open a file to start...</small></h3>
+      <h3 class="text-center">Hello there! <small>Open a file to start... after that press ctrl+h for shortcuts</small></h3>
     </div>
     <div class="workspace editor">
       <div id="editor">
       </div>
     </div>
   </article>
-	<div id="workspaces-info" class="splitter"></div>
-	<aside id="info">
-    <div id="recent">
-    </div>
-	</aside>
 </main>
 <div id="main-footer" class="splitter horizontal"></div>
 <footer>

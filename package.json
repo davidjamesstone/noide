@@ -1,6 +1,6 @@
 {
   "name": "noide",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Web Editor built on hapi and nes websockets using browserify, superviews.js, bootstrap and the ACE editor.",
   "keywords": [
     "Browser editor",
@@ -23,7 +23,7 @@
     "build:core:js": "bin/build-core-js",
     "build:css": "bin/build-css",
     "watch": "bin/watch",
-    "build": "npm run build:core:js && npm run build:app:js && npm run build:css",
+    "build": "npm run build:core:js && npm run build:app:js",
     "copy:assets": "bin/copy-assets",
     "lint": "standard",
     "test": "npm run lint"

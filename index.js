@@ -3,6 +3,17 @@ const config = require('./config')
 const sock = require('./server/file-system-watcher')
 const appName = require('./package.json').name
 
+for (let i = 2; i<=process.argv.length; i+=2) {
+  switch(process.argv[i]) {
+    case "--port":
+      config.server.port = +process.argv[i+1];
+      break;
+    case "--host":
+      config.server.host = process.argv[i+1];
+      break;
+  }
+}
+
 Glupe.compose(__dirname, config, function (err, server) {
   if (err) {
     throw err
